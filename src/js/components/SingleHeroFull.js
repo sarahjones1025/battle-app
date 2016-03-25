@@ -1,0 +1,1 @@
+SingleHeroFull.js

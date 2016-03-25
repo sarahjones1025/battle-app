@@ -15,10 +15,11 @@ var BattleRouter = Backbone.Router.extend {(
     },
 
     battleNow: function () {
+        
 
     },
 
-    
+
 
 
 )};
