@@ -17,6 +17,13 @@ var HeroCollection = Backbone.Collection.extend ({
                  + '&'
                  + marvelKey;
 
+    },
+
+    parse: function (obj) {
+        console.log('in parse');
+        for (var x=0;x<obj.data.results.length;x++) {
+            console.log(obj.data.results[x].thumbnail.path);
+        };
     }
 
 });

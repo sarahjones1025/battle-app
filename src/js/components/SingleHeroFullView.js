@@ -4,6 +4,8 @@ var Backbone = require ('backbone');
 var SingleHeroFullView = Backbone.View.extend({
     
     initialize: function () {
+
+        console.log ("Hero ID ",this.id);
         // Initialize the 
         //this.model = GetHeroFromData();
     },
@@ -18,4 +20,4 @@ var SingleHeroFullView = Backbone.View.extend({
     } 
 });
 
-module.extend = SingleHeroFullView;
+module.exports = SingleHeroFullView;

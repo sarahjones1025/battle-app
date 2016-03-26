@@ -13344,8 +13344,8 @@ var BattleRouter = Backbone.Router.extend ({
             new SearchView({collection: heroCollection}));
     },
 
-    singleHero: function () {
-        dispatcher.trigger('show', new SingleHeroFullView());
+    singleHero: function (thisId) {
+        dispatcher.trigger('show', new SingleHeroFullView({id:thisId}));
     },
 
     battleNow: function () {
@@ -13387,6 +13387,13 @@ var HeroCollection = Backbone.Collection.extend ({
                  + '&'
                  + marvelKey;
 
+    },
+
+    parse: function (obj) {
+        console.log('in parse');
+        for (var x=0;x<obj.data.results.length;x++) {
+            console.log(obj.data.results[x].thumbnail.path);
+        };
     }
 
 });
@@ -13477,6 +13484,8 @@ var Backbone = require ('backbone');
 var SingleHeroFullView = Backbone.View.extend({
     
     initialize: function () {
+
+        console.log ("Hero ID ",this.id);
         // Initialize the 
         //this.model = GetHeroFromData();
     },
@@ -13491,7 +13500,7 @@ var SingleHeroFullView = Backbone.View.extend({
     } 
 });
 
-module.extend = SingleHeroFullView;
+module.exports = SingleHeroFullView;
 },{"backbone":1,"jquery":2}],10:[function(require,module,exports){
 var _ = require ('underscore');
 var Backbone = require ('backbone');

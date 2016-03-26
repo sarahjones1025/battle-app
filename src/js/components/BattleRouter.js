@@ -25,8 +25,8 @@ var BattleRouter = Backbone.Router.extend ({
             new SearchView({collection: heroCollection}));
     },
 
-    singleHero: function () {
-        dispatcher.trigger('show', new SingleHeroFullView());
+    singleHero: function (thisId) {
+        dispatcher.trigger('show', new SingleHeroFullView({id:thisId}));
     },
 
     battleNow: function () {
