@@ -1,1 +1,4 @@
-MarvelDataCollection.js
+var MarvelDataCollection = Backbone.Collection.extend({
+    url: 'www.  '
+    
+})

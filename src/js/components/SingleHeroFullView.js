@@ -1,11 +1,12 @@
+var $ = require('jquery');
 var Backbone = require ('backbone');
 
-var SingleHeroFull = Backbone.View.extend({
+var SingleHeroFullView = Backbone.View.extend({
     
     initialize: function () {
         // Initialize the 
         //this.model = GetHeroFromData();
-    }
+    },
 
     render: function () {
         var example = $('<button>');
@@ -16,3 +17,5 @@ var SingleHeroFull = Backbone.View.extend({
 
     } 
 });
+
+module.extend = SingleHeroFullView;

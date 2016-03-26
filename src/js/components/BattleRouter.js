@@ -1,3 +1,12 @@
+var Backbone = require('backbone');
+
+var dispatcher = require('./dispatcher.js');
+var BattleSpaceView = require('./BattleSpaceView.js');
+var SearchView = require('./SearchView.js');
+var HeroCollection = require('./HeroCollection.js');
+var SingleHeroFullView = require('./SingleHeroFullView.js');
+
+var heroCollection = new HeroCollection();
 var BattleRouter = Backbone.Router.extend ({
     routes: {
         '': 'home',
@@ -12,18 +21,18 @@ var BattleRouter = Backbone.Router.extend ({
     },
 
     search: function () {
-        dispatcher.trigger('show', new searchView());
+        dispatcher.trigger('show', 
+            new SearchView({collection: heroCollection}));
     },
 
     singleHero: function () {
-        dispatcher.trigger('show', new SingleHeroView());
+        dispatcher.trigger('show', new SingleHeroFullView());
     },
 
     battleNow: function () {
-
+        dispatcher.trigger('show', new BattleSpaceView());
     },
 
 });
-
-
-)};
+ 
+module.exports = BattleRouter;
