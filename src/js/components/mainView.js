@@ -1,3 +1,7 @@
+
+var marvelKey = 'cd80e84f4acc3f0d2cdabd391244ab24';
+
+
 var MainView = Backbone.View.extend({
 
     events: {
@@ -12,6 +16,10 @@ var MainView = Backbone.View.extend({
 
         this.listenTo(this.collection, '', this.show);
     },
+
+    render: function () {
+        
+    }
 
 
 

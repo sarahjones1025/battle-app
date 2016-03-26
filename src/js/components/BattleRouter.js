@@ -1,25 +1,29 @@
-var BattleRouter = Backbone.Router.extend {(
+var BattleRouter = Backbone.Router.extend ({
     routes: {
         '': 'home',
-        'singleCharacter': 'ErrorRoute',
+        'singleHero': 'errorRoute',
+        'singleHero/:hero': 'singleHero',
         'battleSpace': 'battleNow',
         'searchFull': 'search'
     },
 
     errorRoute: function () {
-        dispatcher.trigger( )
+        alert('error in the program: Bad route');
     },
 
     search: function () {
-        dispatcher.trigger('show', new )
+        dispatcher.trigger('show', new searchView());
+    },
+
+    singleHero: function () {
+        dispatcher.trigger('show', new SingleHeroView());
     },
 
     battleNow: function () {
-        
 
     },
 
-
+});
 
 
 )};
