@@ -13340,23 +13340,31 @@ var BattleRouter = Backbone.Router.extend ({
     },
 
     search: function () {
-        dispatcher.trigger('show', 
+        dispatcher.trigger('show',
             new SearchView({collection: heroCollection}));
     },
 
     singleHero: function (thisId) {
+
+
+        console.log(thisId);
+
         dispatcher.trigger('show', new SingleHeroFullView({id:thisId}));
     },
 
+    // homePageView: function () {
+        
+    // },
+
     battleNow: function () {
         dispatcher.trigger('show', new BattleSpaceView());
-    },
+    }
 
 });
  
 module.exports = BattleRouter;
 
-},{"./BattleSpaceView.js":5,"./HeroCollection.js":6,"./SearchView.js":8,"./SingleHeroFullView.js":9,"./dispatcher.js":10,"backbone":1}],5:[function(require,module,exports){
+},{"./BattleSpaceView.js":5,"./HeroCollection.js":6,"./SearchView.js":8,"./SingleHeroFullView.js":9,"./dispatcher.js":11,"backbone":1}],5:[function(require,module,exports){
 var Backbone = require ('backbone');
 
 BattleSpaceView = Backbone.View.extend({
@@ -13376,14 +13384,15 @@ var HeroCollection = Backbone.Collection.extend ({
     url: function () {
         var marvelKey = 'apikey=cd80e84f4acc3f0d2cdabd391244ab24';
 
-        var listOf20 = 'limit=20';
+        var listOf10 = 'limit=10';
+        // standard _small
 
         console.log ('in URL function');
         console.log (this.searchString);
 
 
         return 'http://gateway.marvel.com/v1/public/characters?'
-                 + listOf20
+                 + listOf10
                  + '&'
                  + marvelKey;
 
@@ -13444,7 +13453,7 @@ var MainView = Backbone.View.extend({
 
 module.exports = MainView;
 
-},{"./dispatcher.js":10,"backbone":1,"jquery":2}],8:[function(require,module,exports){
+},{"./dispatcher.js":11,"backbone":1,"jquery":2}],8:[function(require,module,exports){
 var $ = require('jquery');
 var Backbone = require ('backbone');
 
@@ -13457,8 +13466,8 @@ var SearchView = Backbone.View.extend({
     onClick: function () {
         console.log('click Event');
         this.collection.searchString = 'Thor';
-
         this.collection.fetch();
+        
     },
 
     initialize: function () {
@@ -13479,29 +13488,71 @@ var SearchView = Backbone.View.extend({
 module.exports = SearchView;
 },{"backbone":1,"jquery":2}],9:[function(require,module,exports){
 var $ = require('jquery');
-var Backbone = require ('backbone');
-
+var Backbone = require('backbone');
+var SingleHeroModel = require('./SingleHeroModel');
 var SingleHeroFullView = Backbone.View.extend({
-    
+
     initialize: function () {
 
         console.log ("Hero ID ",this.id);
         // Initialize the 
         //this.model = GetHeroFromData();
+        this.listenTo(this.model, 'sync', this.render);
+        this.model = new SingleHeroModel({id: this.id});
+        console.log( 'this test' ,this.model);
+        this.model.url = function () {
+
+            var marvelKey = 'apikey=cd80e84f4acc3f0d2cdabd391244ab24';
+
+            return 'http://gateway.marvel.com/v1/public/characters/'
+                 +this.id
+                 +'?'
+                 +marvelKey;
+
+        };
+
+
+        this.model.fetch();
+
     },
 
     render: function () {
         var example = $('<button>');
+        var img = $('<img>');
 
         example.html('SingleHeroFull');
         this.$el.append(example);
+        console.log(this.model);
+        console.log(this.model.attributes);
+        console.log(this.model.get("thumbnail"));
+        // (img.attr('src', this.model.get('thumbnail'));
+        this.$el.append(img);
 
-
-    } 
+    }
 });
 
 module.exports = SingleHeroFullView;
-},{"backbone":1,"jquery":2}],10:[function(require,module,exports){
+},{"./SingleHeroModel":10,"backbone":1,"jquery":2}],10:[function(require,module,exports){
+var $ = require('jquery');
+var Backbone = require ('backbone');
+
+var SingleHeroModel = Backbone.Model.extend({
+
+    defaults: {
+        thumbnail: "default string"
+    },
+
+    parse: function (obj) {
+        console.log('in parse');
+
+        return {
+            thumbnail: obj.data.results[0].thumbnail.path
+        };
+    }
+});
+
+module.exports = SingleHeroModel;
+},{"backbone":1,"jquery":2}],11:[function(require,module,exports){
 var _ = require ('underscore');
 var Backbone = require ('backbone');
 
@@ -13509,9 +13560,8 @@ var dispatcher = _.extend({}, Backbone.Events );
 
 module.exports = dispatcher;
 
-},{"backbone":1,"underscore":3}],11:[function(require,module,exports){
+},{"backbone":1,"underscore":3}],12:[function(require,module,exports){
 var Backbone = require ('backbone');
-
 var BattleRouter = require ('./components/BattleRouter.js');
 var MainView = require ('./components/MainView.js');
 
@@ -13524,4 +13574,4 @@ mainView.render();
 
 Backbone.history.start();
   
-},{"./components/BattleRouter.js":4,"./components/MainView.js":7,"backbone":1}]},{},[11]);
+},{"./components/BattleRouter.js":4,"./components/MainView.js":7,"backbone":1}]},{},[12]);

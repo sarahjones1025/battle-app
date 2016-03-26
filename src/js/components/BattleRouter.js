@@ -21,17 +21,25 @@ var BattleRouter = Backbone.Router.extend ({
     },
 
     search: function () {
-        dispatcher.trigger('show', 
+        dispatcher.trigger('show',
             new SearchView({collection: heroCollection}));
     },
 
     singleHero: function (thisId) {
+
+
+        console.log(thisId);
+
         dispatcher.trigger('show', new SingleHeroFullView({id:thisId}));
     },
 
+    // homePageView: function () {
+        
+    // },
+
     battleNow: function () {
         dispatcher.trigger('show', new BattleSpaceView());
-    },
+    }
 
 });
  

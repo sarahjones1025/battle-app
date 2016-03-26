@@ -1,5 +1,4 @@
 var Backbone = require ('backbone');
-
 var BattleRouter = require ('./components/BattleRouter.js');
 var MainView = require ('./components/MainView.js');
 

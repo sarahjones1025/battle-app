@@ -10,8 +10,8 @@ var SearchView = Backbone.View.extend({
     onClick: function () {
         console.log('click Event');
         this.collection.searchString = 'Thor';
-
         this.collection.fetch();
+        
     },
 
     initialize: function () {
