@@ -19,6 +19,10 @@ var BattleRouter = Backbone.Router.extend {(
 
     },
 
+    homePageView: function () {
+        
+    }
+
 
 
 
