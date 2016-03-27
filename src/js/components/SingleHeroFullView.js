@@ -8,8 +8,8 @@ var SingleHeroFullView = Backbone.View.extend({
         console.log ("Hero ID ",this.id);
         // Initialize the 
         //this.model = GetHeroFromData();
-        this.listenTo(this.model, 'sync', this.render);
         this.model = new SingleHeroModel({id: this.id});
+        this.listenTo(this.model, 'sync', this.render);
         console.log( 'this test' ,this.model);
         this.model.url = function () {
 
