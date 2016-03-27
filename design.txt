@@ -1,0 +1,34 @@
+
+List Package:
+    These are utilities for the underlying work with lists.
+
+
+function: getTopPicks()
+    input: ?
+    output: ? array, model, collection ?
+
+    The data source is the P-Data (Battle Stats).  We searh through the entire list of battles and determine which heros battle most frequently.
+
+function: getRecentBattles()
+    input: ?
+    output: ? collection, array, model?
+
+    We get all this data from P-Data.
+
+    Just grab the last number of items in the Battle List.
+
+Function: getWinsAndLosses()
+    input: HeroID
+    output: ?
+
+    We get all this data from P-Data.
+
+    Search through the entire list.  Count up the wins and losses of each player.
+
+
+
+BattleSpace:
+    Turn By Turn:
+        The Battle text display will scroll off the top as the battle continues.
+
+
