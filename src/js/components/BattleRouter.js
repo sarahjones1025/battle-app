@@ -7,7 +7,7 @@ var HeroCollection = require('./HeroCollection.js');
 var SingleHeroFullView = require('./SingleHeroFullView.js');
 var SingleHeroModel = require('./SingleHeroModel.js');
 var BattleSetupView = require('./BattleSetupView');
-var HomeView = require('./HomeView');
+//var HomeView = require('./HomeView');
 
 var cache = require('./characterCache');
 
