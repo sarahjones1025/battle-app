@@ -16,6 +16,7 @@ var BattleSetupView = Backbone.View.extend({
         this.model1 = options.model1;
         this.listenTo(this.model1, 'sync', this.render);
         this.button = $('<button>');
+        this.$el.append(this.button);
         // if (options.withHero === true) {
         //     this.model.fetch();
         // }
@@ -25,7 +26,7 @@ var BattleSetupView = Backbone.View.extend({
 
     onClick: function () {
         window.location.hash = 'searchView';
-    }
+    },
 
     render: function () {
         this.$el.html(this.template({
