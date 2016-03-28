@@ -13352,13 +13352,11 @@ var BattleRouter = Backbone.Router.extend ({
         dispatcher.trigger('show', new SingleHeroFullView({id:thisId}));
     },
 
-    // homePageView: function () {
-        
-    // },
-
     battleNow: function () {
         dispatcher.trigger('show', new BattleSpaceView());
     }
+
+    
 
 });
  
@@ -13455,10 +13453,15 @@ module.exports = MainView;
 
 },{"./dispatcher.js":11,"backbone":1,"jquery":2}],8:[function(require,module,exports){
 var $ = require('jquery');
-var Backbone = require ('backbone');
+var Backbone = require('backbone');
+var _ = require('underscore');
 
 var SearchView = Backbone.View.extend({
-    
+
+    template: _.template(`
+        <button class='searchButton'>Search</button>
+        `),
+   
     events: {
         'click button': 'onClick'
     },
@@ -13466,27 +13469,21 @@ var SearchView = Backbone.View.extend({
     onClick: function () {
         console.log('click Event');
         this.collection.searchString = 'Thor';
-        this.collection.fetch();
-        
+        this.collection.fetch();  
     },
 
     initialize: function () {
-        // Initialize the 
+        // Initialize the
         //this.model = GetHeroFromData();
     },
 
     render: function () {
-        var example = $('<button>');
-
-        example.html('SearchView');
-        this.$el.append(example);
-
-
-    } 
+        this.$el.append(this.template());
+    }
 });
 
 module.exports = SearchView;
-},{"backbone":1,"jquery":2}],9:[function(require,module,exports){
+},{"backbone":1,"jquery":2,"underscore":3}],9:[function(require,module,exports){
 var $ = require('jquery');
 var Backbone = require('backbone');
 var SingleHeroModel = require('./SingleHeroModel');
