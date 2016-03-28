@@ -13,7 +13,7 @@ var SingleHeroFullView = Backbone.View.extend({
 
     onClick: function () {
         console.log("On click in SingleHeroFullView");
-        window.location.hash = 'BattleSetup/' + 
+        window.location.hash = 'battleSetup/' + 
                                 this.model.get('id');
     },
 
