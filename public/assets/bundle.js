@@ -13518,6 +13518,7 @@ var SearchView = Backbone.View.extend({
 
     template: _.template(`
         <button class='searchButton'>Search</button>
+        <div> this is the search view </div>
         `),
    
     events: {
@@ -13541,11 +13542,7 @@ var SearchView = Backbone.View.extend({
 });
 
 module.exports = SearchView;
-<<<<<<< HEAD
-},{"backbone":1,"jquery":2,"underscore":3}],9:[function(require,module,exports){
-=======
-},{"backbone":1,"jquery":2}],10:[function(require,module,exports){
->>>>>>> ca6e6698e1f2adb7b37d33a7bfd08fdc47bdeb97
+},{"backbone":1,"jquery":2,"underscore":3}],10:[function(require,module,exports){
 var $ = require('jquery');
 var Backbone = require('backbone');
 
