@@ -5,18 +5,37 @@ var BattleSpaceView = require('./BattleSpaceView.js');
 var SearchView = require('./SearchView.js');
 var HeroCollection = require('./HeroCollection.js');
 var SingleHeroFullView = require('./SingleHeroFullView.js');
+var SingleHeroModel = require('./SingleHeroModel.js');
+var BattleSetupView = require('./BattleSetupView');
+
+var cache = require('./characterCache');
 
 var heroCollection = new HeroCollection();
-var BattleRouter = Backbone.Router.extend ({
+
+var BattleRouter = Backbone.Router.extend({
+    
     routes: {
         '': 'home',
-        'singleHero': 'errorRoute',
         'singleHero/:hero': 'singleHero',
+        'battleSetup/:hero': 'battleSetup',
+        'battleSetup': 'battleSetupNoHero',
         'battleSpace': 'battleNow',
-        'searchFull': 'search'
+        'searchFull': 'search',
+        '*notFound': 'notFound'
     },
 
-    errorRoute: function () {
+    battleSetupNoHero: function () {
+        //dispatcher.trigger('show', new BattleSetupView());
+
+    },
+
+    battleSetup: function ( heroId ) {
+        var model = cache.getCharacter(heroId);
+
+        dispatcher.trigger('show', new BattleSetupView({ model1: model }));
+    },
+
+    notFound: function () {
         alert('error in the program: Bad route');
     },
 
@@ -26,8 +45,6 @@ var BattleRouter = Backbone.Router.extend ({
     },
 
     singleHero: function (thisId) {
-
-
         console.log(thisId);
 
         dispatcher.trigger('show', new SingleHeroFullView({id:thisId}));
