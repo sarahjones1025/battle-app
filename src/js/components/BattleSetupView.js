@@ -8,15 +8,24 @@ var BattleSetupView = Backbone.View.extend({
         <img src="<%= hero1.thumbnail %>.jpg">
     `),
 
+    events: {
+        'click button': 'onClick'
+    },
+
     initialize: function (options) {
         this.model1 = options.model1;
         this.listenTo(this.model1, 'sync', this.render);
+        this.button = $('<button>');
         // if (options.withHero === true) {
         //     this.model.fetch();
         // }
 
         // INCOMPLETE!  Give me a button here
     },
+
+    onClick: function () {
+        window.location.hash = 'searchView';
+    }
 
     render: function () {
         this.$el.html(this.template({
