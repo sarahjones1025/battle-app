@@ -55,13 +55,11 @@ var BattleRouter = Backbone.Router.extend({
         dispatcher.trigger('show', new SingleHeroFullView({id:thisId}));
     },
 
-    // homePageView: function () {
-        
-    // },
-
     battleNow: function () {
         dispatcher.trigger('show', new BattleSpaceView());
     }
+
+    
 
 });
  

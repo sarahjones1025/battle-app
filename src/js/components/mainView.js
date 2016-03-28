@@ -25,7 +25,7 @@ var MainView = Backbone.View.extend({
 
     show: function (view) {
         console.log ('View is called');
-        if(this.savedView) {
+        if (this.savedView) {
             this.savedView.remove();
         };
 
