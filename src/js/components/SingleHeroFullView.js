@@ -1,9 +1,25 @@
 var $ = require('jquery');
 var Backbone = require('backbone');
+
 var SingleHeroModel = require('./SingleHeroModel');
+
 var SingleHeroFullView = Backbone.View.extend({
 
+    className: "Single-Hero",
+
+    events: {
+        'click button': 'onClick'
+    },
+
+    onClick: function () {
+        console.log("On click in SingleHeroFullView");
+        window.location.hash = 'BattleSetup/' + 
+                                this.model.get('id');
+    },
+
     initialize: function () {
+        var example = $('<button>');
+        this.img = $('<img>');
 
         console.log ("Hero ID ",this.id);
         // Initialize the 
@@ -11,33 +27,21 @@ var SingleHeroFullView = Backbone.View.extend({
         this.model = new SingleHeroModel({id: this.id});
         this.listenTo(this.model, 'sync', this.render);
         console.log( 'this test' ,this.model);
-        this.model.url = function () {
-
-            var marvelKey = 'apikey=cd80e84f4acc3f0d2cdabd391244ab24';
-
-            return 'http://gateway.marvel.com/v1/public/characters/'
-                 +this.id
-                 +'?'
-                 +marvelKey;
-
-        };
 
 
-        this.model.fetch();
+        example.html('SingleHeroFull');
+        this.$el.append(example); 
+        this.$el.append(this.img);
+       
 
     },
 
     render: function () {
-        var example = $('<button>');
-        var img = $('<img>');
 
-        example.html('SingleHeroFull');
-        this.$el.append(example);
         console.log(this.model);
         console.log(this.model.attributes);
         console.log(this.model.get("thumbnail"));
-        img.attr('src', (this.model.get('thumbnail') + '.jpg' ));
-        this.$el.append(img);
+        this.img.attr('src', (this.model.get('thumbnail') + '.jpg' ));
 
     }
 });

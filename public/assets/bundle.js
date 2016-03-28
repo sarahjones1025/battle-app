@@ -13324,18 +13324,37 @@ var BattleSpaceView = require('./BattleSpaceView.js');
 var SearchView = require('./SearchView.js');
 var HeroCollection = require('./HeroCollection.js');
 var SingleHeroFullView = require('./SingleHeroFullView.js');
+var SingleHeroModel = require('./SingleHeroModel.js');
+var BattleSetupView = require('./BattleSetupView');
+
+var cache = require('./characterCache');
 
 var heroCollection = new HeroCollection();
-var BattleRouter = Backbone.Router.extend ({
+
+var BattleRouter = Backbone.Router.extend({
+    
     routes: {
         '': 'home',
-        'singleHero': 'errorRoute',
         'singleHero/:hero': 'singleHero',
+        'battleSetup/:hero': 'battleSetup',
+        'battleSetup': 'battleSetupNoHero',
         'battleSpace': 'battleNow',
-        'searchFull': 'search'
+        'searchFull': 'search',
+        '*notFound': 'notFound'
     },
 
-    errorRoute: function () {
+    battleSetupNoHero: function () {
+        //dispatcher.trigger('show', new BattleSetupView());
+
+    },
+
+    battleSetup: function ( heroId ) {
+        var model = cache.getCharacter(heroId);
+
+        dispatcher.trigger('show', new BattleSetupView({ model1: model }));
+    },
+
+    notFound: function () {
         alert('error in the program: Bad route');
     },
 
@@ -13345,8 +13364,6 @@ var BattleRouter = Backbone.Router.extend ({
     },
 
     singleHero: function (thisId) {
-
-
         console.log(thisId);
 
         dispatcher.trigger('show', new SingleHeroFullView({id:thisId}));
@@ -13364,18 +13381,57 @@ var BattleRouter = Backbone.Router.extend ({
  
 module.exports = BattleRouter;
 
-},{"./BattleSpaceView.js":5,"./HeroCollection.js":6,"./SearchView.js":8,"./SingleHeroFullView.js":9,"./dispatcher.js":11,"backbone":1}],5:[function(require,module,exports){
+},{"./BattleSetupView":5,"./BattleSpaceView.js":6,"./HeroCollection.js":7,"./SearchView.js":9,"./SingleHeroFullView.js":10,"./SingleHeroModel.js":11,"./characterCache":12,"./dispatcher.js":13,"backbone":1}],5:[function(require,module,exports){
+var Backbone = require('backbone');
+var _ = require('underscore');
+
+var BattleSetupView = Backbone.View.extend({
+
+    template: _.template(`
+        <%= hero1.name %>
+        <img src="<%= hero1.thumbnail %>.jpg">
+    `),
+
+    initialize: function (options) {
+        this.model1 = options.model1;
+        this.listenTo(this.model1, 'sync', this.render);
+        // if (options.withHero === true) {
+        //     this.model.fetch();
+        // }
+
+        // INCOMPLETE!  Give me a button here
+    },
+
+    render: function () {
+        this.$el.html(this.template({
+            hero1: this.model1.attributes
+        }));
+    }
+});
+
+module.exports = BattleSetupView;
+},{"backbone":1,"underscore":3}],6:[function(require,module,exports){
 var Backbone = require ('backbone');
 
+// Child Views are BattleDisplayView
+//    healthbar views
 BattleSpaceView = Backbone.View.extend({
+
+    initialize: function () {
+        battleNow();
+
+        // Store Results from the Battle.
+
+    },
 
     render: function () {
         this.$el.html("BattleSpaceView");
     }
+
 });
 
 module.exports = BattleSpaceView;
-},{"backbone":1}],6:[function(require,module,exports){
+},{"backbone":1}],7:[function(require,module,exports){
 var Backbone = require ('backbone');
 
 var HeroCollection = Backbone.Collection.extend ({
@@ -13408,7 +13464,7 @@ var HeroCollection = Backbone.Collection.extend ({
 });
 
 module.exports = HeroCollection;
-},{"backbone":1}],7:[function(require,module,exports){
+},{"backbone":1}],8:[function(require,module,exports){
 var $ = require('jquery');
 var Backbone = require('backbone');
 
@@ -13418,16 +13474,18 @@ var MainView = Backbone.View.extend({
 
     className: 'main-dock',
 
+
     events: {
         'click': 'onClick'
     },
 
     onClick: function () {
         //Incomplete:  What buttons are clicked in this View? 
-        
+        console.log('main view click');
     },
 
     initialize: function () {
+
 
         this.listenTo(dispatcher,'show', this.show);
     },
@@ -13453,7 +13511,7 @@ var MainView = Backbone.View.extend({
 
 module.exports = MainView;
 
-},{"./dispatcher.js":11,"backbone":1,"jquery":2}],8:[function(require,module,exports){
+},{"./dispatcher.js":13,"backbone":1,"jquery":2}],9:[function(require,module,exports){
 var $ = require('jquery');
 var Backbone = require ('backbone');
 
@@ -13486,13 +13544,29 @@ var SearchView = Backbone.View.extend({
 });
 
 module.exports = SearchView;
-},{"backbone":1,"jquery":2}],9:[function(require,module,exports){
+},{"backbone":1,"jquery":2}],10:[function(require,module,exports){
 var $ = require('jquery');
 var Backbone = require('backbone');
+
 var SingleHeroModel = require('./SingleHeroModel');
+
 var SingleHeroFullView = Backbone.View.extend({
 
+    className: "Single-Hero",
+
+    events: {
+        'click button': 'onClick'
+    },
+
+    onClick: function () {
+        console.log("On click in SingleHeroFullView");
+        window.location.hash = 'BattleSetup/' + 
+                                this.model.get('id');
+    },
+
     initialize: function () {
+        var example = $('<button>');
+        this.img = $('<img>');
 
         console.log ("Hero ID ",this.id);
         // Initialize the 
@@ -13500,39 +13574,27 @@ var SingleHeroFullView = Backbone.View.extend({
         this.model = new SingleHeroModel({id: this.id});
         this.listenTo(this.model, 'sync', this.render);
         console.log( 'this test' ,this.model);
-        this.model.url = function () {
-
-            var marvelKey = 'apikey=cd80e84f4acc3f0d2cdabd391244ab24';
-
-            return 'http://gateway.marvel.com/v1/public/characters/'
-                 +this.id
-                 +'?'
-                 +marvelKey;
-
-        };
 
 
-        this.model.fetch();
+        example.html('SingleHeroFull');
+        this.$el.append(example); 
+        this.$el.append(this.img);
+       
 
     },
 
     render: function () {
-        var example = $('<button>');
-        var img = $('<img>');
 
-        example.html('SingleHeroFull');
-        this.$el.append(example);
         console.log(this.model);
         console.log(this.model.attributes);
         console.log(this.model.get("thumbnail"));
-        img.attr('src', (this.model.get('thumbnail') + '.jpg' ));
-        this.$el.append(img);
+        this.img.attr('src', (this.model.get('thumbnail') + '.jpg' ));
 
     }
 });
 
 module.exports = SingleHeroFullView;
-},{"./SingleHeroModel":10,"backbone":1,"jquery":2}],10:[function(require,module,exports){
+},{"./SingleHeroModel":11,"backbone":1,"jquery":2}],11:[function(require,module,exports){
 var $ = require('jquery');
 var Backbone = require ('backbone');
 
@@ -13542,17 +13604,109 @@ var SingleHeroModel = Backbone.Model.extend({
         thumbnail: "default string"
     },
 
+    initialize: function () {
+        this.url = function () {
+
+            var marvelKey = 'apikey=cd80e84f4acc3f0d2cdabd391244ab24';
+
+            return 'http://gateway.marvel.com/v1/public/characters/'
+                 + this.id
+                 + '?'
+                 + marvelKey;
+
+        };   
+    },
+
     parse: function (obj) {
         console.log('in parse');
 
         return {
+            name: obj.data.results[0].name,
             thumbnail: obj.data.results[0].thumbnail.path
         };
     }
 });
 
 module.exports = SingleHeroModel;
-},{"backbone":1,"jquery":2}],11:[function(require,module,exports){
+},{"backbone":1,"jquery":2}],12:[function(require,module,exports){
+var SingleHeroModel = require('./SingleHeroModel');
+
+//  This is a file storage Utility only good for a single URL, 
+//  but it works like saving to a file.  Will work across 
+//  Laptop reboots, closing out of the browser, etc.
+
+//  This may be implemented for any model, however now it's
+//  hardcoded to use SingleHeroModel().
+
+//  It is model-based (it stores models).
+
+//  Anytime you wish to use the cache call getCharacter().
+//  This function will return a model.  If the data is cached,
+//  it will return the data from the cache.  If there is not
+//  a pre-existing cached model, it will create an instance of 
+//  the model and fetch from the API.
+
+//  'cache' is the data Storage memory(an array of characters).
+
+var cache = window.localStorage.characterCache
+//  localStorage is a builtIn property on all browsers.  It can
+//  only store strings, not objects.  JSON.parse is called to
+//  turn this string into a JSON object that we can use.
+    ? JSON.parse(window.localStorage.characterCache)
+    : {};
+
+
+//  Get a single character from the cache.
+function get (id) {
+    if (cache[id]) {
+        return cache[id];
+    }
+
+    return false;
+}
+
+//  Save a character to the cache.
+function set (id, model) {
+    cache[id] = model.toJSON();
+    window.localStorage.characterCache = JSON.stringify(cache);
+}
+
+
+//  This is the External function that the application code uses.
+function getCharacter (heroId) {
+
+    //  It will get a character from the cache and create a new 
+    //  model.
+    var cached = get(heroId);
+    var model = new SingleHeroModel({ id: heroId });
+
+    if (!cached) {
+
+        //  If the character wasn't in the cache, it will 
+        //  fetch from the API and set it in the cache.
+        model.fetch({
+            success: function () {
+                set(heroId, model);
+            }
+        });
+    } else {
+        //  It was a cached character, return the model.
+        model = new SingleHeroModel(cached);
+    }
+
+    return model;
+}
+
+module.exports = {
+
+    get: get,
+
+    set: set,
+
+    getCharacter: getCharacter
+
+};
+},{"./SingleHeroModel":11}],13:[function(require,module,exports){
 var _ = require ('underscore');
 var Backbone = require ('backbone');
 
@@ -13560,7 +13714,7 @@ var dispatcher = _.extend({}, Backbone.Events );
 
 module.exports = dispatcher;
 
-},{"backbone":1,"underscore":3}],12:[function(require,module,exports){
+},{"backbone":1,"underscore":3}],14:[function(require,module,exports){
 var Backbone = require ('backbone');
 var BattleRouter = require ('./components/BattleRouter.js');
 var MainView = require ('./components/MainView.js');
@@ -13574,4 +13728,4 @@ mainView.render();
 
 Backbone.history.start();
   
-},{"./components/BattleRouter.js":4,"./components/MainView.js":7,"backbone":1}]},{},[12]);
+},{"./components/BattleRouter.js":4,"./components/MainView.js":8,"backbone":1}]},{},[14]);

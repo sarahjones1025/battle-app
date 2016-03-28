@@ -7,16 +7,18 @@ var MainView = Backbone.View.extend({
 
     className: 'main-dock',
 
+
     events: {
         'click': 'onClick'
     },
 
     onClick: function () {
         //Incomplete:  What buttons are clicked in this View? 
-        
+        console.log('main view click');
     },
 
     initialize: function () {
+
 
         this.listenTo(dispatcher,'show', this.show);
     },
