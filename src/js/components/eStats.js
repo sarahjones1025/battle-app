@@ -8130,3 +8130,5 @@ var eStats = [
         "strength": 1
     }
 ]
+
+module.exports = eStats;

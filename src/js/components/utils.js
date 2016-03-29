@@ -1,20 +1,40 @@
+var eStats = require('./eStats.js')
 
-function Battle (player1, player2) {
-    var eventList =[];
+// function Battle (player1, player2) {
+//     var eventList =[];
 
-    eventList.push ('Pow');
-    eventList.push ('Ouch');
-    eventList.push ('Hit Hard');
-    eventList.push ('Down for the count');
-    eventList.push ('We have a winner');
+//     eventList.push ('Pow');
+//     eventList.push ('Ouch');
+//     eventList.push ('Hit Hard');
+//     eventList.push ('Down for the count');
+//     eventList.push ('We have a winner');
 
-    return eventList;
-}
+//     return eventList;
+// }
 
-function SetupURL ( searchParam ) {
-    var marvelKey = 'cd80e84f4acc3f0d2cdabd391244ab24';
+// function SetupURL ( searchParam ) {
+//     var marvelKey = 'cd80e84f4acc3f0d2cdabd391244ab24';
 
-    var url = 
-    return url + '?keyCode=' + marvelKey;
+//     var url = 
+//     return url + '?keyCode=' + marvelKey;
 
-}
+// }
+
+var searchForName = function (name) {
+    console.log(name);
+    var searchPattern = new RegExp('^' + name);
+    var resultArray = [];
+    var count = 0;
+    eStats.forEach(function (current) {
+        if ((searchPattern.test(current.name)) && (count < 10)) {
+            resultArray.push(current);
+            count++;
+        }
+    });
+    console.log(resultArray);
+    return resultArray;
+};
+
+module.exports = searchForName;
+
+

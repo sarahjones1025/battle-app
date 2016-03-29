@@ -7,7 +7,7 @@ var HeroCollection = require('./HeroCollection.js');
 var SingleHeroFullView = require('./SingleHeroFullView.js');
 var SingleHeroModel = require('./SingleHeroModel.js');
 var BattleSetupView = require('./BattleSetupView');
-//var HomeView = require('./HomeView');
+var HomeView = require('./HomeView');
 
 var cache = require('./characterCache');
 
@@ -20,7 +20,7 @@ var BattleRouter = Backbone.Router.extend({
         'singleHero/:hero': 'singleHero',
         'battleSetup/:hero': 'battleSetup',
         'battleSetup': 'battleSetupNoHero',
-        'battleSpace': 'battleNow',
+        'battleSpace/:hero1/:hero2': 'battleNow',
         'searchFull': 'search',
         '*notFound': 'notFound'
     },
@@ -30,7 +30,7 @@ var BattleRouter = Backbone.Router.extend({
     },
 
     battleSetupNoHero: function () {
-        //dispatcher.trigger('show', new BattleSetupView());
+        dispatcher.trigger('show', new BattleSetupView());
 
     },
 
@@ -55,8 +55,10 @@ var BattleRouter = Backbone.Router.extend({
         dispatcher.trigger('show', new SingleHeroFullView({id:thisId}));
     },
 
-    battleNow: function () {
-        dispatcher.trigger('show', new BattleSpaceView());
+    battleNow: function (id1, id2) {
+      
+        dispatcher.trigger('show', new BattleSpaceView({model1: cache.getCharacter(id1),
+            model2: cache.getCharacter(id2)}));
     }
 
     
