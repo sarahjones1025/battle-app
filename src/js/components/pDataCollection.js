@@ -2,11 +2,10 @@ var _ = require ('underscore');
 var Backbone = require ('backbone');
 var $ = require('jquery');
 
+var pDataCollection = Backbone.Collection.extend({
 
-var pDataCollection = Backbone.Collection.Extend({
-
-    model:
+    url: '/api/battleResults'
 
 });
 
-module.exports = pDataCollection;
+module.exports = new pDataCollection();

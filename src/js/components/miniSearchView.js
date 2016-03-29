@@ -1,18 +1,23 @@
 var $ = require('jquery');
 var _ = require('underscore');
-var backbone = require('backbone');
+var Backbone = require('backbone');
 
 var HeroChildView = Backbone.View.extend({
     tagName: 'li',
-    className: 'hero-item'
+    className: 'hero-item',
 
     events: {
-        'click': 'onClick';
+        'click': 'onClick'
+    },
+
+    initialize: function (options) {
+        this.searchView = options.searchView;
     },
 
     onClick: function () {
-        dispatcher.trigger('pick', )
-    }
+        // dispatcher.trigger('pick', )
+        this.searchView.trigger('pick', this.model);
+    },
 
     remove: function () { 
         Backbone.View.prototype.remove.call(this);
@@ -37,38 +42,9 @@ var MiniSearchView = Backbone.View.extend({
 
         var count = 0;
         while (count < 10) {
-            child[count] = new HeroChildView();
-            $('.results-dock').append(child[count].$el);
+            this.children[count] = new HeroChildView({ searchView: this });
+            $('.results-dock').append(this.children[count].$el);
         };
-
-        function () holdoff {      
-
-        if(this.children.length) {
-            this.children.forEach( function (child) {
-                child.remove();
-            });
-        } 
-
-
-  
-    //  OK this is a search that I started after finding some
-    //  use of regExp.
-
-
-
-        //  Based on the search.  Go to eStats and pull up results
-        var criteria = $('.search-mini').val();
-        
-        var searchPattern = new RegExp('^' + criteria);
-        var count = 0;
-        eStats.forEach( function (current) {
-            if ((count < 10) && (searchPattern.test())) {
-
-        })
-  }
-
-
-
     },
 
     initialize: function () {
@@ -77,9 +53,7 @@ var MiniSearchView = Backbone.View.extend({
 
         this.$el.html(this.template());
 
-    },
-
-
+    }
 });
 
 module.exports = MiniSearchView;

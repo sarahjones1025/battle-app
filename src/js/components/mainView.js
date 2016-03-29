@@ -1,7 +1,7 @@
 var $ = require('jquery');
 var Backbone = require('backbone');
 
-
+var pDataCollection = require('./pDataCollection.js');
 var dispatcher = require('./dispatcher.js');
 var MainView = Backbone.View.extend({
 
@@ -19,8 +19,10 @@ var MainView = Backbone.View.extend({
 
     initialize: function () {
 
+        pDataCollection.fetch({ data: { limit: 5, order: 'desc' } });
+        console.log(pDataCollection);
 
-        this.listenTo(dispatcher,'show', this.show);
+        this.listenTo(dispatcher, 'show', this.show);
     },
 
     show: function (view) {

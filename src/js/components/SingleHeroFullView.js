@@ -29,7 +29,7 @@ var SingleHeroFullView = Backbone.View.extend({
 
     render: function () {
 
-        this.img.attr('src', (this.model.get('thumbnail') + '.jpg' ));
+        this.img.attr('src', (this.model.get('thumbnail')));
 
     }
 });

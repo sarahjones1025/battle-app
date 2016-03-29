@@ -1,6 +1,7 @@
 var Backbone = require('backbone');
 var _ = require('underscore');
 var $ = require('jquery');
+var pDataCollection = require('./pDataCollection');
 
 var HomeView = Backbone.View.extend({
 
@@ -23,6 +24,12 @@ var HomeView = Backbone.View.extend({
         } else {
             window.location.hash = 'battleSetup/1009146';
         }
+    },
+
+    initialize: function () {
+        pDataCollection.url = '/api/topPicks';
+        pDataCollection.fetch();
+        console.log(pDataCollection);
     }
 
 });
