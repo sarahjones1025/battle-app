@@ -4,9 +4,12 @@ var $ = require('jquery');
 
 var BattleSetupView = Backbone.View.extend({
 
+
     template: _.template(`
-        <%= hero1.name %>
-        <img src="<%= hero1.thumbnail %>.jpg">
+        <div class='hero-setup'>
+            <%= hero1.name %>
+            <img src="<%= hero1.thumbnail %>.jpg">
+        </div>
     `),
 
     events: {
@@ -14,15 +17,21 @@ var BattleSetupView = Backbone.View.extend({
     },
 
     initialize: function (options) {
-        this.model1 = options.model1;
-        this.listenTo(this.model1, 'sync', this.render);
+
+        heroPick1 = new HeroPickView();
+        heroPick2 = new HeroPickView();
+
+        if (options.withHero === true) {
+
+            this.model1 = options.model1;
+            this.listenTo(this.model1, 'sync', this.render);
+            heroPick1.model = this.model1;
+        };
+
         this.button = $('<button>');
         this.$el.append(this.button);
-        // if (options.withHero === true) {
-        //     this.model.fetch();
-        // }
 
-        // INCOMPLETE!  Give me a button here
+        //INCOMPLETE!  Give me a button here
     },
 
     onClick: function () {

@@ -12,7 +12,6 @@ var SingleHeroFullView = Backbone.View.extend({
     },
 
     onClick: function () {
-        console.log("On click in SingleHeroFullView");
         window.location.hash = 'battleSetup/' + 
                                 this.model.get('id');
     },
@@ -21,26 +20,15 @@ var SingleHeroFullView = Backbone.View.extend({
         var example = $('<button>');
         this.img = $('<img>');
 
-        console.log ("Hero ID ",this.id);
-        // Initialize the 
-        //this.model = GetHeroFromData();
-        this.model = new SingleHeroModel({id: this.id});
         this.listenTo(this.model, 'sync', this.render);
-        console.log( 'this test' ,this.model);
-
 
         example.html('SingleHeroFull');
         this.$el.append(example); 
         this.$el.append(this.img);
-       
-
     },
 
     render: function () {
 
-        console.log(this.model);
-        console.log(this.model.attributes);
-        console.log(this.model.get("thumbnail"));
         this.img.attr('src', (this.model.get('thumbnail') + '.jpg' ));
 
     }

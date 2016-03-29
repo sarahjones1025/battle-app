@@ -30,14 +30,15 @@ var BattleRouter = Backbone.Router.extend({
     },
 
     battleSetupNoHero: function () {
-        dispatcher.trigger('show', new BattleSetupView());
 
+        dispatcher.trigger('show', new BattleSetupView({withHero: false}));
     },
 
     battleSetup: function ( heroId ) {
         var model = cache.getCharacter(heroId);
 
-        dispatcher.trigger('show', new BattleSetupView({ model1: model }));
+        dispatcher.trigger('show', 
+            new BattleSetupView({ model1: model, withHero: true }));
     },
 
     notFound: function () {
@@ -50,9 +51,8 @@ var BattleRouter = Backbone.Router.extend({
     },
 
     singleHero: function (thisId) {
-        console.log(thisId);
-
-        dispatcher.trigger('show', new SingleHeroFullView({id:thisId}));
+        var newModel = cache.getCharacter(thisId);
+        dispatcher.trigger('show', new SingleHeroFullView({model:newModel}));
     },
 
     battleNow: function (id1, id2) {
