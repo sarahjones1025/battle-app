@@ -1,3 +1,7 @@
+function searchForHero () {
+    eStats.forEach ( function )
+}
+
 
 function Battle (player1, player2) {
     var eventList =[];
