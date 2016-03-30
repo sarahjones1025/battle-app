@@ -176,7 +176,7 @@ app.post('/api/battleResults', function (req, res) {
 });
 
 app.get('/api/topPicks', function (req, res) {
-    var result = topPicks();
+    var result = topPicks(battleResults);
     if (req.query.limit) {
         result = result.slice(0, req.query.limit);
     }
