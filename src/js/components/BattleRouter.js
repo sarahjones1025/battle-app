@@ -40,8 +40,7 @@ var BattleRouter = Backbone.Router.extend({
     },
 
     search: function () {
-        dispatcher.trigger('show',
-            new SearchView({collection: heroCollection}));
+        dispatcher.trigger('show', new SearchView());
     },
 
     singleHero: function (thisId) {

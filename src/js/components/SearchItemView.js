@@ -6,7 +6,7 @@ var SearchItemView = Backbone.View.extend({
 
     template: _.template(`
         <%= get('id') %>
-        <img src='<%= get('thumbnail') %>.jpg'>
+        <img src='<%= get('thumbnail') %>'>
         <li>this is SearchItemView</li>
         `),
 

@@ -13359,8 +13359,7 @@ var BattleRouter = Backbone.Router.extend({
     },
 
     search: function () {
-        dispatcher.trigger('show',
-            new SearchView({collection: heroCollection}));
+        dispatcher.trigger('show', new SearchView());
     },
 
     singleHero: function (thisId) {
@@ -13380,11 +13379,12 @@ var BattleRouter = Backbone.Router.extend({
  
 module.exports = BattleRouter;
 
-},{"./BattleSetupView":5,"./BattleSpaceView.js":6,"./HomeView":7,"./SearchView.js":10,"./SingleHeroFullView.js":11,"./SingleHeroModel.js":12,"./characterCache":13,"./dispatcher.js":14,"backbone":1}],5:[function(require,module,exports){
+},{"./BattleSetupView":5,"./BattleSpaceView.js":6,"./HomeView":8,"./SearchView.js":12,"./SingleHeroFullView.js":13,"./SingleHeroModel.js":14,"./characterCache":15,"./dispatcher.js":16,"backbone":1}],5:[function(require,module,exports){
 var Backbone = require('backbone');
 var _ = require('underscore');
 var $ = require('jquery');
-var HeroPickView = require('./heroPickView.js');
+var HeroPickView = require('./HeroPickView.js');
+var searchController = require('./searchController.js');
 
 var BattleSetupView = Backbone.View.extend({
 
@@ -13395,7 +13395,8 @@ var BattleSetupView = Backbone.View.extend({
     initialize: function (options) {
 
         if (options.withHero === true) {
-
+            console.log(options.model1);
+            console.log('sent hero');
             heroPick1 = new HeroPickView({model: options.model1});
             heroPick2 = new HeroPickView();
 
@@ -13414,12 +13415,25 @@ var BattleSetupView = Backbone.View.extend({
 
     },
 
-    render: function () {}
+    render: function () {},
+
+    clickPick1: function () {
+
+    },
+
+    remove: function () {
+        searchController.enable();
+    }
+
 
 });
 
 module.exports = BattleSetupView;
-},{"./heroPickView.js":16,"backbone":1,"jquery":2,"underscore":3}],6:[function(require,module,exports){
+
+
+
+
+},{"./HeroPickView.js":7,"./searchController.js":19,"backbone":1,"jquery":2,"underscore":3}],6:[function(require,module,exports){
 var Backbone = require ('backbone');
 
 // Child Views are BattleDisplayView
@@ -13441,6 +13455,83 @@ BattleSpaceView = Backbone.View.extend({
 
 module.exports = BattleSpaceView;
 },{"backbone":1}],7:[function(require,module,exports){
+var $ = require('jquery');
+var Backbone = require('backbone');
+var cache = require('./characterCache.js');
+var MiniSearchView = require('./MiniSearchView');
+var searchController = require('./searchController.js');
+var dispatcher = require('./dispatcher');
+
+var HeroPickView = Backbone.View.extend({
+
+    className: 'hero-pick',
+
+    tagName: 'div',
+
+    events: {
+        'click': 'onClick'
+    },
+
+    onClick: function () {
+        //    We will listen for the 'pick' event now.  It is
+        //  important to listen now and stop listening later, 
+        //  because there is another view that uses the 
+        //  same event.
+        //    This event is triggered when the user picks
+        //  a character to fight from the search results.
+        // this.listenTo(dispatcher, 'pick', this.show);
+        if ((searchController.holdOff() === false) && (this.withHero === false)) {
+            searchController.disable();
+            this.searchView = new MiniSearchView();
+            this.searchView.render();
+            this.$el.append(this.searchView.$el);
+            this.listenTo(this.searchView,'pick', this.show);
+            this.testproperty = "this test";
+        }
+
+
+        // Pull up the search View
+
+    },
+
+    initialize: function (options) {
+        this.img = $('<img>');
+        this.$el.append(this.img);
+        this.img.attr('src', 'assets/imgs/Question-mark.png');
+        this.listenTo(dispatcher, 'sync', this.render);
+        if (options) {
+            this.withHero = true;
+            this.img.attr('src', (options.model.get('thumbnail')));
+        } else {
+            this.withHero = false;
+        }
+
+        console.log(this.withHero);
+        console.log(searchController.holdOff());
+
+    },
+
+    show: function (model) {
+
+        // this.stopListening('pick');
+        //  show the current character.
+        //INCOMPLETE!!! Set the message here.
+
+        // this.model = cache.getCharacter(heroId);
+        this.stopListening('pick');
+        if (model) {
+            this.model = model;
+            this.searchView.remove();
+            this.img.attr('src', (this.model.get('thumbnail')));
+        }
+        searchController.enable();
+     
+    }
+
+});
+
+module.exports = HeroPickView;
+},{"./MiniSearchView":10,"./characterCache.js":15,"./dispatcher":16,"./searchController.js":19,"backbone":1,"jquery":2}],8:[function(require,module,exports){
 var Backbone = require('backbone');
 var _ = require('underscore');
 var $ = require('jquery');
@@ -13465,7 +13556,7 @@ var HomeView = Backbone.View.extend({
         if (e.target.classList.contains('searchButton')) {
             window.location.hash = 'searchFull';
         } else {
-            window.location.hash = 'battleSetup/1009146';
+            window.location.hash = 'battleSetup';
         }
     },
 
@@ -13478,12 +13569,12 @@ var HomeView = Backbone.View.extend({
 });
 
 module.exports = HomeView;
-},{"./pDataCollection":18,"backbone":1,"jquery":2,"underscore":3}],8:[function(require,module,exports){
+},{"./pDataCollection":18,"backbone":1,"jquery":2,"underscore":3}],9:[function(require,module,exports){
 var $ = require('jquery');
 var Backbone = require('backbone');
-
 var pDataCollection = require('./pDataCollection.js');
 var dispatcher = require('./dispatcher.js');
+
 var MainView = Backbone.View.extend({
 
     className: 'main-dock',
@@ -13527,7 +13618,98 @@ var MainView = Backbone.View.extend({
 
 module.exports = MainView;
 
-},{"./dispatcher.js":14,"./pDataCollection.js":18,"backbone":1,"jquery":2}],9:[function(require,module,exports){
+},{"./dispatcher.js":16,"./pDataCollection.js":18,"backbone":1,"jquery":2}],10:[function(require,module,exports){
+var $ = require('jquery');
+var _ = require('underscore');
+var Backbone = require('backbone');
+var dispatcher = require('./dispatcher.js');
+var searchForName = require('./utils.js');
+var cache = require('./characterCache.js');
+
+
+
+var HeroChildView = Backbone.View.extend({
+
+    tagName: 'li',
+    className: 'hero-item',
+
+    events: {
+        'click': 'onClick'
+    },
+
+    initialize: function (options) {
+        this.searchView = options.searchView;        
+    },
+
+    onClick: function () {
+        // dispatcher.trigger('pick', )
+        // searchView below, is a reference to searchView.js
+        this.searchView.trigger('pick', this.model);
+    },
+
+    render: function () {
+        var img = $('<img>');
+        this.$el.append(img);
+        img.attr('src',this.model.get('thumbnail'));
+    }
+
+
+
+});
+
+var MiniSearchView = Backbone.View.extend({
+
+    template: _.template(
+        `<input class='search-mini'>
+         <button>Search</button>
+         <div class='results-dock'></div>
+
+         `
+        ),
+
+    events: {
+        'click button': 'onClick',
+    },
+
+    remove: function () {
+        this.children.forEach(function (child) {
+            child.remove();  
+        });
+        Backbone.View.prototype.remove.call(this);           
+
+    },
+
+    onClick: function () {
+
+        var count = 0;
+        var _this = this;
+        for (var i = 0; i < _this.children.length; i++) {
+            this.children[i].remove();
+        }
+        var list = searchForName($('.search-mini').val());
+        list.forEach(function (current) {
+            var currentModel = cache.getCharacter(current.id);
+            if (count < 10) {
+                _this.children[ count ] = new HeroChildView({model: currentModel, searchView: _this});
+                $('.results-dock').append(_this.children[count].$el);
+                _this.children[count].render();
+                count++;
+            }
+        });
+    },
+
+    initialize: function () {
+
+        this.children = [];
+    },
+
+    render: function () {
+        this.$el.html(this.template());
+    }
+});
+
+module.exports = MiniSearchView;
+},{"./characterCache.js":15,"./dispatcher.js":16,"./utils.js":20,"backbone":1,"jquery":2,"underscore":3}],11:[function(require,module,exports){
 var Backbone = require('backbone');
 var _ = require('underscore');
 var $ = require('jquery');
@@ -13536,7 +13718,7 @@ var SearchItemView = Backbone.View.extend({
 
     template: _.template(`
         <%= get('id') %>
-        <img src='<%= get('thumbnail') %>.jpg'>
+        <img src='<%= get('thumbnail') %>'>
         <li>this is SearchItemView</li>
         `),
 
@@ -13555,7 +13737,7 @@ var SearchItemView = Backbone.View.extend({
 });
 
 module.exports = SearchItemView;
-},{"backbone":1,"jquery":2,"underscore":3}],10:[function(require,module,exports){
+},{"backbone":1,"jquery":2,"underscore":3}],12:[function(require,module,exports){
 var $ = require('jquery');
 var Backbone = require('backbone');
 var _ = require('underscore');
@@ -13604,7 +13786,7 @@ var SearchView = Backbone.View.extend({
 });
 
 module.exports = SearchView;
-},{"./SearchItemView.js":9,"./SingleHeroModel.js":12,"./characterCache.js":13,"./utils.js":19,"backbone":1,"jquery":2,"underscore":3}],11:[function(require,module,exports){
+},{"./SearchItemView.js":11,"./SingleHeroModel.js":14,"./characterCache.js":15,"./utils.js":20,"backbone":1,"jquery":2,"underscore":3}],13:[function(require,module,exports){
 var $ = require('jquery');
 var Backbone = require('backbone');
 
@@ -13624,25 +13806,26 @@ var SingleHeroFullView = Backbone.View.extend({
     },
 
     initialize: function () {
-        var example = $('<button>');
+        var button = $('<button>');
         this.img = $('<img>');
 
         this.listenTo(this.model, 'sync', this.render);
 
-        example.html('SingleHeroFull');
-        this.$el.append(example); 
+        button.html('Send To Battle');
+        this.$el.append(button); 
         this.$el.append(this.img);
     },
 
     render: function () {
-
+        console.log('Single Hero Render');
+        console.log(this.model.get('thumbnail'));
         this.img.attr('src', (this.model.get('thumbnail')));
 
     }
 });
 
 module.exports = SingleHeroFullView;
-},{"./SingleHeroModel":12,"backbone":1,"jquery":2}],12:[function(require,module,exports){
+},{"./SingleHeroModel":14,"backbone":1,"jquery":2}],14:[function(require,module,exports){
 var $ = require('jquery');
 var Backbone = require ('backbone');
 
@@ -13653,8 +13836,6 @@ var SingleHeroModel = Backbone.Model.extend({
     },
 
     initialize: function () {
-        console.log ('model Definintion')
-        console.log(this);
         this.url = function () {
 
             var marvelKey = 'apikey=cd80e84f4acc3f0d2cdabd391244ab24';
@@ -13668,8 +13849,6 @@ var SingleHeroModel = Backbone.Model.extend({
     },
 
     parse: function (obj) {
-        console.log('in parse');
-
         return {
             name: obj.data.results[0].name,
             thumbnail: obj.data.results[0].thumbnail.path + 
@@ -13679,7 +13858,7 @@ var SingleHeroModel = Backbone.Model.extend({
 });
 
 module.exports = SingleHeroModel;
-},{"backbone":1,"jquery":2}],13:[function(require,module,exports){
+},{"backbone":1,"jquery":2}],15:[function(require,module,exports){
 var SingleHeroModel = require('./SingleHeroModel');
 
 //  This is a file storage Utility only good for a single URL, 
@@ -13737,6 +13916,8 @@ function getCharacter (heroId) {
         //  fetch from the API and set it in the cache.
         model.fetch({
             success: function () {
+                console.log('this is where we add to cache')
+                console.log( model.get('thumbnail'));
                 set(heroId, model);
             }
         });
@@ -13757,7 +13938,7 @@ module.exports = {
     getCharacter: getCharacter
 
 };
-},{"./SingleHeroModel":12}],14:[function(require,module,exports){
+},{"./SingleHeroModel":14}],16:[function(require,module,exports){
 var _ = require ('underscore');
 var Backbone = require ('backbone');
 
@@ -13765,7 +13946,7 @@ var dispatcher = _.extend({}, Backbone.Events);
 
 module.exports = dispatcher;
 
-},{"backbone":1,"underscore":3}],15:[function(require,module,exports){
+},{"backbone":1,"underscore":3}],17:[function(require,module,exports){
 var eStats = [
     {
         "name": "3-D Man",
@@ -21900,122 +22081,7 @@ var eStats = [
 ]
 
 module.exports = eStats;
-},{}],16:[function(require,module,exports){
-var $ = require('jquery');
-var Backbone = require('backbone');
-var cache = require('./characterCache.js');
-var MiniSearchView = require('./miniSearchView');
-
-var dispatcher = require('./dispatcher');
-
-var HeroPickView = Backbone.View.extend({
-
-    className: 'hero-pick',
-
-    tagName: 'div',
-
-    events: {
-        'click': 'onClick'
-    },
-
-    onClick: function () {
-        //    We will listen for the 'pick' event now.  It is
-        //  important to listen now and stop listening later, 
-        //  because there is another view that uses the 
-        //  same event.
-        //    This event is triggered when the user picks
-        //  a character to fight from the search results.
-        // this.listenTo(dispatcher, 'pick', this.show);
-        this.searchView = new MiniSearchView();
-        this.seachView.render();
-        this.$('.search-slot').append(this.searchView.$el);
-        this.searchView.once('pick', this.show);
-
-        // Pull up the search View
-
-    },
-
-    initialize: function () {
-        this.listenTo(dispatcher, 'sync', this.render);
-    },
-
-    show: function (model) {
-
-        // this.stopListening('pick');
-        //  show the current character.
-        //INCOMPLETE!!! Set the message here.
-
-        // this.model = cache.getCharacter(heroId);
-        this.model = model;
-        this.searchView.remove();
-        this.$el.attr('src', (this.model.get('thumbnail')));
-
-    }
-
-});
-
-module.exports = HeroPickView;
-},{"./characterCache.js":13,"./dispatcher":14,"./miniSearchView":17,"backbone":1,"jquery":2}],17:[function(require,module,exports){
-var $ = require('jquery');
-var _ = require('underscore');
-var Backbone = require('backbone');
-
-var HeroChildView = Backbone.View.extend({
-    tagName: 'li',
-    className: 'hero-item',
-
-    events: {
-        'click': 'onClick'
-    },
-
-    initialize: function (options) {
-        this.searchView = options.searchView;
-    },
-
-    onClick: function () {
-        // dispatcher.trigger('pick', )
-        this.searchView.trigger('pick', this.model);
-    },
-
-    remove: function () { 
-        Backbone.View.prototype.remove.call(this);
-    }    
-});
-
-var MiniSearchView = Backbone.View.extend({
-
-    template: _.template(
-        `<input class='search-mini'>
-         <button>Search</button>
-         <div class='results-dock'></div>
-
-         `
-        ),
-
-    events: {
-        'click button': 'onClick'
-    },
-
-    onClick: function () {
-
-        var count = 0;
-        while (count < 10) {
-            this.children[count] = new HeroChildView({ searchView: this });
-            $('.results-dock').append(this.children[count].$el);
-        };
-    },
-
-    initialize: function () {
-
-        this.children = [];
-
-        this.$el.html(this.template());
-
-    }
-});
-
-module.exports = MiniSearchView;
-},{"backbone":1,"jquery":2,"underscore":3}],18:[function(require,module,exports){
+},{}],18:[function(require,module,exports){
 var _ = require ('underscore');
 var Backbone = require ('backbone');
 var $ = require('jquery');
@@ -22028,6 +22094,27 @@ var pDataCollection = Backbone.Collection.extend({
 
 module.exports = new pDataCollection();
 },{"backbone":1,"jquery":2,"underscore":3}],19:[function(require,module,exports){
+var searchController = {
+
+    disableSearch: false,
+
+    holdOff: function () {
+        return this.disableSearch;
+    },
+
+    disable: function () {
+        this.disableSearch = true;
+
+    },
+
+    enable: function () {
+        this.disableSearch = false;
+
+    }
+ };
+
+ module.exports = searchController;
+},{}],20:[function(require,module,exports){
 var eStats = require('./eStats.js')
 
 
@@ -22070,10 +22157,10 @@ module.exports = searchForName;
 
 
 
-},{"./eStats.js":15}],20:[function(require,module,exports){
-var Backbone = require ('backbone');
-var BattleRouter = require ('./components/BattleRouter.js');
-var MainView = require ('./components/MainView.js');
+},{"./eStats.js":17}],21:[function(require,module,exports){
+var Backbone = require('backbone');
+var BattleRouter = require('./components/BattleRouter.js');
+var MainView = require('./components/MainView.js');
 
 
 var battleRouter = new BattleRouter();
@@ -22084,4 +22171,4 @@ mainView.render();
 
 Backbone.history.start();
   
-},{"./components/BattleRouter.js":4,"./components/MainView.js":8,"backbone":1}]},{},[20]);
+},{"./components/BattleRouter.js":4,"./components/MainView.js":9,"backbone":1}]},{},[21]);

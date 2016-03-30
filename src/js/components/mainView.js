@@ -1,8 +1,8 @@
 var $ = require('jquery');
 var Backbone = require('backbone');
-
 var pDataCollection = require('./pDataCollection.js');
 var dispatcher = require('./dispatcher.js');
+
 var MainView = Backbone.View.extend({
 
     className: 'main-dock',

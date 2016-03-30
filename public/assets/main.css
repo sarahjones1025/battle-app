@@ -1,5 +1,12 @@
 .hero-pick {
-  height: 200px;
-  background-color: blue; }
+  height: 100%;
+  width: 50px;
+  background-color: blue;
+  padding: 20px; }
+
+.hero-pick img {
+    height: 100%;
+    width: 100%;
+}
 
 /*# sourceMappingURL=main.css.map */

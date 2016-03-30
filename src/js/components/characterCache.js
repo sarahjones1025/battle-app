@@ -55,6 +55,8 @@ function getCharacter (heroId) {
         //  fetch from the API and set it in the cache.
         model.fetch({
             success: function () {
+                console.log('this is where we add to cache')
+                console.log( model.get('thumbnail'));
                 set(heroId, model);
             }
         });

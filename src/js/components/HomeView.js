@@ -22,7 +22,7 @@ var HomeView = Backbone.View.extend({
         if (e.target.classList.contains('searchButton')) {
             window.location.hash = 'searchFull';
         } else {
-            window.location.hash = 'battleSetup/1009146';
+            window.location.hash = 'battleSetup';
         }
     },
 

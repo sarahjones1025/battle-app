@@ -17,18 +17,19 @@ var SingleHeroFullView = Backbone.View.extend({
     },
 
     initialize: function () {
-        var example = $('<button>');
+        var button = $('<button>');
         this.img = $('<img>');
 
         this.listenTo(this.model, 'sync', this.render);
 
-        example.html('SingleHeroFull');
-        this.$el.append(example); 
+        button.html('Send To Battle');
+        this.$el.append(button); 
         this.$el.append(this.img);
     },
 
     render: function () {
-
+        console.log('Single Hero Render');
+        console.log(this.model.get('thumbnail'));
         this.img.attr('src', (this.model.get('thumbnail')));
 
     }

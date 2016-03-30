@@ -8,8 +8,6 @@ var SingleHeroModel = Backbone.Model.extend({
     },
 
     initialize: function () {
-        console.log ('model Definintion')
-        console.log(this);
         this.url = function () {
 
             var marvelKey = 'apikey=cd80e84f4acc3f0d2cdabd391244ab24';
@@ -23,8 +21,6 @@ var SingleHeroModel = Backbone.Model.extend({
     },
 
     parse: function (obj) {
-        console.log('in parse');
-
         return {
             name: obj.data.results[0].name,
             thumbnail: obj.data.results[0].thumbnail.path + 

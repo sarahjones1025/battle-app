@@ -1,7 +1,8 @@
 var Backbone = require('backbone');
 var _ = require('underscore');
 var $ = require('jquery');
-var HeroPickView = require('./heroPickView.js');
+var HeroPickView = require('./HeroPickView.js');
+var searchController = require('./searchController.js');
 
 var BattleSetupView = Backbone.View.extend({
 
@@ -12,7 +13,8 @@ var BattleSetupView = Backbone.View.extend({
     initialize: function (options) {
 
         if (options.withHero === true) {
-
+            console.log(options.model1);
+            console.log('sent hero');
             heroPick1 = new HeroPickView({model: options.model1});
             heroPick2 = new HeroPickView();
 
@@ -31,8 +33,20 @@ var BattleSetupView = Backbone.View.extend({
 
     },
 
-    render: function () {}
+    render: function () {},
+
+    clickPick1: function () {
+
+    },
+
+    remove: function () {
+        searchController.enable();
+    }
+
 
 });
 
 module.exports = BattleSetupView;
+
+
+
