@@ -1,0 +1,314 @@
+/* CLEARFIX */
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table; }
+
+.clearfix:after {
+  clear: both; }
+
+.clearfix {
+  zoom: 1;
+  /* ie 6/7 */ }
+
+.clear {
+  clear: both; }
+
+@media screen and (min-width: 800px) {
+  .wrapper {
+    width: 87%; }
+
+  .star {
+    position: absolute;
+    top: -85px;
+    left: -91px;
+    z-index: 1; }
+
+  .main_toppicks, .recent_battles {
+    float: left;
+    width: 50%; }
+
+  .battle1, .battle2 {
+    width: 100%;
+    height: 200px;
+    margin: 0 auto 20px auto; }
+
+  footer {
+    height: 100px;
+    margin: 0 auto;
+    padding: 0 7.5%; } }
+@font-face {
+  font-family: Badaboom;
+  src: url(../fonts/badaboom.ttf);
+  font-weight: 100; }
+@font-face {
+  font-family: Digitalstrip;
+  src: url(../fonts/digitalstrip_regular.ttf); }
+/*
+    SIL Open Font License v1.10
+    License found at: http://www.fontsquirrel.com/license/bebas-neue
+*/
+@font-face {
+  font-family: 'bebas_neue_regularregular';
+  src: url("../fonts/bebasneue_regular-webfont.eot");
+  src: url("../fonts/bebasneue_regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/bebasneue_regular-webfont.woff2") format("woff2"), url("../fonts/bebasneue_regular-webfont.woff") format("woff"), url("../fonts/bebasneue_regular-webfont.ttf") format("truetype"), url("../fonts/bebasneue_regular-webfont.svg#bebas_neue_regularregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+form li {
+  list-style: none; }
+form li p, form li button {
+  display: inline-block; }
+form input {
+  height: 70px;
+  border: solid 5px yellow;
+  background: #2286e8;
+  box-sizing: border-box;
+  vertical-align: middle; }
+  form input:first-child {
+    width: 84%;
+    font-size: 1.3em;
+    color: yellow;
+    text-indent: 20px;
+    font-family: 'bebas_neue_regularregular';
+    letter-spacing: .2em; }
+  form input:nth-child(2) {
+    width: 14%;
+    margin-left: 1%;
+    font-size: 3em;
+    padding-top: 5px; }
+
+.top_picks {
+  margin: 30px 0; }
+  .top_picks div {
+    float: left;
+    width: 30%;
+    margin-right: 5%;
+    text-align: center; }
+    .top_picks div:last-child {
+      margin: 0; }
+    .top_picks div img {
+      border: solid 10px black;
+      width: 100%;
+      box-sizing: border-box;
+      display: block;
+      margin: 0;
+      padding: 0; }
+  .top_picks h1 {
+    font-size: 1.5em; }
+
+.searchresults {
+  display: none; }
+  .searchresults li {
+    display: block; }
+
+.pre-pick {
+  background-color: orange;
+  border: solid 5px #000;
+  color: #000; }
+  .pre-pick h1 {
+    font-size: 4em;
+    font-family: Badaboom;
+    margin: 0;
+    padding: 0; }
+
+.picked {
+  z-index: 50; }
+
+.character_1, .character_2 {
+  float: left;
+  width: 20%; }
+
+.versus {
+  float: left;
+  width: 10%; }
+
+.battle_options {
+  text-align: center; }
+  .battle_options a {
+    display: inline-block;
+    padding: 15px 30px;
+    font-family: Badaboom;
+    background-color: orange;
+    border: solid 5px #000;
+    text-decoration: none;
+    font-size: 1.5em;
+    color: #000;
+    width: 125px; }
+
+body {
+  font-family: "bebas_neue_regularregular";
+  color: yellow;
+  letter-spacing: .2em;
+  background: url(../img/background.jpg);
+  margin: 0;
+  position: relative;
+  background-size: cover;
+  background-attachment: fixed; }
+
+.logo_wrapper {
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 100%;
+  height: 100%; }
+
+.wrapper {
+  margin: 0 auto; }
+
+header {
+  position: relative;
+  height: 100px;
+  z-index: 0; }
+  header h1 {
+    font-family: Badaboom;
+    margin: 0;
+    position: relative;
+    width: 380px;
+    float: left;
+    font-weight: 100;
+    margin-left: 110px; }
+    header h1 a {
+      color: yellow;
+      text-decoration: none; }
+  header .first_s {
+    color: red;
+    font-size: 3em;
+    text-shadow: 2px 5px 5px #000; }
+  header .top_nav {
+    padding: 0;
+    margin: 30px 0 0 0;
+    float: right; }
+    header .top_nav a {
+      display: block;
+      padding: 15px 50px;
+      color: yellow;
+      background-color: #2286e8;
+      font-family: 'bebas_neue_regularregular';
+      font-size: 1em;
+      text-decoration: none; }
+  header li {
+    color: yellow;
+    display: inline-block;
+    padding: 5px; }
+    header li:last-child a {
+      padding: 15px 65px;
+      margin-left: 30px; }
+
+.main_buttons {
+  background: url(../img/marvel_group.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: block;
+  height: 574px;
+  position: relative; }
+
+.buttons {
+  height: 574px; }
+
+.character_button {
+  background: url(../img/choose_button.png);
+  background-repeat: no-repeat;
+  display: block;
+  width: 220px;
+  height: 200px;
+  position: relative;
+  top: 100px;
+  left: 20%;
+  font-family: bebas_neue_regularregular; }
+  .character_button h2 {
+    margin: 0;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 2em; }
+  .character_button a {
+    text-decoration: none;
+    font-size: .75em;
+    color: yellow;
+    display: block;
+    padding: 60px 0; }
+  .character_button p {
+    color: yellow;
+    margin: 0;
+    padding: 55px 20px;
+    font-size: 1.5em; }
+
+.battle_button {
+  background: url(../img/battle_button.png);
+  background-repeat: no-repeat;
+  display: block;
+  width: 220px;
+  height: 200px;
+  position: relative;
+  top: 50px;
+  left: 60%;
+  font-family: bebas_neue_regularregular; }
+  .battle_button h2 {
+    margin: 0;
+    padding: 10px 56px;
+    text-align: center;
+    font-size: 2em; }
+  .battle_button a {
+    text-decoration: none;
+    font-size: .75em;
+    color: yellow;
+    padding: 80px 0;
+    display: block; }
+
+.picks_battles {
+  font-family: bebas_neue_regularregular; }
+  .picks_battles .main_toppicks h3 {
+    color: yellow;
+    text-align: center;
+    font-size: 2em; }
+  .picks_battles .main_toppicks ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none; }
+  .picks_battles .main_toppicks li {
+    display: table;
+    margin: 20px 0; }
+    .picks_battles .main_toppicks li img {
+      float: left; }
+    .picks_battles .main_toppicks li p {
+      float: left;
+      color: yellow;
+      font-size: 1.5em;
+      margin: 0;
+      padding: 55px 15px; }
+  .picks_battles .recent_battles h3 {
+    color: yellow;
+    text-align: center;
+    font-size: 2em; }
+  .picks_battles .recent_battles ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none; }
+  .picks_battles .recent_battles .recent_versus {
+    background: url(../img/versus.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    display: block;
+    width: 20%;
+    height: 111px;
+    float: left;
+    margin-top: 7%; }
+  .picks_battles .recent_battles .battle1 .character1, .picks_battles .recent_battles .battle1 .character2, .picks_battles .recent_battles .battle2 .character1, .picks_battles .recent_battles .battle2 .character2 {
+    background: url(../img/character_square.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 39%;
+    height: 200px;
+    float: left; }
+
+footer {
+  background: #000;
+  height: 100px;
+  margin-top: 30px;
+  padding: 0 7.5%; }
+  footer p {
+    float: left;
+    color: yellow;
+    font-family: bebas_neue_regularregular; }
+    footer p:nth-child(2) {
+      float: right; }
+
+/*# sourceMappingURL=style.css.map */
