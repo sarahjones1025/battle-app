@@ -1,3 +1,7 @@
+//Variables
+
+$orange: #f7942e;
+
 //Imports
 
 @import "clearfix";
@@ -10,6 +14,10 @@
 
 @import "matchup";
 
+@import "fight";
+
+@import "bio";
+
 body{
 	font-family: "bebas_neue_regularregular";
 	color: yellow;
@@ -21,18 +29,18 @@ body{
 	background-attachment:fixed;
 }
 
-.logo_wrapper{
+// .logo_wrapper{
 
-	background-repeat:no-repeat;
-	background-size:contain;
-	width:100%;
-	height:100%;
+// 	background-repeat:no-repeat;
+// 	background-size:contain;
+// 	width:100%;
+// 	height:100%;
 
-}
+// }
 
-.wrapper{
+main{
 
-	margin:0 auto;
+	
 
 }
 
@@ -41,20 +49,20 @@ body{
 }
 
 header{
-
+	width: 90%;
 	position: relative;
-	height:100px;
-	z-index:0;
+	height: 115px;
+	z-index: 0;
 
 	h1{
 		font-family:Badaboom;
 		// color:yellow;
 		margin:0;
 		position: relative;
-		width:380px;
 		float:left;
 		font-weight: 100;
-		margin-left: 110px;
+		margin-left: 19%;
+    	font-size: 2.2em;
 
 			a{
 				color: yellow;
@@ -254,35 +262,8 @@ header{
 				float:left;
 			}
 
-			// .character2{
-			// 	background:url(../img/character_square.jpg);
-			// 	width:200px;
-			// 	height:200px;
-			// 	float:left;
-			// }
-
 		}
 
-		// .battle2{
-
-		// 	.character1{
-		// 		background:url(../img/character_square.jpg);
-		// 		background-size:100%;
-		// 		background-repeat:no-repeat;
-		// 		// width:200px;
-		// 		width:40%;
-		// 		height:200px;
-		// 		float:left;
-		// 	}
-
-		// 	.character2{
-		// 		background:url(../img/character_square.jpg);
-		// 		width:200px;
-		// 		height:200px;
-		// 		float:left;
-		// 	}
-		
-		
 	}
 
 }
@@ -291,7 +272,7 @@ footer{
 	background:#000;
     height: 100px;
     margin-top: 30px;
-    padding: 0 7.5%;
+    padding: 0 10%;
 
 	p{
 		float:left;

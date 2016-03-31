@@ -6,93 +6,87 @@
 </head>
 <body>
 
-<div class="logo_wrapper">
+	<header class="clearfix">
+		<h1><a href="index.html"><span class="first_s">S</span>uper <span class="first_s">S</span>idewalk <span class="first_s">S</span>lam</a></h1>
+		<ul class="top_nav">
+			<li><a href="characters.html">Characters</a></li>
+			<li><a href="matchup.html">Battle</a></li>
+		</ul>
+	</header>
 
-	<div class="wrapper">
+	<section class="arena clearfix">
+			<!-- sidewalk graphic as random background -->
+			<div class="health_bars clearfix">
+				<div class="health_left"></div>
+				<div class="health_right"></div>
+			</div>
 
-		<header class="clearfix">
-			<h1><a href="index.html"><span class="first_s">S</span>uper <span class="first_s">S</span>idewalk <span class="first_s">S</span>lam</a></h1>
-			<ul class="top_nav">
-				<li><a href="characters.html">Characters</a></li>
-				<li><a href="matchup.html">Battle</a></li>
+			<!-- Health bars on an isolated row. -->
+
+			<div class="combatants">
+				<div class="combatant_one">
+					<img class="char_pic" src="img/character_square.jpg" />
+					<img src="img/shadow.png" />
+					<p>CHARACTER NAME</p>
+				</div>
+
+				<div class="action_area">
+					
+				</div>
+				
+				<div class="combatant_two">
+					<img class="char_pic" src="img/character_square.jpg" />
+					<img src="img/shadow.png" />
+					<p>CHARACTER NAME</p>
+				</div>
+			</div>
+
+			<!-- Character pictures on an isolated row. Should help with positioning and moving images between them? -->
+
+	</section>
+
+	<main>
+
+		<!-- Turn battle. Same box styling at stats battle. -->
+		<section class="turn_battle clearfix">
+			<ul class="turns">
+				<!-- 
+				For Character One, picture before text.
+				For Character Two, text before picture.
+				Order is either determined by JS insert order, or images are absolutely positioned by parent class. -->
+				<li class="char_one">
+					<img src="img/character_square.jpg">
+					<p>[Insert Character name] lands a devastating blow for 40 Damage!</p>
+				</li>
+				<li class="char_two">
+					<p>[Insert Character name] Unleashes a barrage for 35 Damage!</p>
+					<img src="img/character_square.jpg">
+				</li>
+				
 			</ul>
-		</header>
+		</section>
 
-		<main>
-			
-			<section class="arena">
-				<!-- sidewalk graphic as random background -->
-				<div class="health_bars">
-					<div class="health_left"></div>
-					<div class="health_right"></div>
-				</div>
-
-				<!-- Health bars on an isolated row. -->
-
-				<div class="combatants">
-					<div class="combatant_one">
-						<img class="char_pic" src="<character_one>" />
-						<img src="<ellipse" />
-						<p>CHARACTER NAME</p>
-					</div>
-
-					<div class="action_area">
-						
-					</div>
-					
-					<div class="comtatant_two">
-						<img class="char_pic" src="<character_two" />
-						<img src="<ellipse>" />
-						<p>CHARACTER NAME</p>
-					</div>
-				</div>
-
-				<!-- Character pictures on an isolated row. Should help with positioning and moving images between them? -->
-
-			</section>
-
-			<!-- Turn battle. Same box styling at stats battle. -->
-			<section class="turn_battle">
-				<ul class="turns">
-					<!-- 
-					For Character One, picture before text.
-					For Character Two, text before picture.
-					Order is either determined by JS insert order, or images are absolutely positioned by parent class. -->
-					<li class="char_one">
-						<img src="<character pic>">
-						<p>[Insert Character name] lands a devastating blow for 40 Damage!</p>
-					</li>
-					<li class="char_two">
-						<img src="<character pic>">
-						<p>[Insert Character name] UNleashes a barrage for 35 Damage!</p>
-					</li>
-					
-				</ul>
-			</section>
-
-			<section class="battle_buttons">
-				<div>
+		<section class="battle_buttons clearfix">
+			<ul>
+				<li class="button">
 					<p>REMATCH</p>
-				</div>
-				<div>
+				</li>
+				<li class="button">
 					<p>NEW BATTLE</p>
-				</div>
-				<div>
+				</li>
+				<li class="button">
 					<p>TURN BATTLE</p>
-				</div>
-			</section>
+				</li>
+			</ul>
+		</section>
 
-		</main>
-
-	</div>
+	</main>
 
 	<footer>
 			<p>Data Provided By: Marvel. &copy; 2014 Marvel</p>
 			<p>UI/UX By: Will McCain &amp; Sarah Jones</p>
 			<p>Frameworks, Implementation, Animations, &amp; Literally Everything Else By: Dave Millican &amp; Fabian Murillo </p>
 	</footer>
-
-</div>
 
 <script type="text/javascript" src="js/script.js"></script>
 </body>

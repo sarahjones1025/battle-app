@@ -6,33 +6,27 @@
 </head>
 <body>
 
-<div class="logo_wrapper">
+	<header class="clearfix">
+		<h1><a href="index.html"><span class="first_s">S</span>uper <span class="first_s">S</span>idewalk <span class="first_s">S</span>lam</a></h1>
+		<ul class="top_nav">
+			<li><a href="characters.html">Characters</a></li>
+			<li><a href="matchup.html">Battle</a></li>
+		</ul>
+	</header>
 
-	<div class="wrapper">
+	<section class="arena clearfix">
+			<!-- sidewalk graphic as random background -->
+			<div class="health_bars clearfix">
+				<div class="health_left"></div>
+				<div class="health_right"></div>
+			</div>
 
-		<header class="clearfix">
-			<h1><a href="index.html"><span class="first_s">S</span>uper <span class="first_s">S</span>idewalk <span class="first_s">S</span>lam</a></h1>
-			<ul class="top_nav">
-				<li><a href="characters.html">Characters</a></li>
-				<li><a href="matchup.html">Battle</a></li>
-			</ul>
-		</header>
-
-		<main>
-			
-			<section class="arena">
-				<!-- sidewalk graphic as random background -->
-				<div class="health_bars">
-					<div class="health_left"></div>
-					<div class="health_right"></div>
-				</div>
-
-				<!-- Health bars on an isolated row. -->
+			<!-- Health bars on an isolated row. -->
 
 				<div class="combatants">
 					<div class="combatant_one">
 						<img class="char_pic" src="img/character_square.jpg" />
-						<img src="" />
+						<img src="img/shadow.png" />
 						<p>CHARACTER NAME</p>
 					</div>
 
@@ -41,75 +35,77 @@
 					</div>
 					
 					<div class="combatant_two">
-						<img class="char_pic" src="<character_two" />
-						<img src="<ellipse>" />
+						<img class="char_pic" src="img/character_square.jpg" />
+						<img src="img/shadow.png" />
 						<p>CHARACTER NAME</p>
 					</div>
 				</div>
 
-				<!-- Character pictures on an isolated row. Should help with positioning and moving images between them? -->
+	</section>
 
-			</section>
+	<main>
+		
+		
 
-			<!-- Stats battle. Top and bottom padding. Display:block, blue background, yellow border. -->
-			<section class="stats_battle">
-				<ul class="victories_left">
-					<!-- Checkmark as background? -->
-					<li class="one"></li>
-					<li class="two"></li>
-					<li class="three"></li>
-					<li class="four"></li>
-					<li class="five"></li>
-					<li class="six"></li>
-					<li class="seven"></li>
-					<li class="eight"></li>
-					<li class="nine"></li>
-					<li class="ten"></li>
-				</ul>
+		<!-- Stats battle. Top and bottom padding. Display:block, blue background, yellow border. -->
+		<section class="stats_battle clearfix">
+			<ul class="victories_left">
+				<!-- Checkmark as background? -->
+				<li class="one"></li>
+				<li class="two"></li>
+				<li class="three"></li>
+				<li class="four"></li>
+				<li class="five"></li>
+				<li class="six"></li>
+				<li class="seven"></li>
+				<li class="eight"></li>
+				<li class="nine"></li>
+				<li class="ten"></li>
+			</ul>
 
-				<ul class="battle_labels">
-					<li>Round One</li>
-					<li>Round Two</li>
-					<li>Round Three</li>
-					<li>Round Four</li>
-					<li>Round Five</li>
-					<li>Round Six</li>
-					<li>Round Seven</li>
-					<li>Round Eight</li>
-					<li>Round Nine</li>
-					<li>Round Ten</li>
-				</ul>
+			<ul class="battle_labels">
+				<li><p>Round One</p></li>
+				<li><p>Round Two<p></li>
+				<li><p>Round Three<p></li>
+				<li>Round Four</li>
+				<li>Round Five</li>
+				<li>Round Six</li>
+				<li>Round Seven</li>
+				<li>Round Eight</li>
+				<li>Round Nine</li>
+				<li>Round Ten</li>
+			</ul>
 
-				<ul class="victories_right">
-					<li class="one"></li>
-					<li class="two"></li>
-					<li class="three"></li>
-					<li class="four"></li>
-					<li class="five"></li>
-					<li class="six"></li>
-					<li class="seven"></li>
-					<li class="eight"></li>
-					<li class="nine"></li>
-					<li class="ten"></li>
-				</ul>
+			<ul class="victories_right">
+				<li class="one"></li>
+				<li class="two"></li>
+				<li class="three"></li>
+				<li class="four"></li>
+				<li class="five"></li>
+				<li class="six"></li>
+				<li class="seven"></li>
+				<li class="eight"></li>
+				<li class="nine"></li>
+				<li class="ten"></li>
+			</ul>
 
-			</section>
+		</section>
 
-			<section class="battle_buttons">
-				<div>
+		<section class="battle_buttons clearfix">
+			<ul>
+				<li class="button">
 					<p>REMATCH</p>
-				</div>
-				<div>
+				</li>
+				<li class="button">
 					<p>NEW BATTLE</p>
-				</div>
-				<div>
+				</li>
+				<li class="button">
 					<p>TURN BATTLE</p>
-				</div>
-			</section>
+				</li>
+			</ul>
+		</section>
 
-		</main>
-
-	</div>
+	</main>
 
 	<footer>
 			<p>Data Provided By: Marvel. &copy; 2014 Marvel</p>
@@ -117,7 +113,6 @@
 			<p>Frameworks, Implementation, Animations, &amp; Literally Everything Else By: Dave Millican &amp; Fabian Murillo </p>
 	</footer>
 
-</div>
 
 <script type="text/javascript" src="js/script.js"></script>
 </body>

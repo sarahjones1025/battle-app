@@ -1,0 +1,150 @@
+
+.card{
+	background-color: #fff4d5;
+}
+
+.combatant{
+	text-align: center;
+	padding-top: 70px;
+	background-image: url(../img/bio_bg_03.jpg);
+	background-size: contain;
+	// don't change this ^ 
+	background-repeat: no-repeat;
+	width: 50%;
+	float: left;
+	position: relative;
+	box-sizing: border-box;
+		h1{
+			position: absolute;
+			bottom: 0;
+			left: 20px;
+			text-align: left;
+			margin: 0;
+			padding: 0;
+			font-family: Impact;
+			text-transform: uppercase;
+			&:first-letter{
+		  		font-size: 4em;
+  			}
+		}
+}
+
+.bio_img {
+    background-image: url(../img/detail.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 20;
+    height: 568px;
+    box-sizing: border-box;
+    margin: 0 7% 17% 7%;
+}
+
+.levels{
+	background-color: #000;
+	
+	p{
+		text-align: center;
+		background-color: #000;
+		color: #fff;
+		float: left;
+		width: 14%;
+		margin: 0;
+		padding: 0;
+
+		&:first-child{
+			width: 8%;
+			text-align: left;
+		}
+
+		&:last-child{
+			width: 8%;
+			padding-right: 0;
+			text-align: right;
+		}
+	}
+}
+
+.character_bio{
+	width: 50%;
+	float: left;
+	box-sizing: border-box;
+
+	img{
+    	margin-left: 9%;
+    }
+	
+	a{
+	    display: inline-block;
+	    padding: 20px 120px;
+	    text-decoration: none;
+	    color: #fff;
+	    background-color: red;
+	    text-align: center;
+	}
+
+	h1{
+		background-color: yellow;
+		border: solid 1px #000;
+		font-family: Impact;
+		color: blue;
+	}
+}
+
+.categories{
+	padding-top: 20px;
+
+
+	div{
+		position: relative;
+
+		div{
+			background-color: pink;
+			height: 23px;
+			width: 28%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 2;
+		}
+	}
+}
+
+.power_rating{
+	float: right;
+    width: 60%;
+    background-color: #fff;
+    margin-right: 15px;
+    border: solid 2px #000;
+    background-image: url(../img/tile.jpg);
+
+	
+	div{
+		list-style: none;
+		color: #000;
+		h4{
+			padding: 4px;
+			margin: 4px;
+			z-index: 10;
+			position: relative;
+		}
+	}
+
+	h3{
+		padding: 0;
+		margin: 0;
+		background-color: #000;
+		color: #fff;
+		text-align: center;
+		letter-spacing: .5em;
+	}
+}
+
+.wins_losses{
+	background-color: #fff;
+	color: #000;
+}
+
+.description{
+	background-color: #fff;
+	color: #000;
+}

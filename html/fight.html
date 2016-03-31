@@ -6,160 +6,126 @@
 </head>
 <body>
 
-<div class="logo_wrapper">
+	<header class="clearfix">
+		<h1><a href="index.html"><span class="first_s">S</span>uper <span class="first_s">S</span>idewalk <span class="first_s">S</span>lam</a></h1>
+		<ul class="top_nav">
+			<li><a href="characters.html">Characters</a></li>
+			<li><a href="matchup.html">Battle</a></li>
+		</ul>
+	</header>
 
-	<div class="wrapper">
+	<main>
+		
+		<section class="arena">
+			<!-- sidewalk graphic as random background -->
+			<div class="health_bars">
+				<div class="health_left"></div>
+				<div class="health_right"></div>
+			</div>
 
-		<header class="clearfix">
-			<h1><a href="index.html"><span class="first_s">S</span>uper <span class="first_s">S</span>idewalk <span class="first_s">S</span>lam</a></h1>
-			<ul class="top_nav">
-				<li><a href="characters.html">Characters</a></li>
-				<li><a href="matchup.html">Battle</a></li>
+			<!-- Health bars on an isolated row. -->
+
+			<div class="combatants">
+				<div class="combatant_one">
+					<img class="char_pic" src="<character_one>" />
+					<img src="<ellipse" />
+					<p>CHARACTER NAME</p>
+				</div>
+				
+				<div class="comtatant_two">
+					<img class="char_pic" src="<character_two" />
+					<img src="<ellipse>" />
+					<p>CHARACTER NAME</p>
+				</div>
+			</div>
+
+			<!-- Character pictures on an isolated row. Should help with positioning and moving images between them? -->
+
+		</section>
+
+		<!-- Stats battle. Top and bottom padding. Display:block, blue background, yellow border. -->
+		<section class="stats_battle">
+			<ul class="victories_left">
+				<!-- Checkmark as background? -->
+				<li class="one"></li>
+				<li class="two"></li>
+				<li class="three"></li>
+				<li class="four"></li>
+				<li class="five"></li>
+				<li class="six"></li>
+				<li class="seven"></li>
+				<li class="eight"></li>
+				<li class="nine"></li>
+				<li class="ten"></li>
 			</ul>
-		</header>
 
-		<main>
-			
+			<ul class="battle_labels">
+				<li>Round One</li>
+				<li>Round Two</li>
+				<li>Round Three</li>
+				<li>Round Four</li>
+				<li>Round Five</li>
+				<li>Round Six</li>
+				<li>Round Seven</li>
+				<li>Round Eight</li>
+				<li>Round Nine</li>
+				<li>Round Ten</li>
+			</ul>
 
-=================================================================
-	Arena
-==================================================================
+			<ul class="victories_right">
+				<li class="one"></li>
+				<li class="two"></li>
+				<li class="three"></li>
+				<li class="four"></li>
+				<li class="five"></li>
+				<li class="six"></li>
+				<li class="seven"></li>
+				<li class="eight"></li>
+				<li class="nine"></li>
+				<li class="ten"></li>
+			</ul>
 
+		</section>
 
+		<!-- Turn battle. Same box styling at stats battle. -->
+		<section class="turn_battle">
+			<ul class="turns">
+				<!-- 
+				For Character One, picture before text.
+				For Character Two, text before picture.
+				Order is either determined by JS insert order, or images are absolutely positioned by parent class. -->
+				<li class="char_one">
+					<img src="<character pic>">
+					<p>[Insert Character name] lands a devastating blow for 40 Damage!</p>
+				</li>
+				<li class="char_two">
+					<img src="<character pic>">
+					<p>[Insert Character name] UNleashes a barrage for 35 Damage!</p>
+				</li>
+				
+			</ul>
+		</section>
 
+		<section class="battle_buttons">
+			<div>
+				<p>REMATCH</p>
+			</div>
+			<div>
+				<p>NEW BATTLE</p>
+			</div>
+			<div>
+				<p>TURN BATTLE</p>
+			</div>
+		</section>
 
+	</main>
 
-
-			<section class="arena">
-				<!-- sidewalk graphic as random background -->
-				<div class="health_bars">
-					<div class="health_left"></div>
-					<div class="health_right"></div>
-				</div>
-
-				<!-- Health bars on an isolated row. -->
-
-				<div class="combatants">
-					<div class="combatant_one">
-						<img class="char_pic" src="<character_one>" />
-						<img src="<ellipse" />
-						<p>CHARACTER NAME</p>
-					</div>
-					
-					<div class="comtatant_two">
-						<img class="char_pic" src="<character_two" />
-						<img src="<ellipse>" />
-						<p>CHARACTER NAME</p>
-					</div>
-				</div>
-
-				<!-- Character pictures on an isolated row. Should help with positioning and moving images between them? -->
-
-			</section>
-
-
-=======================================================
-	Fight  Stats
-=======================================================
-
-
-
-
-
-
-			<!-- Stats battle. Top and bottom padding. Display:block, blue background, yellow border. -->
-			<section class="stats_battle">
-				<ul class="victories_left">
-					<!-- Checkmark as background? -->
-					<li class="one"></li>
-					<li class="two"></li>
-					<li class="three"></li>
-					<li class="four"></li>
-					<li class="five"></li>
-					<li class="six"></li>
-					<li class="seven"></li>
-					<li class="eight"></li>
-					<li class="nine"></li>
-					<li class="ten"></li>
-				</ul>
-
-				<ul class="battle_labels">
-					<li>Round One</li>
-					<li>Round Two</li>
-					<li>Round Three</li>
-					<li>Round Four</li>
-					<li>Round Five</li>
-					<li>Round Six</li>
-					<li>Round Seven</li>
-					<li>Round Eight</li>
-					<li>Round Nine</li>
-					<li>Round Ten</li>
-				</ul>
-
-				<ul class="victories_right">
-					<li class="one"></li>
-					<li class="two"></li>
-					<li class="three"></li>
-					<li class="four"></li>
-					<li class="five"></li>
-					<li class="six"></li>
-					<li class="seven"></li>
-					<li class="eight"></li>
-					<li class="nine"></li>
-					<li class="ten"></li>
-				</ul>
-
-			</section>
-
-=======================================================
-			Turn By Turn
-=======================================================
-			
-
-
-
-			<!-- Turn battle. Same box styling at stats battle. -->
-			<section class="turn_battle">
-				<ul class="turns">
-					<!-- 
-					For Character One, picture before text.
-					For Character Two, text before picture.
-					Order is either determined by JS insert order, or images are absolutely positioned by parent class. -->
-					<li class="char_one">
-						<img src="<character pic>">
-						<p>[Insert Character name] lands a devastating blow for 40 Damage!</p>
-					</li>
-					<li class="char_two">
-						<img src="<character pic>">
-						<p>[Insert Character name] UNleashes a barrage for 35 Damage!</p>
-					</li>
-					
-				</ul>
-			</section>
-
-			<section class="battle_buttons">
-				<div>
-					<p>REMATCH</p>
-				</div>
-				<div>
-					<p>NEW BATTLE</p>
-				</div>
-				<div>
-					<p>TURN BATTLE</p>
-				</div>
-			</section>
-
-		</main>
-
-	</div>
 
 	<footer>
 			<p>Data Provided By: Marvel. &copy; 2014 Marvel</p>
 			<p>UI/UX By: Will McCain &amp; Sarah Jones</p>
 			<p>Frameworks, Implementation, Animations, &amp; Literally Everything Else By: Dave Millican &amp; Fabian Murillo </p>
 	</footer>
-
-</div>
 
 <script type="text/javascript" src="js/script.js"></script>
 </body>
