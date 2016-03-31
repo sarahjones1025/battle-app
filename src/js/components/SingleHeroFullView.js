@@ -1,3 +1,4 @@
+var _ = require('underscore');
 var $ = require('jquery');
 var Backbone = require('backbone');
 
@@ -6,6 +7,8 @@ var SingleHeroModel = require('./SingleHeroModel');
 var SingleHeroFullView = Backbone.View.extend({
 
     className: "Single-Hero",
+
+    template: _.template(require('./SingleHero.html')),
 
     events: {
         'click button': 'onClick'
@@ -17,20 +20,21 @@ var SingleHeroFullView = Backbone.View.extend({
     },
 
     initialize: function () {
-        var button = $('<button>');
-        this.img = $('<img>');
+       //******** var button = $('<button>');
+       //********  this.img = $('<img>');
 
         this.listenTo(this.model, 'sync', this.render);
 
-        button.html('Send To Battle');
-        this.$el.append(button); 
-        this.$el.append(this.img);
+        //*********button.html('Send To Battle');
+        this.$el.html(this.template(this.model))
     },
 
     render: function () {
-        console.log('Single Hero Render');
-        console.log(this.model.get('thumbnail'));
-        this.img.attr('src', (this.model.get('thumbnail')));
+        //  The following is the full path of the image.
+        $('.combatant img').attr('src',
+             (this.model.get('thumbnail')
+             + '/detail'   
+             + '.' + this.model.get('extension')));
 
     }
 });

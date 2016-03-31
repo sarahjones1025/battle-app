@@ -4,21 +4,25 @@ var $ = require('jquery');
 
 var SearchItemView = Backbone.View.extend({
 
-    template: _.template(`
-        <%= get('id') %>
-        <img src='<%= get('thumbnail') %>'>
-        <li>this is SearchItemView</li>
-        `),
+    tagName: 'li',
+    
+    template: _.template(require('./SearchItemView.html')),
 
     events: {
-        'click': 'onClick'
+        'click .single-hero': 'toSingleHero',
+        'click .to-the-battle': 'toBattle'
     },
 
     render: function () {
+        console.log(this.model);
         this.$el.html(this.template(this.model));
     },
 
-    onClick: function () {
+    toBattle: function () {
+        window.location.hash = ('battleSetup/' + this.model.get('id'));
+    },
+
+    toSingleHero: function () {
         window.location.hash = ('singleHero/' + this.model.get('id'));
     }
 
