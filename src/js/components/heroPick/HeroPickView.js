@@ -1,8 +1,9 @@
 var $ = require('jquery');
 var _ = require('underscore');
 var Backbone = require('backbone');
-var cache = require('./characterCache.js');
-var MiniSearchView = require('./MiniSearchView');
+
+var cache = require('../cache/characterCache.js');
+var MiniSearchView = require('../search/MiniSearchView');
 var searchController = require('./searchController.js');
 var dispatcher = require('./dispatcher');
 
