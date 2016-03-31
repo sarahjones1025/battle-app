@@ -1,7 +1,7 @@
 var Backbone = require('backbone');
 
 var dispatcher = require('../router/dispatcher.js');
-//var BattleSpaceView = require('../battle/BattleSpaceView.js');
+var BattleSpaceView = require('../battle/BattleSpaceView.js');
 var SearchView = require('../search/SearchView.js');
 var SingleHeroFullView = require('../singleHero/SingleHeroFullView.js');
 var SingleHeroModel = require('../singleHero/SingleHeroModel.js');
@@ -51,8 +51,8 @@ var BattleRouter = Backbone.Router.extend({
 
     battleNow: function (id1, id2) {
       
-        //dispatcher.trigger('show', new BattleSpaceView({model1: cache.getCharacter(id1),
-            //model2: cache.getCharacter(id2)}));
+        dispatcher.trigger('show', new BattleSpaceView({model1: cache.getCharacter(id1),
+                model2: cache.getCharacter(id2)}));
     }
 
     
