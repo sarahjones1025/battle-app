@@ -16,20 +16,18 @@ var HeroChildView = Backbone.View.extend({
         'click': 'onClick'
     },
 
+    template: _.template(require('./SearchItemView.html')),
+
     initialize: function (options) {
         this.searchView = options.searchView;        
     },
 
     onClick: function () {
-        // dispatcher.trigger('pick', )
-        // searchView below, is a reference to searchView.js
         this.searchView.trigger('pick', this.model);
     },
 
     render: function () {
-        var img = $('<img>');
-        this.$el.append(img);
-        img.attr('src',this.model.get('thumbnail'));
+        this.$el.html(this.template(this.model));
     }
 
 
@@ -38,13 +36,9 @@ var HeroChildView = Backbone.View.extend({
 
 var MiniSearchView = Backbone.View.extend({
 
-    template: _.template(
-        `<input class='search-mini'>
-         <button>Search</button>
-         <div class='results-dock'></div>
 
-         `
-        ),
+    template: _.template(require('./SearchView.html')),
+    
 
     events: {
         'click button': 'onClick',
