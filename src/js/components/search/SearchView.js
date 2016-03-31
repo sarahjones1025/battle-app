@@ -1,10 +1,11 @@
 var $ = require('jquery');
 var Backbone = require('backbone');
 var _ = require('underscore');
-var searchForName = require('./utils.js');
-var SingleHeroModel = require('./SingleHeroModel.js');
-var SearchItemView = require('./SearchItemView.js');
-var cache = require('./characterCache.js');
+
+var searchForName = require('../utils/utils.js');
+var SingleHeroModel = require('../singleHero/SingleHeroModel.js');
+var SearchItemView = require('../search/SearchItemView.js');
+var cache = require('../cache/characterCache.js');
 
 var SearchView = Backbone.View.extend({
 

@@ -3,9 +3,9 @@ var _ = require('underscore');
 var Backbone = require('backbone');
 
 var cache = require('../cache/characterCache.js');
-var MiniSearchView = require('../search/MiniSearchView');
+var MiniSearchView = require('../search/MiniSearchView.js');
 var searchController = require('./searchController.js');
-var dispatcher = require('./dispatcher');
+var dispatcher = require('../router/dispatcher.js');
 
 var HeroPickView = Backbone.View.extend({
 

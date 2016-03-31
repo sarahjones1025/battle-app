@@ -1,12 +1,13 @@
 var Backbone = require('backbone');
-var dispatcher = require('./dispatcher.js');
-//var BattleSpaceView = require('./BattleSpaceView.js');
-var SearchView = require('./SearchView.js');
-var SingleHeroFullView = require('./SingleHeroFullView.js');
-var SingleHeroModel = require('./SingleHeroModel.js');
-var BattleSetupView = require('./BattleSetupView');
-var HomeView = require('./HomeView');
-var cache = require('./characterCache');
+
+var dispatcher = require('../router/dispatcher.js');
+//var BattleSpaceView = require('../battle/BattleSpaceView.js');
+var SearchView = require('../search/SearchView.js');
+var SingleHeroFullView = require('../singleHero/SingleHeroFullView.js');
+var SingleHeroModel = require('../singleHero/SingleHeroModel.js');
+var BattleSetupView = require('../battle/BattleSetupView.js');
+var HomeView = require('../homeView/HomeView.js');
+var cache = require('../cache/characterCache.js');
 var BattleRouter = Backbone.Router.extend({
     
     routes: {

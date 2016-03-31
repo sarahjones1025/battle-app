@@ -1,9 +1,9 @@
 var $ = require('jquery');
 var _ = require('underscore');
 var Backbone = require('backbone');
-var dispatcher = require('./dispatcher.js');
-var searchForName = require('./utils.js');
-var cache = require('./characterCache.js');
+var dispatcher = require('../router/dispatcher.js');
+var searchForName = require('../utils/utils.js');
+var cache = require('../cache/characterCache.js');
 
 
 

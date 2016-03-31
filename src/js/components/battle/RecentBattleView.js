@@ -1,6 +1,7 @@
 var Backbone = require('backbone');
 var $ = require('jquery');
 var _ = require('underscore');
+
 var dispatcher = require('../router/dispatcher');
 
 // This view, will generate the Recent Battle sub view,

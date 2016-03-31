@@ -2,7 +2,7 @@ var _ = require('underscore');
 var $ = require('jquery');
 var Backbone = require('backbone');
 
-var SingleHeroModel = require('./SingleHeroModel');
+var SingleHeroModel = require('./SingleHeroModel.js');
 
 var SingleHeroFullView = Backbone.View.extend({
 

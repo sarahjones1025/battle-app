@@ -1,7 +1,8 @@
 var Backbone = require('backbone');
 var $ = require('jquery');
 var _ = require('underscore');
-var dispatcher = require('dispatcher');
+
+var dispatcher = require('../router/dispatcher.js');
 
 // This view, will generate the Top Picks sub view,
 // it'll have 3 children views, which will be the last 3
