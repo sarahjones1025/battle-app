@@ -7,7 +7,7 @@ var searchController = require('../heroPick/searchController.js');
 
 var BattleSetupView = Backbone.View.extend({
 
-    template: _.template('./BattleSetupView.html'),
+    template: _.template(require('./BattleSetupView.html')),
 
     events: {
         'click button': 'onClick'
@@ -16,32 +16,36 @@ var BattleSetupView = Backbone.View.extend({
     initialize: function (options) {
 
         if (options.withHero === true) {
-            var heroPick1 = new HeroPickView({model: options.model1});
-            var heroPick2 = new HeroPickView();
+            this.heroPick1 = new HeroPickView({model: options.model1});
+            this.heroPick2 = new HeroPickView();
 
         } else {
 
-            var heroPick1 = new HeroPickView();
-            var heroPick2 = new HeroPickView();
+            this.heroPick1 = new HeroPickView();
+            this.heroPick2 = new HeroPickView();
 
         }
 
-        this.$el.html(this.template());
-        this.$el.append();
+        this.$el.append(this.template());
 
-        $('.character_1').append(heroPick1.$el);
-        $('.character_2').append(heroPick2.$el);
+        this.$el.find('.character_1').append(this.heroPick1.$el);
+        this.$el.find('.character_2').append(this.heroPick2.$el);
 
     },
 
-    render: function () {},
+    render: function () {
+
+    },
 
     clickPick1: function () {
 
     },
 
     remove: function () {
+        this.heroPick1.remove();
+        this.heroPick2.remove();
         searchController.enable();
+        Backbone.View.prototype.remove.call(this);
     }
 
 

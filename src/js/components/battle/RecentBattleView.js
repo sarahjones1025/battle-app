@@ -13,9 +13,7 @@ var RecentBattleView = Backbone.View.extend({
 
     className: 'recentBattleView',
 
-    template: _.template(`
-        <div class="recentBattleSlot"></div>
-    `),
+    template: _.template(require('./recentBattles.html')),
 
     initialize: function (options) {
         this.listenTo(dispatcher, 'show', this.show);
@@ -23,16 +21,16 @@ var RecentBattleView = Backbone.View.extend({
 
     show: function (view) {
 
-        if (view) {
-            if (this.child) {
-                this.child.remove();
-            }
+        // if (view) {
+        //     if (this.child) {
+        //         this.child.remove();
+        //     }
 
-            view.render();
+        //     view.render();
 
-            this.$('.recentBattleSlot').append(view.$el);
-            this.child = view;
-        }
+        //     this.$('.recentBattleSlot').append(view.$el);
+        //     this.child = view;
+        // }
     },
 
     render: function () {
