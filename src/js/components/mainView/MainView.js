@@ -1,5 +1,7 @@
+var _ = require('underscore');
 var $ = require('jquery');
 var Backbone = require('backbone');
+
 var pDataCollection = require('./pDataCollection.js');
 var dispatcher = require('./dispatcher.js');
 
@@ -7,6 +9,7 @@ var MainView = Backbone.View.extend({
 
     className: 'main-dock',
 
+    template: _.template(require('./MainView.html')),
 
     events: {
         'click': 'onClick'
@@ -37,6 +40,8 @@ var MainView = Backbone.View.extend({
     },
 
     render: function () {
+
+        this.$el.html(this.template());
 
         $('body').append(this.$el);
         

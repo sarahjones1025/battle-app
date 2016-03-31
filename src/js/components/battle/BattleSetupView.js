@@ -6,6 +6,8 @@ var searchController = require('./searchController.js');
 
 var BattleSetupView = Backbone.View.extend({
 
+    template: _.template('./BattleSetupView.html'),
+
     events: {
         'click button': 'onClick'
     },
@@ -13,23 +15,21 @@ var BattleSetupView = Backbone.View.extend({
     initialize: function (options) {
 
         if (options.withHero === true) {
-            console.log(options.model1);
-            console.log('sent hero');
-            heroPick1 = new HeroPickView({model: options.model1});
-            heroPick2 = new HeroPickView();
+            var heroPick1 = new HeroPickView({model: options.model1});
+            var heroPick2 = new HeroPickView();
 
         } else {
 
-            heroPick1 = new HeroPickView();
-            heroPick2 = new HeroPickView();
+            var heroPick1 = new HeroPickView();
+            var heroPick2 = new HeroPickView();
 
         }
 
-        this.button = $('<button>');
-        this.$el.append(this.button);
+        this.$el.html(this.template());
+        this.$el.append();
 
-        this.$el.append(heroPick1.$el);
-        this.$el.append(heroPick2.$el);
+        $('.character_1').append(heroPick1.$el);
+        $('.character_2').append(heroPick2.$el);
 
     },
 

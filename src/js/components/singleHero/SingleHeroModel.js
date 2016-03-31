@@ -23,8 +23,8 @@ var SingleHeroModel = Backbone.Model.extend({
     parse: function (obj) {
         return {
             name: obj.data.results[0].name,
-            thumbnail: obj.data.results[0].thumbnail.path + 
-                       '.' + obj.data.results[0].thumbnail.extension
+            thumbnail: obj.data.results[0].thumbnail.path,
+            extension: obj.data.results[0].thumbnail.extension
         };
     }
 });

@@ -1,4 +1,5 @@
 var $ = require('jquery');
+var _ = require('underscore');
 var Backbone = require('backbone');
 var cache = require('./characterCache.js');
 var MiniSearchView = require('./MiniSearchView');
@@ -15,6 +16,8 @@ var HeroPickView = Backbone.View.extend({
         'click': 'onClick'
     },
 
+    template: _.template('./HeroPickView.html'),
+
     onClick: function () {
         //    We will listen for the 'pick' event now.  It is
         //  important to listen now and stop listening later, 
@@ -27,9 +30,8 @@ var HeroPickView = Backbone.View.extend({
             searchController.disable();
             this.searchView = new MiniSearchView();
             this.searchView.render();
-            this.$el.append(this.searchView.$el);
+            $('.search-dock').append(this.searchView.$el);
             this.listenTo(this.searchView,'pick', this.show);
-            this.testproperty = "this test";
         }
 
 
@@ -38,19 +40,17 @@ var HeroPickView = Backbone.View.extend({
     },
 
     initialize: function (options) {
-        this.img = $('<img>');
-        this.$el.append(this.img);
-        this.img.attr('src', 'assets/imgs/Question-mark.png');
         this.listenTo(dispatcher, 'sync', this.render);
         if (options) {
             this.withHero = true;
-            this.img.attr('src', (options.model.get('thumbnail')));
+
+            //******************
+           // dock.attr('src', (options.model.get('thumbnail')
+             //               + '/portrait_xlarge'
+               //             + '.' + options.model.get('extension')));
         } else {
             this.withHero = false;
         }
-
-        console.log(this.withHero);
-        console.log(searchController.holdOff());
 
     },
 
@@ -65,11 +65,14 @@ var HeroPickView = Backbone.View.extend({
         if (model) {
             this.model = model;
             this.searchView.remove();
-            this.img.attr('src', (this.model.get('thumbnail')));
-        }
+            this.img.attr('src', (this.model.get('thumbnail')
+                    + '/portrait_xlarge'
+                    + '.' + options.model.get('extension')));
+        };
+
         searchController.enable();
      
-    }
+    },
 
 });
 

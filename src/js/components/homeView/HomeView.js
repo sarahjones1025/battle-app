@@ -9,10 +9,7 @@ var HomeView = Backbone.View.extend({
         'click': 'onClick'
     },
 
-    template: _.template(`
-        <button class='searchButton'>search view</button>
-        <button class='battleSetupButton'>battle setup</button>
-        `),
+    template: _.template(require('./HomeView.html')),
 
     render: function () {
         this.$el.html(this.template());
@@ -27,9 +24,7 @@ var HomeView = Backbone.View.extend({
     },
 
     initialize: function () {
-        pDataCollection.url = '/api/topPicks';
-        pDataCollection.fetch();
-        console.log(pDataCollection);
+ 
     }
 
 });

@@ -8,11 +8,7 @@ var cache = require('./characterCache.js');
 
 var SearchView = Backbone.View.extend({
 
-    template: _.template(`
-        <button class='searchButton'>Search</button>
-        <input id="searchViewInput">
-        <div class='searchView'> this is the search view</div>
-    `),
+    template: _.template(require('./SearchView.html')),
    
     events: {
         'click button': 'onClick'
@@ -20,11 +16,14 @@ var SearchView = Backbone.View.extend({
 
     onClick: function () {
         var count = 0;
-        _this = this;
+        var _this = this;
+
         for (var i = 0; i < _this.children.length; i++) {
             this.children[i].remove();
-        }
+        };
+        
         var list = searchForName($('input').val());
+
         list.forEach(function (current) {
             var currentModel = cache.getCharacter(current.id);
             if (count < 10) {
