@@ -1,4 +1,4 @@
-var SingleHeroModel = require('./SingleHeroModel');
+var SingleHeroModel = require('../singleHero/SingleHeroModel');
 
 //  This is a file storage Utility only good for a single URL, 
 //  but it works like saving to a file.  Will work across 
@@ -55,6 +55,8 @@ function getCharacter (heroId) {
         //  fetch from the API and set it in the cache.
         model.fetch({
             success: function () {
+                console.log('this is where we add to cache')
+                console.log( model.get('thumbnail'));
                 set(heroId, model);
             }
         });

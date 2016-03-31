@@ -1,17 +1,17 @@
 var Backbone = require('backbone');
 var $ = require('jquery');
 var _ = require('underscore');
-var dispatcher = require('dispatcher');
 
-// This view, will generate the Top Picks sub view,
+var dispatcher = require('../router/dispatcher');
+
+// This view, will generate the Recent Battle sub view,
 // it'll have 3 children views, which will be the last 3
-// battles.  The models for these children views, will
-// come from a collection, containing the battle results,
-// initially, these three will be randomly generated:
+// battles.  The models for these children views, will 
+// come from a collection, containing the battle results:
 
-var TopPicksView = Backbone.View.extend({
+var RecentBattleView = Backbone.View.extend({
 
-    className: 'topPicksView',
+    className: 'recentBattleView',
 
     template: _.template(`
         <div class="recentBattleSlot"></div>
@@ -40,4 +40,4 @@ var TopPicksView = Backbone.View.extend({
     }
 });
 
-module.exports = TopPicksView;
+module.exports = RecentBattleView;

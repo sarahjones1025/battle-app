@@ -1,7 +1,6 @@
 var Backbone = require('backbone');
 var _ = require('underscore');
 var $ = require('jquery');
-var pDataCollection = require('./pDataCollection');
 
 var HomeView = Backbone.View.extend({
 
@@ -9,10 +8,7 @@ var HomeView = Backbone.View.extend({
         'click': 'onClick'
     },
 
-    template: _.template(`
-        <button class='searchButton'>search view</button>
-        <button class='battleSetupButton'>battle setup</button>
-        `),
+    template: _.template(require('./HomeView.html')),
 
     render: function () {
         this.$el.html(this.template());
@@ -22,14 +18,12 @@ var HomeView = Backbone.View.extend({
         if (e.target.classList.contains('searchButton')) {
             window.location.hash = 'searchFull';
         } else {
-            window.location.hash = 'battleSetup/1009146';
+            window.location.hash = 'battleSetup';
         }
     },
 
     initialize: function () {
-        pDataCollection.url = '/api/topPicks';
-        pDataCollection.fetch();
-        console.log(pDataCollection);
+ 
     }
 
 });
