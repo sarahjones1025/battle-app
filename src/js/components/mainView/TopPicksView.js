@@ -2,6 +2,7 @@ var Backbone = require('backbone');
 var $ = require('jquery');
 var _ = require('underscore');
 
+
 var dispatcher = require('../router/dispatcher.js');
 
 // This view, will generate the Top Picks sub view,
@@ -14,9 +15,7 @@ var TopPicksView = Backbone.View.extend({
 
     className: 'topPicksView',
 
-    template: _.template(`
-        <div class="recentBattleSlot"></div>
-    `),
+    template: _.template(require('./topPicks.html')),
 
     initialize: function (options) {
         this.listenTo(dispatcher, 'show', this.show);

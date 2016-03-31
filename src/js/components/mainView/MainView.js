@@ -12,11 +12,18 @@ var MainView = Backbone.View.extend({
     template: _.template(require('./MainView.html')),
 
     events: {
-        'click': 'onClick'
+        'click .charactersButton': 'onClick',
+        'click .matchupButton': 'onClick'
     },
 
-    onClick: function () {
-        //Incomplete:  What buttons are clicked in this View? 
+    onClick: function (e) {
+        console.log('in on click now');
+        if (e.target.classList.contains('charactersButton')) {
+            window.location.hash = 'searchFull';
+        } else if (e.target.classList.contains('matchupButton')) {
+            window.location.hash = 'battleSetup';
+
+        }
     },
 
     initialize: function () {
