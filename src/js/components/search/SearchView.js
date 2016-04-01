@@ -18,8 +18,10 @@ var SearchView = Backbone.View.extend({
     onClick: function () {
         var count = 0;
         var _this = this;
+        var holding;
 
         for (var i = 0; i < _this.children.length; i++) {
+
             this.children[i].remove();
         };
         
@@ -41,8 +43,10 @@ var SearchView = Backbone.View.extend({
     },
 
     render: function () {
-        this.$el.append(this.template());
+        this.$el.html(this.template());
     }
+
+ 
 });
 
 module.exports = SearchView;
