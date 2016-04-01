@@ -8,6 +8,8 @@ var cache = require('../cache/characterCache.js');
 
 var SearchView = Backbone.View.extend({
 
+    className: 'wrapper',
+
     template: _.template(require('./SearchView.html')),
    
     events: {
