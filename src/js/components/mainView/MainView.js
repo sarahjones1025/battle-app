@@ -12,22 +12,19 @@ var MainView = Backbone.View.extend({
     template: _.template(require('./MainView.html')),
 
     events: {
-        'click .charactersButton': 'onClick',
-        'click .matchupButton': 'onClick'
+        'click .charactersButton': 'onCharactersClick',
+        'click .matchupButton': 'onBattleSetupClick'
     },
 
-    onClick: function (e) {
-        console.log('in on click now');
-        if (e.target.classList.contains('charactersButton')) {
-            window.location.hash = 'searchFull';
-        } else if (e.target.classList.contains('matchupButton')) {
-            window.location.hash = 'battleSetup';
+    onCharactersClick: function () {
+        window.location.hash = 'searchFull';
+    },
 
-        }
+    onBattleSetupClick: function () {
+        window.location.hash = 'battleSetup';
     },
 
     initialize: function () {
-
         pDataCollection.fetch({ data: { limit: 5, order: 'desc' } });
 
         this.listenTo(dispatcher, 'show', this.show);
@@ -44,11 +41,9 @@ var MainView = Backbone.View.extend({
     },
 
     render: function () {
-
         this.$el.html(this.template());
 
         $('body').append(this.$el);
-        
     }
 
 });
