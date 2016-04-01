@@ -17,7 +17,7 @@ var HeroPickView = Backbone.View.extend({
         'click': 'onClick'
     },
 
-    template: _.template('./HeroPickView.html'),
+    template: _.template(require('./HeroPickView.html')),
 
     onClick: function () {
         //    We will listen for the 'pick' event now.  It is
@@ -41,6 +41,7 @@ var HeroPickView = Backbone.View.extend({
     },
 
     initialize: function (options) {
+        this.$el.html(this.template());
         this.listenTo(dispatcher, 'sync', this.render);
         if (options) {
             this.withHero = true;
