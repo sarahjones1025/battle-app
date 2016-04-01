@@ -2,6 +2,7 @@ var Backbone = require('backbone');
 var _ = require('underscore');
 var $ = require('jquery');
 
+
 var SearchItemView = Backbone.View.extend({
 
     tagName: 'li',
@@ -11,6 +12,10 @@ var SearchItemView = Backbone.View.extend({
     events: {
         'click .single-hero': 'toSingleHero',
         'click .to-the-battle': 'toBattle'
+    },
+
+    initialize: function () {
+        this.listenTo(this.model, 'sync', this.render);
     },
 
     render: function () {
