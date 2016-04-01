@@ -29,15 +29,6 @@ body{
 	background-attachment:fixed;
 }
 
-// .logo_wrapper{
-
-// 	background-repeat:no-repeat;
-// 	background-size:contain;
-// 	width:100%;
-// 	height:100%;
-
-// }
-
 main{
 
 	
@@ -115,18 +106,25 @@ header{
 }
 
 .buttons{
+	position: relative;
 	height:574px;
+	
+	img{
+    position: absolute;
+    left: 40%;
+    top: 37%;
+	}
+
 }
 
 .character_button{
 	background:url(../img/choose_button.png);
 	background-repeat:no-repeat;
 	display:block;
-	width:220px;
-	height:200px;
+	width:220px; 
+	height:200px; 
 	position: relative;
-	top:100px;
-	left:20%;
+
 	font-family: bebas_neue_regularregular;
 
 	h2{
@@ -137,6 +135,8 @@ header{
 	}
 
 	a{
+		font-family: Badaboom;
+		font-weight: 100;
 		text-decoration: none;
 		font-size: .75em;
 		color:yellow;
@@ -159,7 +159,7 @@ header{
 	width:220px;
 	height:200px;
 	position: relative;
-	top:50px;
+	top: 25px;
 	left:60%;
 	font-family: bebas_neue_regularregular;
 
@@ -171,6 +171,8 @@ header{
 	}
 
 	a{
+		font-family: Badaboom;
+		font-weight: 100;
 		text-decoration: none;
 		font-size: .75em;
 		color:yellow;
@@ -245,7 +247,7 @@ header{
 			background-repeat: no-repeat;
 			display: block;
 			width: 20%;
-			height:111px;
+			height:130px;
 			float:left;
 			margin-top: 7%;
 		}

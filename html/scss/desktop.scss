@@ -1,4 +1,4 @@
-@media screen and (min-width:800px){
+@media screen and (min-width:700px){
 
 	main{
 		width:80%;
@@ -10,6 +10,35 @@
 		top: -85px;
     	left: -91px;
 		z-index: 1;
+	}
+
+	.top_nav{
+		padding:0;
+		margin:30px 0 0 0;
+		float:right;
+
+		a{
+			padding: 10px 10px;
+		}
+	}
+
+	li{
+		color:yellow;
+		display: inline-block;
+		padding:5px;
+
+		&:last-child a{
+			padding: 10px 30px;
+			margin-left: 30px;
+		}
+	}
+
+	.character_button{
+		left: 10%;
+	}
+
+	.battle_button{
+
 	}
 
 	.main_toppicks, .recent_battles{
@@ -30,4 +59,33 @@
     	padding: 0 7.5%;
 	}
 	
+}
+
+@media screen and (min-width:1000px){
+
+	.top_nav{
+		
+		a{
+			padding: 15px 50px;
+		}
+	}
+
+	li{
+		
+
+		&:last-child a{
+			padding: 15px 65px;
+			margin-left: 30px;
+		}
+	}
+
+	.character_button{
+		top:100px; 
+		left:20%; 
+	}
+
+	.battle_button{
+
+	}
+
 }

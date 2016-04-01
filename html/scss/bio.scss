@@ -47,47 +47,73 @@
 		background-color: #000;
 		color: #fff;
 		float: left;
-		width: 14%;
+		width: 14.23%;
 		margin: 0;
 		padding: 0;
 
 		&:first-child{
-			width: 8%;
+			width: 7.3%;
 			text-align: left;
 		}
 
 		&:last-child{
-			width: 8%;
+			width: 7.3%;
 			padding-right: 0;
 			text-align: right;
 		}
 	}
 }
 
+.yellow_box {
+    background-color: yellow;
+    border: solid 1px #000;
+    height: 50px;
+    margin-top: 2.5%;
+    margin-bottom: 20px;
+}
+
 .character_bio{
 	width: 50%;
+	position: relative;
+	padding-right: 30px;
 	float: left;
 	box-sizing: border-box;
 
+	span{
+		font-size: 3em;
+	    position: absolute;
+	    top: -17px;
+	    left: -58px;
+	}
+	
+
 	img{
-    	margin-left: 9%;
+    	margin-left: 5%;
     }
 	
 	a{
-	    display: inline-block;
+		margin-top: 20px;
+	    display: block;
 	    padding: 20px 120px;
 	    text-decoration: none;
 	    color: #fff;
 	    background-color: red;
 	    text-align: center;
+	    font-size: 1.5em;
+	}
+	
+	h1{
+		margin: 0;
+	    font-family: Impact;
+	    color: blue;
+	    position: absolute;
+	    top: -65px;
+	    right: 390px;
+
+		// &:first-letter{
+  // 		}
 	}
 
-	h1{
-		background-color: yellow;
-		border: solid 1px #000;
-		font-family: Impact;
-		color: blue;
-	}
 }
 
 .categories{
@@ -100,12 +126,13 @@
 		div{
 			background-color: pink;
 			height: 23px;
-			width: 28%;
+			width: 28.3%;
 			position: absolute;
 			top: 0;
 			left: 0;
 			z-index: 2;
 		}
+
 	}
 }
 
@@ -113,14 +140,15 @@
 	float: right;
     width: 60%;
     background-color: #fff;
-    margin-right: 15px;
     border: solid 2px #000;
     background-image: url(../img/tile.jpg);
+    background-size: 14.6%;
 
 	
 	div{
 		list-style: none;
 		color: #000;
+		
 		h4{
 			padding: 4px;
 			margin: 4px;
@@ -140,11 +168,48 @@
 }
 
 .wins_losses{
+	padding: 5px;
+	margin-top: 20px;
 	background-color: #fff;
 	color: #000;
+
+	h3{
+		float: left;
+		margin: 5px;
+	}
+}
+
+.wins, .losses{
+	float: left;
+	width: 25%;
+
+	h3{
+		float: left;
+		margin: 5px;
+		text-decoration: underline;
+	}
+
+	div{
+		float: left;
+		width: 25px;
+		height: 25px;
+		border: solid 2px #000;
+	}
+
 }
 
 .description{
+	padding: 10px;
+    margin-top: 20px;
 	background-color: #fff;
 	color: #000;
+
+	h3{
+		margin: 0;
+	}
+
+	p{
+		font-family: Helvetica;
+		font-size: .8em;
+	}
 }
