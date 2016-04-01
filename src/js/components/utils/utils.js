@@ -1,5 +1,5 @@
-var eStats = require('./eStats.js')
-
+var eStats = require('./eStats.js');
+var SingleHeroModel = require('../singleHero/SingleHeroModel.js');
 
 // function Battle (player1, player2) {
 //     var eventList =[];
@@ -44,7 +44,7 @@ var utils = {
                 result = current;
             }
         });
-        return result;
+        return new SingleHeroModel(result);
     }
 };
 

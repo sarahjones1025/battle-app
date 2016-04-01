@@ -1,17 +1,14 @@
 var _ = require('underscore');
 var $ = require('jquery');
 var Backbone = require('backbone');
-var battlemanager = require('../battlemanager/data/character.js');
-
+// 
 // Child Views are BattleDisplayView
 //    healthbar views
 var BattleSpaceView = Backbone.View.extend({
 
-    template: _.template(require('./statsBattle.html')),
+    template1: _.template(require('./statsBattle.html')),
 
-    events: {
-        'click': 'onClick'
-    },
+    template2: _.template(require('./turnByTurn.html')),
 
     onClick: function () {
  
@@ -24,7 +21,14 @@ var BattleSpaceView = Backbone.View.extend({
     },
 
     initialize: function (options) {
-        this.$el.append(this.template());  
+
+
+        if (this.statBattle === true) {
+            this.$el.append(this.template1());  
+        } else {
+            this.$el.append(this.template2());  
+        }
+
 
         this.model1 = options.model1;
         this.model2 = options.model2;
@@ -53,6 +57,15 @@ var BattleSpaceView = Backbone.View.extend({
     },
 
     render: function () {
+
+        if (this.statBattle === true) {
+            var result = BattleManager.statBattle(this.model1.attributes, this.model2.attributes, 15);
+            $('.victories_left > .wins').html(result.fighter1.wins);
+            $('.victories_left > .percent').html(result.fighter1.wins / 15);
+            $('.victories_right > .wins').html(result.fighter2.wins);
+            $('.victories_right > .percent').html(result.fighter2.wins / 15);
+
+        }
 
     }
 

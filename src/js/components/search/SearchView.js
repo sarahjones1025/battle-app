@@ -17,9 +17,9 @@ var SearchView = Backbone.View.extend({
     },
 
     onClick: function () {
+        console.log('entering click event');
         var count = 0;
         var _this = this;
-        var holding;
 
         for (var i = 0; i < _this.children.length; i++) {
 
@@ -29,7 +29,7 @@ var SearchView = Backbone.View.extend({
         var list = utils.searchForName($('input').val());
 
         list.forEach(function (current) {
-            var currentModel = cache.getCharacter(current.id);
+            var currentModel = cache.getCharacter(current);
             if (count < 10) {
                 _this.children[ count ] = new SearchItemView({model:currentModel});
                 $('.searchView').append(_this.children[count].$el);

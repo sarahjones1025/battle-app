@@ -44,6 +44,8 @@ function set (id, model) {
 //  This is the External function that the application code uses.
 function getCharacter (heroData) {
 
+    console.log(heroData);
+
     //  It will get a character from the cache and create a new 
     //  model.
     var cached = get(heroData.id);

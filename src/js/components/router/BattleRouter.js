@@ -19,7 +19,7 @@ var BattleRouter = Backbone.Router.extend({
         'singleHero/:hero': 'singleHero',
         'battleSetup/:hero': 'battleSetup',
         'battleSetup': 'battleSetupNoHero',
-        'battleSpace/:hero1/:hero2': 'battleNow',
+        'battleSpace/:hero1/:hero2/:type': 'battleNow',
         'searchFull': 'search',
         '*notFound': 'notFound'
     },
