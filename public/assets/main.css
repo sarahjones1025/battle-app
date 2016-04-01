@@ -1,12 +1,543 @@
-.hero-pick {
-  height: 100%;
-  width: 50px;
-  background-color: blue;
-  padding: 20px; }
+/* CLEARFIX */
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table; }
 
-.hero-pick img {
-    height: 100%;
+.clearfix:after {
+  clear: both; }
+
+.clearfix {
+  zoom: 1;
+  /* ie 6/7 */ }
+
+.clear {
+  clear: both; }
+
+@media screen and (min-width: 800px) {
+  main {
+    width: 80%;
+    margin: 0 auto; }
+
+  .star {
+    position: absolute;
+    top: -85px;
+    left: -91px;
+    z-index: 1; }
+
+  .main_toppicks, .recent_battles {
+    float: left;
+    width: 50%; }
+
+  .battle1, .battle2 {
     width: 100%;
-}
+    height: 200px;
+    margin: 0 auto 20px auto; }
+
+  footer {
+    height: 100px;
+    margin: 0 auto;
+    padding: 0 7.5%; } }
+@font-face {
+  font-family: Badaboom;
+  src: url(../fonts/badaboom.ttf);
+  font-weight: 100; }
+@font-face {
+  font-family: Digitalstrip;
+  src: url(../fonts/digitalstrip_regular.ttf); }
+/*
+    SIL Open Font License v1.10
+    License found at: http://www.fontsquirrel.com/license/bebas-neue
+*/
+@font-face {
+  font-family: 'bebas_neue_regularregular';
+  src: url("../fonts/bebasneue_regular-webfont.eot");
+  src: url("../fonts/bebasneue_regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/bebasneue_regular-webfont.woff2") format("woff2"), url("../fonts/bebasneue_regular-webfont.woff") format("woff"), url("../fonts/bebasneue_regular-webfont.ttf") format("truetype"), url("../fonts/bebasneue_regular-webfont.svg#bebas_neue_regularregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+form li {
+  list-style: none; }
+form li p, form li button {
+  display: inline-block; }
+form input {
+  height: 70px;
+  border: solid 5px yellow;
+  background: #2286e8;
+  box-sizing: border-box;
+  vertical-align: middle; }
+  form input:first-child {
+    width: 84%;
+    font-size: 1.3em;
+    color: yellow;
+    text-indent: 20px;
+    font-family: 'bebas_neue_regularregular';
+    letter-spacing: .2em; }
+  form input:nth-child(2) {
+    width: 14%;
+    margin-left: 1%;
+    font-size: 3em;
+    padding-top: 5px; }
+
+.top_picks {
+  margin: 30px 0; }
+  .top_picks div {
+    float: left;
+    width: 30%;
+    margin-right: 5%;
+    text-align: center; }
+    .top_picks div:last-child {
+      margin: 0; }
+    .top_picks div img {
+      border: solid 10px black;
+      width: 100%;
+      box-sizing: border-box;
+      display: block;
+      margin: 0;
+      padding: 0; }
+  .top_picks h1 {
+    font-size: 1.5em; }
+
+.searchresults {
+  display: none; }
+  .searchresults li {
+    display: block; }
+
+.active {
+  display: block; }
+
+.pre-pick {
+  width: 100%;
+  height: inherit;
+  background-color: orange;
+  border: solid 5px #000;
+  color: #000; }
+  .pre-pick h1 {
+    text-align: center;
+    font-size: 14em;
+    font-family: Badaboom;
+    margin: 0;
+    padding: 0; }
+
+.picked {
+  z-index: 50; }
+
+.character_1, .character_2 {
+  float: left;
+  width: 250px; }
+
+.versus {
+  float: left;
+  width: 10%; }
+
+.battle_options {
+  text-align: center; }
+  .battle_options a {
+    display: inline-block;
+    padding: 15px 30px;
+    font-family: Badaboom;
+    background-color: orange;
+    border: solid 5px #000;
+    text-decoration: none;
+    font-size: 1.5em;
+    color: #000;
+    width: 125px; }
+
+.arena {
+  background: url(../img/sidewalk.jpg);
+  background-size: 100%;
+  width: 80%;
+  background-repeat: no-repeat;
+  padding: 0 10%; }
+
+.health_bars {
+  padding: 20px 0; }
+
+.health_left, .health_right {
+  display: block;
+  width: 35%;
+  height: 60px;
+  background: red; }
+
+.health_left {
+  float: left; }
+
+.health_right {
+  float: right; }
+
+.combatants {
+  position: relative; }
+
+.combatant_one, .combatant_two {
+  float: left;
+  width: 249px;
+  text-align: center; }
+  .combatant_one p, .combatant_two p {
+    font-size: 1.6em;
+    text-shadow: 2px 2px 2px #000; }
+
+.combatant_one {
+  float: left; }
+
+.combatant_two {
+  float: right; }
+
+.char_pic {
+  display: block;
+  margin: 0 auto; }
+
+.action_area {
+  width: 100%;
+  height: 250px;
+  position: absolute; }
+
+.stats_battle, .turn_battle {
+  background: #7198b3;
+  border: 20px solid #f7942e;
+  margin: 30px 0; }
+
+.victories_left, .victories_right, .battle_labels {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  width: 33%;
+  float: left;
+  text-align: center; }
+  .victories_left li, .victories_right li, .battle_labels li {
+    display: block;
+    padding: 40px 0;
+    font-size: 1.5em; }
+
+.battle_buttons {
+  width: 100%; }
+  .battle_buttons ul {
+    padding: 0; }
+  .battle_buttons li {
+    float: left; }
+  .battle_buttons li:first-child {
+    margin-right: 10px; }
+  .battle_buttons li:last-child {
+    margin-left: 10px;
+    float: right; }
+
+.button {
+  display: inline-block;
+  width: 30%;
+  height: 100px;
+  background: orange;
+  text-align: center;
+  border: 6px solid #000; }
+  .button p {
+    font-size: 2em;
+    color: #000;
+    font-family: Badaboom; }
+
+.turn_battle .char_one, .turn_battle .char_two {
+  display: table; }
+  .turn_battle .char_one p, .turn_battle .char_two p {
+    font-size: 1.5em;
+    display: table-cell;
+    vertical-align: middle; }
+  .turn_battle .char_one img, .turn_battle .char_two img {
+    width: 100px; }
+.turn_battle .char_one {
+  float: left;
+  padding: 20px 0 0 20px; }
+  .turn_battle .char_one img {
+    float: left;
+    padding-right: 10px; }
+.turn_battle .char_two {
+  float: right;
+  padding: 0 20px 20px 0; }
+  .turn_battle .char_two img {
+    float: right;
+    padding-left: 10px; }
+
+.turns {
+  list-style-type: none;
+  padding: 0;
+  margin: 0; }
+
+.card {
+  background-color: #fff4d5; }
+
+.combatant {
+  text-align: center;
+  padding-top: 70px;
+  background-image: url(../img/bio_bg_03.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 50%;
+  float: left;
+  position: relative;
+  box-sizing: border-box; }
+  .combatant h1 {
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    font-family: Impact;
+    text-transform: uppercase; }
+    .combatant h1:first-letter {
+      font-size: 4em; }
+
+.bio_img {
+  background-image: url(../img/detail.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 20;
+  height: 568px;
+  box-sizing: border-box;
+  margin: 0 7% 17% 7%; }
+
+.levels {
+  background-color: #000; }
+  .levels p {
+    text-align: center;
+    background-color: #000;
+    color: #fff;
+    float: left;
+    width: 14%;
+    margin: 0;
+    padding: 0; }
+    .levels p:first-child {
+      width: 8%;
+      text-align: left; }
+    .levels p:last-child {
+      width: 8%;
+      padding-right: 0;
+      text-align: right; }
+
+.character_bio {
+  width: 50%;
+  float: left;
+  box-sizing: border-box; }
+  .character_bio img {
+    margin-left: 9%; }
+  .character_bio a {
+    display: inline-block;
+    padding: 20px 120px;
+    text-decoration: none;
+    color: #fff;
+    background-color: red;
+    text-align: center; }
+  .character_bio h1 {
+    background-color: yellow;
+    border: solid 1px #000;
+    font-family: Impact;
+    color: blue; }
+
+.categories {
+  padding-top: 20px; }
+  .categories div {
+    position: relative; }
+    .categories div div {
+      background-color: pink;
+      height: 23px;
+      width: 28%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 2; }
+
+.power_rating {
+  float: right;
+  width: 60%;
+  background-color: #fff;
+  margin-right: 15px;
+  border: solid 2px #000;
+  background-image: url(../img/tile.jpg); }
+  .power_rating div {
+    list-style: none;
+    color: #000; }
+    .power_rating div h4 {
+      padding: 4px;
+      margin: 4px;
+      z-index: 10;
+      position: relative; }
+  .power_rating h3 {
+    padding: 0;
+    margin: 0;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    letter-spacing: .5em; }
+
+.wins_losses {
+  background-color: #fff;
+  color: #000; }
+
+.description {
+  background-color: #fff;
+  color: #000; }
+
+body {
+  font-family: "bebas_neue_regularregular";
+  color: yellow;
+  letter-spacing: .2em;
+  background: url(../img/background.jpg);
+  margin: 0;
+  position: relative;
+  background-size: cover;
+  background-attachment: fixed; }
+
+header {
+  width: 90%;
+  position: relative;
+  height: 115px;
+  z-index: 0; }
+  header h1 {
+    font-family: Badaboom;
+    margin: 0;
+    position: relative;
+    float: left;
+    font-weight: 100;
+    margin-left: 19%;
+    font-size: 2.2em; }
+    header h1 a {
+      color: yellow;
+      text-decoration: none; }
+  header .first_s {
+    color: red;
+    font-size: 3em;
+    text-shadow: 2px 5px 5px #000; }
+  header .top_nav {
+    padding: 0;
+    margin: 30px 0 0 0;
+    float: right; }
+    header .top_nav button {
+      display: block;
+      padding: 15px 50px;
+      color: yellow;
+      background-color: #2286e8;
+      font-family: 'bebas_neue_regularregular';
+      font-size: 1em;
+      text-decoration: none; }
+  header li {
+    color: yellow;
+    display: inline-block;
+    padding: 5px; }
+    header li:last-child a {
+      padding: 15px 65px;
+      margin-left: 30px; }
+
+.main_buttons {
+  background: url(../img/marvel_group.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: block;
+  height: 574px;
+  position: relative; }
+
+.buttons {
+  height: 574px; }
+
+.character_button {
+  background: url(../img/choose_button.png);
+  background-repeat: no-repeat;
+  display: block;
+  width: 220px;
+  height: 200px;
+  position: relative;
+  top: 100px;
+  left: 20%;
+  font-family: bebas_neue_regularregular; }
+  .character_button h2 {
+    margin: 0;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 2em; }
+  .character_button a {
+    text-decoration: none;
+    font-size: .75em;
+    color: yellow;
+    display: block;
+    padding: 60px 0; }
+  .character_button p {
+    color: yellow;
+    margin: 0;
+    padding: 55px 20px;
+    font-size: 1.5em; }
+
+.battle_button {
+  background: url(../img/battle_button.png);
+  background-repeat: no-repeat;
+  display: block;
+  width: 220px;
+  height: 200px;
+  position: relative;
+  top: 50px;
+  left: 60%;
+  font-family: bebas_neue_regularregular; }
+  .battle_button h2 {
+    margin: 0;
+    padding: 10px 56px;
+    text-align: center;
+    font-size: 2em; }
+  .battle_button a {
+    text-decoration: none;
+    font-size: .75em;
+    color: yellow;
+    padding: 80px 0;
+    display: block; }
+
+.picks_battles {
+  font-family: bebas_neue_regularregular; }
+  .picks_battles .main_toppicks h3 {
+    color: yellow;
+    text-align: center;
+    font-size: 2em; }
+  .picks_battles .main_toppicks ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none; }
+  .picks_battles .main_toppicks li {
+    display: table;
+    margin: 20px 0; }
+    .picks_battles .main_toppicks li img {
+      float: left; }
+    .picks_battles .main_toppicks li p {
+      float: left;
+      color: yellow;
+      font-size: 1.5em;
+      margin: 0;
+      padding: 55px 15px; }
+  .picks_battles .recent_battles h3 {
+    color: yellow;
+    text-align: center;
+    font-size: 2em; }
+  .picks_battles .recent_battles ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none; }
+  .picks_battles .recent_battles .recent_versus {
+    background: url(../img/versus.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    display: block;
+    width: 20%;
+    height: 111px;
+    float: left;
+    margin-top: 7%; }
+  .picks_battles .recent_battles .battle1 .character1, .picks_battles .recent_battles .battle1 .character2, .picks_battles .recent_battles .battle2 .character1, .picks_battles .recent_battles .battle2 .character2 {
+    background: url(../img/character_square.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 39%;
+    height: 200px;
+    float: left; }
+
+footer {
+  background: #000;
+  height: 100px;
+  margin-top: 30px;
+  padding: 0 10%; }
+  footer p {
+    float: left;
+    color: yellow;
+    font-family: bebas_neue_regularregular; }
+    footer p:nth-child(2) {
+      float: right; }
 
 /*# sourceMappingURL=main.css.map */
