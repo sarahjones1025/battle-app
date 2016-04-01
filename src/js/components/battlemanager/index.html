@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+        <title>Battle Manager Example</title>
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Place favicon.ico in the root directory -->
+    </head>
+    <body>
+
+        <script src="data/characters.js"></script>  <!-- loads the character data as a variable called character -->
+        <script src="data/messages.js"></script>    <!-- loads the message data as a variable called messages -->
+        <script src="js/battlemanager.js"></script> <!-- loads the BattleManager object -->
+        
+        <script>
+            /************  USAGE EXAMPLES  ****************************/
+            /**********************************************************/
+
+                //adds messages to the battlemanager
+                //must do before calling narrativeBattle or statBattle
+                BattleManager.addMessages( messages );
+
+                //runs a single narrative battle
+                //returns an array of event objects that document the battle
+                console.log( "narrativeBattle() ", BattleManager.narrativeBattle( characters[ 12 ], characters[ 101 ] ) );
+
+                //runs a series of narrative battles
+                //third argument: the number of narrative battles to run
+                //returns an object that includes the win/loss ratio of battles and 
+                //the full history of all stat battles
+                console.log( "statBattle() ", BattleManager.statBattle( characters[ 12 ], characters[ 101 ], 30 ) );
+
+            /**********************************************************/
+
+        </script>
+    </body>
+</html>

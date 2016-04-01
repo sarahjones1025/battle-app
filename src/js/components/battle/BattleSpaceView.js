@@ -1,6 +1,7 @@
 var _ = require('underscore');
 var $ = require('jquery');
 var Backbone = require('backbone');
+var battlemanager = require('../battlemanager/data/character.js');
 
 // Child Views are BattleDisplayView
 //    healthbar views
