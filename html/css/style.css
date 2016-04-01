@@ -25,20 +25,27 @@
     left: -91px;
     z-index: 1; }
 
-  .top_nav {
-    padding: 0;
-    margin: 30px 0 0 0;
-    float: right; }
-    .top_nav a {
-      padding: 10px 10px; }
-
-  li {
-    color: yellow;
-    display: inline-block;
-    padding: 5px; }
-    li:last-child a {
-      padding: 10px 30px;
-      margin-left: 30px; }
+  header {
+    width: 90%;
+    height: 115px; }
+    header h1 {
+      margin: 0;
+      margin-left: 19%;
+      font-size: 2.2em; }
+    header .top_nav {
+      padding: 0;
+      margin: 30px 0 0 0;
+      float: right; }
+      header .top_nav a {
+        padding: 15px 50px; }
+    header li {
+      color: yellow;
+      display: inline-block;
+      padding: 5px;
+      width: auto; }
+      header li:last-child a {
+        padding: 10px 30px;
+        margin-left: 30px; }
 
   .character_button {
     left: 10%; }
@@ -46,6 +53,10 @@
   .main_toppicks, .recent_battles {
     float: left;
     width: 50%; }
+    .main_toppicks li img, .recent_battles li img {
+      float: left; }
+    .main_toppicks li p, .recent_battles li p {
+      float: left; }
 
   .battle1, .battle2 {
     width: 100%;
@@ -55,7 +66,9 @@
   footer {
     height: 100px;
     margin: 0 auto;
-    padding: 0 7.5%; } }
+    padding: 0 7.5%; }
+    footer p {
+      margin-bottom: 0; } }
 @media screen and (min-width: 1000px) {
   .top_nav a {
     padding: 15px 50px; }
@@ -447,18 +460,14 @@ body {
   background-attachment: fixed; }
 
 header {
-  width: 90%;
   position: relative;
-  height: 115px;
   z-index: 0; }
   header h1 {
     font-family: Badaboom;
-    margin: 0;
-    position: relative;
     float: left;
     font-weight: 100;
-    margin-left: 19%;
-    font-size: 2.2em; }
+    margin-left: 5%;
+    font-size: 1.5em; }
     header h1 a {
       color: yellow;
       text-decoration: none; }
@@ -468,11 +477,10 @@ header {
     text-shadow: 2px 5px 5px #000; }
   header .top_nav {
     padding: 0;
-    margin: 30px 0 0 0;
     float: right; }
     header .top_nav a {
       display: block;
-      padding: 15px 50px;
+      padding: 10px 10px;
       color: yellow;
       background-color: #2286e8;
       font-family: 'bebas_neue_regularregular';
@@ -481,7 +489,8 @@ header {
   header li {
     color: yellow;
     display: inline-block;
-    padding: 5px; }
+    padding: 5px;
+    width: 100%; }
     header li:last-child a {
       padding: 15px 65px;
       margin-left: 30px; }
@@ -564,16 +573,14 @@ header {
     margin: 0;
     list-style-type: none; }
   .picks_battles .main_toppicks li {
-    display: table;
-    margin: 20px 0; }
+    width: 100%; }
     .picks_battles .main_toppicks li img {
-      float: left; }
+      width: 80%; }
     .picks_battles .main_toppicks li p {
-      float: left;
       color: yellow;
       font-size: 1.5em;
       margin: 0;
-      padding: 55px 15px; }
+      padding: 15px; }
   .picks_battles .recent_battles h3 {
     color: yellow;
     text-align: center;

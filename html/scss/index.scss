@@ -6,6 +6,8 @@ $orange: #f7942e;
 
 @import "clearfix";
 
+@import "tablet";
+
 @import "desktop";
 
 @import "fonts";
@@ -40,20 +42,17 @@ main{
 }
 
 header{
-	width: 90%;
+	
 	position: relative;
-	height: 115px;
 	z-index: 0;
 
 	h1{
 		font-family:Badaboom;
-		// color:yellow;
-		margin:0;
-		position: relative;
+		// margin:0;
 		float:left;
 		font-weight: 100;
-		margin-left: 19%;
-    	font-size: 2.2em;
+		margin-left: 5%;
+    	font-size: 1.5em;
 
 			a{
 				color: yellow;
@@ -69,12 +68,12 @@ header{
 
 	.top_nav{
 		padding:0;
-		margin:30px 0 0 0;
+		// margin:30px 0 0 0;
 		float:right;
 
 		a{
 			display: block;
-			padding: 15px 50px;
+			padding: 10px 10px;
 			color: yellow;
 			background-color: #2286e8;
 			font-family: 'bebas_neue_regularregular';
@@ -87,6 +86,7 @@ header{
 		color:yellow;
 		display: inline-block;
 		padding:5px;
+		width:100%;
 
 		&:last-child a{
 			padding: 15px 65px;
@@ -204,19 +204,18 @@ header{
 		}
 
 		li{
-			display: table;
-			margin: 20px 0;
+			width: 100%;
 			
 			img{
-				float:left;
+				width:80%;
 			}
 
 			p{
-				float:left;
 				color: yellow;
  	    		font-size: 1.5em;
     			margin: 0;
-    			padding: 55px 15px;
+    			// padding: 55px 15px;
+    			padding: 15px;
 			}
 
 		}
