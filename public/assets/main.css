@@ -59,43 +59,48 @@ form li {
   list-style: none; }
 form li p, form li button {
   display: inline-block; }
-form input {
-  height: 70px;
-  border: solid 5px yellow;
-  background: #2286e8;
-  box-sizing: border-box;
-  vertical-align: middle; }
-  form input:first-child {
+
+.wrapper {
+  margin: 0 11%; }
+  .wrapper input {
+    height: 70px;
+    border: solid 5px yellow;
+    background: #2286e8;
+    box-sizing: border-box;
+    vertical-align: middle;
     width: 84%;
     font-size: 1.3em;
     color: yellow;
     text-indent: 20px;
     font-family: 'bebas_neue_regularregular';
     letter-spacing: .2em; }
-  form input:nth-child(2) {
+  .wrapper button {
+    height: 70px;
+    border: solid 5px yellow;
+    background: #2286e8;
+    box-sizing: border-box;
+    vertical-align: middle;
     width: 14%;
     margin-left: 1%;
     font-size: 3em;
     padding-top: 5px; }
 
-.top_picks {
-  margin: 30px 0; }
-  .top_picks div {
-    float: left;
-    width: 30%;
-    margin-right: 5%;
-    text-align: center; }
-    .top_picks div:last-child {
-      margin: 0; }
-    .top_picks div img {
-      border: solid 10px black;
-      width: 100%;
-      box-sizing: border-box;
-      display: block;
-      margin: 0;
-      padding: 0; }
-  .top_picks h1 {
-    font-size: 1.5em; }
+.top_picks div {
+  float: left;
+  width: 30%;
+  margin-right: 5%;
+  text-align: center; }
+  .top_picks div:last-child {
+    margin: 0; }
+  .top_picks div img {
+    border: solid 10px black;
+    width: 100%;
+    box-sizing: border-box;
+    display: block;
+    margin: 0;
+    padding: 0; }
+.top_picks h1 {
+  font-size: 1.5em; }
 
 .searchresults {
   display: none; }
