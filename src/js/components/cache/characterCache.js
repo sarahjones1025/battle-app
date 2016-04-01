@@ -42,12 +42,12 @@ function set (id, model) {
 
 
 //  This is the External function that the application code uses.
-function getCharacter (heroId) {
+function getCharacter (heroData) {
 
     //  It will get a character from the cache and create a new 
     //  model.
-    var cached = get(heroId);
-    var model = new SingleHeroModel({ id: heroId });
+    var cached = get(heroData.id);
+    var model = new SingleHeroModel(heroData);
 
     if (!cached) {
 
@@ -57,7 +57,7 @@ function getCharacter (heroId) {
             success: function () {
                 console.log('this is where we add to cache')
                 console.log( model.get('thumbnail'));
-                set(heroId, model);
+                set(heroData.id, model);
             }
         });
     } else {

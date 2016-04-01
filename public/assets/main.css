@@ -14,7 +14,7 @@
 .clear {
   clear: both; }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 700px) {
   main {
     width: 80%;
     margin: 0 auto; }
@@ -24,6 +24,24 @@
     top: -85px;
     left: -91px;
     z-index: 1; }
+
+  .top_nav {
+    padding: 0;
+    margin: 30px 0 0 0;
+    float: right; }
+    .top_nav a {
+      padding: 10px 10px; }
+
+  li {
+    color: yellow;
+    display: inline-block;
+    padding: 5px; }
+    li:last-child a {
+      padding: 10px 30px;
+      margin-left: 30px; }
+
+  .character_button {
+    left: 10%; }
 
   .main_toppicks, .recent_battles {
     float: left;
@@ -38,6 +56,17 @@
     height: 100px;
     margin: 0 auto;
     padding: 0 7.5%; } }
+@media screen and (min-width: 1000px) {
+  .top_nav a {
+    padding: 15px 50px; }
+
+  li:last-child a {
+    padding: 15px 65px;
+    margin-left: 30px; }
+
+  .character_button {
+    top: 100px;
+    left: 20%; } }
 @font-face {
   font-family: Badaboom;
   src: url(fonts/badaboom.ttf);
@@ -213,16 +242,8 @@ form li p, form li button {
     font-size: 1.5em; }
 
 .battle_buttons {
-  width: 100%; }
-  .battle_buttons ul {
-    padding: 0; }
-  .battle_buttons li {
-    float: left; }
-  .battle_buttons li:first-child {
-    margin-right: 10px; }
-  .battle_buttons li:last-child {
-    margin-left: 10px;
-    float: right; }
+  width: 100%;
+  display: block; }
 
 .button {
   display: inline-block;
@@ -303,35 +324,53 @@ form li p, form li button {
     background-color: #000;
     color: #fff;
     float: left;
-    width: 14%;
+    width: 14.23%;
     margin: 0;
     padding: 0; }
     .levels p:first-child {
-      width: 8%;
+      width: 7.3%;
       text-align: left; }
     .levels p:last-child {
-      width: 8%;
+      width: 7.3%;
       padding-right: 0;
       text-align: right; }
 
+.yellow_box {
+  background-color: yellow;
+  border: solid 1px #000;
+  height: 50px;
+  margin-top: 2.5%;
+  margin-bottom: 20px; }
+
 .character_bio {
   width: 50%;
+  position: relative;
+  padding-right: 30px;
   float: left;
   box-sizing: border-box; }
+  .character_bio span {
+    font-size: 3em;
+    position: absolute;
+    top: -17px;
+    left: -58px; }
   .character_bio img {
-    margin-left: 9%; }
+    margin-left: 5%; }
   .character_bio a {
-    display: inline-block;
+    margin-top: 20px;
+    display: block;
     padding: 20px 120px;
     text-decoration: none;
     color: #fff;
     background-color: red;
-    text-align: center; }
+    text-align: center;
+    font-size: 1.5em; }
   .character_bio h1 {
-    background-color: yellow;
-    border: solid 1px #000;
+    margin: 0;
     font-family: Impact;
-    color: blue; }
+    color: blue;
+    position: absolute;
+    top: -65px;
+    right: 390px; }
 
 .categories {
   padding-top: 20px; }
@@ -340,7 +379,7 @@ form li p, form li button {
     .categories div div {
       background-color: pink;
       height: 23px;
-      width: 28%;
+      width: 28.3%;
       position: absolute;
       top: 0;
       left: 0;
@@ -350,9 +389,9 @@ form li p, form li button {
   float: right;
   width: 60%;
   background-color: #fff;
-  margin-right: 15px;
   border: solid 2px #000;
-  background-image: url(../img/tile.jpg); }
+  background-image: url(../img/tile.jpg);
+  background-size: 14.6%; }
   .power_rating div {
     list-style: none;
     color: #000; }
@@ -370,12 +409,37 @@ form li p, form li button {
     letter-spacing: .5em; }
 
 .wins_losses {
+  padding: 5px;
+  margin-top: 20px;
   background-color: #fff;
   color: #000; }
+  .wins_losses h3 {
+    float: left;
+    margin: 5px; }
+
+.wins, .losses {
+  float: left;
+  width: 25%; }
+  .wins h3, .losses h3 {
+    float: left;
+    margin: 5px;
+    text-decoration: underline; }
+  .wins div, .losses div {
+    float: left;
+    width: 25px;
+    height: 25px;
+    border: solid 2px #000; }
 
 .description {
+  padding: 10px;
+  margin-top: 20px;
   background-color: #fff;
   color: #000; }
+  .description h3 {
+    margin: 0; }
+  .description p {
+    font-family: Helvetica;
+    font-size: .8em; }
 
 body {
   font-family: "bebas_neue_regularregular";

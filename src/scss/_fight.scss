@@ -84,23 +84,9 @@
 
 .battle_buttons{
 	width:100%;
+    display: block;
 
-	ul{
-		padding:0;
-	}
 
-	li{
-		float: left;
-	}
-
-	li:first-child{
-		margin-right:10px;
-	}
-
-	li:last-child{
-		margin-left:10px;
-		float: right;
-	}
 }
 
 .button{

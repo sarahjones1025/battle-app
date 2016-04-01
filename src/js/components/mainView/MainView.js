@@ -25,6 +25,10 @@ var MainView = Backbone.View.extend({
     },
 
     initialize: function () {
+        this.$el.html(this.template());
+        $('body').append(this.$el);
+
+
         pDataCollection.fetch({ data: { limit: 5, order: 'desc' } });
 
         this.listenTo(dispatcher, 'show', this.show);
@@ -36,14 +40,11 @@ var MainView = Backbone.View.extend({
         };
 
         view.render();
-        this.$el.append(view.$el);
+        $('.entry-point').append(view.$el);
         this.savedView = view;
     },
 
     render: function () {
-        this.$el.html(this.template());
-
-        $('body').append(this.$el);
     }
 
 });

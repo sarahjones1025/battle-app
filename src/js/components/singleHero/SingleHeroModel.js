@@ -17,6 +17,7 @@ var SingleHeroModel = Backbone.Model.extend({
                  + '?'
                  + marvelKey;
 
+
         };   
     },
 
