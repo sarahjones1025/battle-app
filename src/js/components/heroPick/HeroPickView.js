@@ -14,12 +14,13 @@ var HeroPickView = Backbone.View.extend({
     tagName: 'div',
 
     events: {
-        'click': 'onClick'
+        'click img': 'onClick'
     },
 
     template: _.template(require('./HeroPickView.html')),
 
     onClick: function () {
+        console.log('onclick works');
         //    We will listen for the 'pick' event now.  It is
         //  important to listen now and stop listening later, 
         //  because there is another view that uses the 
@@ -27,6 +28,7 @@ var HeroPickView = Backbone.View.extend({
         //    This event is triggered when the user picks
         //  a character to fight from the search results.
         // this.listenTo(dispatcher, 'pick', this.show);
+
         if ((searchController.holdOff() === false) && (this.withHero === false)) {
             searchController.disable();
             this.searchView = new MiniSearchView();
@@ -41,10 +43,12 @@ var HeroPickView = Backbone.View.extend({
     },
 
     initialize: function (options) {
+        console.log("options", options)
         this.$el.html(this.template());
         this.listenTo(dispatcher, 'sync', this.render);
         if (options) {
             this.withHero = true;
+            console.log("with hero")
 
             //******************
            // dock.attr('src', (options.model.get('thumbnail')
@@ -58,6 +62,7 @@ var HeroPickView = Backbone.View.extend({
 
     show: function (model) {
 
+        console.log("show inside the pick", model);
         // this.stopListening('pick');
         //  show the current character.
         //INCOMPLETE!!! Set the message here.
@@ -67,7 +72,7 @@ var HeroPickView = Backbone.View.extend({
         if (model) {
             this.model = model;
             this.searchView.remove();
-            this.img.attr('src', (this.model.get('thumbnail')
+            $('.picked > img').attr('src', (this.model.get('thumbnail')
                     + '/portrait_xlarge'
                     + '.' + options.model.get('extension')));
         };
