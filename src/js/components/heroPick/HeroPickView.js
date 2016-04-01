@@ -74,7 +74,7 @@ var HeroPickView = Backbone.View.extend({
             this.searchView.remove();
             $('.picked > img').attr('src', (this.model.get('thumbnail')
                     + '/portrait_xlarge'
-                    + '.' + options.model.get('extension')));
+                    + '.' + this.model.get('extension')));
         };
 
         searchController.enable();
