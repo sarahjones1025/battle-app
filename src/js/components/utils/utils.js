@@ -20,24 +20,37 @@ var eStats = require('./eStats.js')
 //     return url + '?keyCode=' + marvelKey;
 
 // }
+var utils = {
 
-var searchForName = function (name) {
-    console.log(name);
-    var searchPattern = new RegExp('^' + name);
-    var resultArray = [];
-    var count = 0;
-    eStats.forEach(function (current) {
-        if ((searchPattern.test(current.name)) && (count < 10)) {
-            resultArray.push(current);
-            count++;
-        }
-    });
-    console.log(resultArray);
-    return resultArray;
+    searchForName: function (name) {
+        console.log(name);
+        var searchPattern = new RegExp('^' + name);
+        var resultArray = [];
+        var count = 0;
+        eStats.forEach(function (current) {
+            if ((searchPattern.test(current.name)) && (count < 10)) {
+                resultArray.push(current);
+                count++;
+            }
+        });
+        console.log(resultArray);
+        return resultArray;
+    },
+
+    searchForId: function (id) {
+        var result;
+        eStats.forEach(function (current) {
+            if (current.id === id) {
+                result = current;
+            }
+        });
+        return result;
+    }
 };
 
 
 
-module.exports = searchForName;
+module.exports = utils;
+
 
 

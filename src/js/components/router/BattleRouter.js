@@ -1,5 +1,4 @@
 var Backbone = require('backbone');
-
 var dispatcher = require('../router/dispatcher.js');
 var BattleSpaceView = require('../battle/BattleSpaceView.js');
 var SearchView = require('../search/SearchView.js');
@@ -8,6 +7,11 @@ var SingleHeroModel = require('../singleHero/SingleHeroModel.js');
 var BattleSetupView = require('../battle/BattleSetupView.js');
 var HomeView = require('../homeView/HomeView.js');
 var cache = require('../cache/characterCache.js');
+var utils = require('../utils/utils.js');
+
+
+
+
 var BattleRouter = Backbone.Router.extend({
     
     routes: {
@@ -30,7 +34,8 @@ var BattleRouter = Backbone.Router.extend({
     },
 
     battleSetup: function ( heroId ) {
-        var model = cache.getCharacter(heroId);
+        var data = utils.searchForId(heroId);
+        var model = cache.getCharacter(data);
 
         dispatcher.trigger('show', 
             new BattleSetupView({ model1: model, withHero: true }));

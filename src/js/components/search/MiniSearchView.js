@@ -4,6 +4,7 @@ var Backbone = require('backbone');
 var dispatcher = require('../router/dispatcher.js');
 var searchForName = require('../utils/utils.js');
 var cache = require('../cache/characterCache.js');
+var utils = require('../utils/utils.js');
 
 
 
@@ -16,7 +17,7 @@ var HeroChildView = Backbone.View.extend({
         'click': 'onClick'
     },
 
-    template: _.template(require('./SearchItemView.html')),
+    template: _.template(require('./battleSearchItem.html')),
 
     initialize: function (options) {
         this.searchView = options.searchView;        
@@ -59,12 +60,12 @@ var MiniSearchView = Backbone.View.extend({
         for (var i = 0; i < _this.children.length; i++) {
             this.children[i].remove();
         }
-        var list = searchForName($('.search-mini').val());
+        var list = utils.searchForName($('.search-mini').val());
         list.forEach(function (current) {
-            var currentModel = cache.getCharacter(current.id);
+            var currentModel = cache.getCharacter(current);
             if (count < 10) {
                 _this.children[ count ] = new HeroChildView({model: currentModel, searchView: _this});
-                $('.results-dock').append(_this.children[count].$el);
+                $('.searchView').append(_this.children[count].$el);
                 _this.children[count].render();
                 count++;
             }
