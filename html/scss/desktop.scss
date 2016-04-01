@@ -1,0 +1,28 @@
+@media screen and (min-width:1000px){
+
+	.top_nav{
+		
+		a{
+			padding: 15px 50px;
+		}
+	}
+
+	li{
+		
+
+		&:last-child a{
+			padding: 15px 65px;
+			margin-left: 30px;
+		}
+	}
+
+	.character_button{
+		top:100px; 
+		left:20%; 
+	}
+
+	.battle_button{
+
+	}
+
+}
