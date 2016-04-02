@@ -322,7 +322,6 @@ form li p, form li button {
       font-size: 4em; }
 
 .bio_img {
-  background-image: url(../img/detail.jpg);
   background-size: contain;
   background-repeat: no-repeat;
   z-index: 20;
