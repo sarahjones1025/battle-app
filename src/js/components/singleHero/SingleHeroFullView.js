@@ -1,7 +1,6 @@
 var _ = require('underscore');
 var $ = require('jquery');
 var Backbone = require('backbone');
-
 var SingleHeroModel = require('./SingleHeroModel.js');
 
 var SingleHeroFullView = Backbone.View.extend({
@@ -26,7 +25,7 @@ var SingleHeroFullView = Backbone.View.extend({
         this.listenTo(this.model, 'sync', this.render);
 
         //*********button.html('Send To Battle');
-        this.$el.html(this.template(this.model))
+        this.$el.html(this.template(this.model));
     },
 
     render: function () {
@@ -39,7 +38,8 @@ var SingleHeroFullView = Backbone.View.extend({
         this.$el.find('.bio_img').append($('<img>').attr('src', 
              (this.model.get('thumbnail')
              + '.' + this.model.get('extension'))));
-        this.$el.find('.');
+
+        this.$el.find('.description p').html(this.model.get('description'));
     }
 });
 
