@@ -172,6 +172,7 @@ app.get('/api/battleResults', function (req, res) {
 });
 
 app.post('/api/battleResults', function (req, res) {
+    console.log(req.body);
     battleResults.push(req.body);
 });
 
