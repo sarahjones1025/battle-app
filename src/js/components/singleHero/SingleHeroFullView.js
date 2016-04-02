@@ -39,7 +39,7 @@ var SingleHeroFullView = Backbone.View.extend({
         this.$el.find('.bio_img').append($('<img>').attr('src', 
              (this.model.get('thumbnail')
              + '.' + this.model.get('extension'))));
-        this.$el.find('.');
+        // this.$el.find('.');
     }
 });
 
