@@ -23,24 +23,25 @@ var eStats = require('./eStats.js')
 var utils = {
 
     searchForName: function (name) {
-        console.log(name);
-        var searchPattern = new RegExp('^' + name);
+        var lowerCaseName = name.toLowerCase();
+        var searchPattern = new RegExp('^' + lowerCaseName);
         var resultArray = [];
         var count = 0;
         eStats.forEach(function (current) {
-            if ((searchPattern.test(current.name)) && (count < 10)) {
+            var lowerCaseName = current.name.toLowerCase();
+            if ((searchPattern.test(lowerCaseName)) && (count < 10)) {
                 resultArray.push(current);
                 count++;
             }
         });
-        console.log(resultArray);
         return resultArray;
     },
 
     searchForId: function (id) {
         var result;
+
         eStats.forEach(function (current) {
-            if (current.id === id) {
+            if (parseInt(current['id']) === parseInt(id)) {
                 result = current;
             }
         });

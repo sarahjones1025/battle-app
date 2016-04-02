@@ -13,10 +13,23 @@ var SearchView = Backbone.View.extend({
     template: _.template(require('./SearchView.html')),
    
     events: {
-        'click button': 'onClick'
+        'click button': 'onClick',
+        'keyUp'     : 'onKeyUp' 
+    },
+
+    onKeyUp: function (e) {
+        console.log('keyup event in SearchView')
+        if (e.keyCode === '13') {
+
+            this.onClick();
+        };
     },
 
     onClick: function () {
+<<<<<<< Updated upstream
+=======
+        console.log('click event in SearchView')
+>>>>>>> Stashed changes
         var count = 0;
         var _this = this;
         var holding;
