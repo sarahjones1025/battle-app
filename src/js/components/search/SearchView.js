@@ -13,13 +13,21 @@ var SearchView = Backbone.View.extend({
     template: _.template(require('./SearchView.html')),
    
     events: {
-        'click button': 'onClick'
+        'click button': 'onClick',
+        'keyUp'     : 'onKeyUp' 
+    },
+
+    onKeyUp: function (e) {
+        console.log('keyup event in SearchView')
+        if (e.keyCode === '13') {
+
+            this.onClick();
+        };
     },
 
     onClick: function () {
         var count = 0;
         var _this = this;
-        var holding;
 
         for (var i = 0; i < _this.children.length; i++) {
 
@@ -29,7 +37,7 @@ var SearchView = Backbone.View.extend({
         var list = utils.searchForName($('input').val());
 
         list.forEach(function (current) {
-            var currentModel = cache.getCharacter(current.id);
+            var currentModel = cache.getCharacter(current);
             if (count < 10) {
                 _this.children[ count ] = new SearchItemView({model:currentModel});
                 $('.searchView').append(_this.children[count].$el);

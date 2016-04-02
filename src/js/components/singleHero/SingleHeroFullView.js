@@ -31,9 +31,9 @@ var SingleHeroFullView = Backbone.View.extend({
 
     render: function () {
         //  The following is the full path of the image.
-        $('.combatant img').attr('src',
+        this.$el.find('.character_bio img').attr('src',
              (this.model.get('thumbnail')
-             + '/detail'   
+             + '/standard_small'   
              + '.' + this.model.get('extension')));
 
     }

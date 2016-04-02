@@ -19,7 +19,7 @@ var BattleRouter = Backbone.Router.extend({
         'singleHero/:hero': 'singleHero',
         'battleSetup/:hero': 'battleSetup',
         'battleSetup': 'battleSetupNoHero',
-        'battleSpace/:hero1/:hero2': 'battleNow',
+        'battleSpace/:hero1/:hero2/:type': 'battleNow',
         'searchFull': 'search',
         '*notFound': 'notFound'
     },
@@ -50,14 +50,19 @@ var BattleRouter = Backbone.Router.extend({
     },
 
     singleHero: function (thisId) {
-        var newModel = cache.getCharacter(thisId);
+        var data = utils.searchForId(thisId);       
+        var newModel = cache.getCharacter(data);
         dispatcher.trigger('show', new SingleHeroFullView({model:newModel}));
     },
 
-    battleNow: function (id1, id2) {
+    battleNow: function (id1, id2,battleType) {
+
       
-        dispatcher.trigger('show', new BattleSpaceView({model1: cache.getCharacter(id1),
-                model2: cache.getCharacter(id2)}));
+        dispatcher.trigger('show', 
+                new BattleSpaceView({   
+                    model1: cache.getCharacter(utils.searchForId(id1)),
+                    model2: cache.getCharacter(utils.searchForId(id2)),
+                    type: battleType}));
     }
 
     
