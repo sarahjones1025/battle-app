@@ -25,7 +25,8 @@ var SingleHeroModel = Backbone.Model.extend({
         return {
             name: obj.data.results[0].name,
             thumbnail: obj.data.results[0].thumbnail.path,
-            extension: obj.data.results[0].thumbnail.extension
+            extension: obj.data.results[0].thumbnail.extension,
+            description: obj.data.results[0].description
         };
     }
 });

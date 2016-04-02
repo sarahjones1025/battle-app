@@ -63,67 +63,43 @@ var BattleSpaceView = Backbone.View.extend({
     },
 
     render: function () {
+        var result;
+        var _this = this;
+        function appendLI () {
+            _this.$el.find('.turns').append($('<li>').html(result.fightData[counter].message));
 
-        if (this.statBattle === true) {
-            var result = BattleManager.statBattle(this.model1.attributes, this.model2.attributes, 15);
-            $('.victories_left > .wins').html(result.fighter1.wins);
-            $('.victories_left > .percent').html(result.fighter1.wins / 15);
-            $('.victories_right > .wins').html(result.fighter2.wins);
-            $('.victories_right > .percent').html(result.fighter2.wins / 15);
+            counter++;
 
-        } 
-        else {
-
-
-
-            var result = BattleManager.narrativeBattle(this.model1.attributes, this.model2.attributes);
-            var counter = 0;
-            function appendLI () {
-                
-                this.$el.find('.turns').append($('<li>').html(result.fightData[counter].message));
-                counter++;
-                setTimeout(appendLI, 750);
-
+            if ($('.turns').children().length > maxLength) {
+                $('.turns li:last-child').remove();
             }
 
-
-
-
-            // var displayList = this.$el.find('.turns li').toArray();
-            // console.log("in turn battle");
-            // var currentPoint;
-            // var x = 0, y = 0;
-
-            // console.log(displayList);
-
-            // var numberOfMsgs = result.fightData.length;
-            // while( (x < displayList.length) && (y < numberOfMsgs) )  {
-            //     console.log(result.fightData[y].message);
-            //     displayList[x].find('p').html(result.fightData[y].message);
-            //     x++;
-            //     y++;
-            // }
-
-            // x = 0;
-            // while(x < result.fightData.length) {
-            //     console.log(result.fightData[x].message);
-            // }
-
-
-
-
-
+            if (counter < result.fightData.length) {
+                setTimeout(appendLI, 750);
+            }
         }
 
         if (this.statBattle === true) {
-            var result = BattleManager.statBattle(this.model1.attributes, this.model2.attributes, 15);
+            result = BattleManager.statBattle(this.model1.attributes, this.model2.attributes, 15);
             $('.victories_left > .wins').html(result.fighter1.wins);
             $('.victories_left > .percent').html(result.fighter1.wins / 15);
             $('.victories_right > .wins').html(result.fighter2.wins);
             $('.victories_right > .percent').html(result.fighter2.wins / 15);
+        } else {
+            result = BattleManager.narrativeBattle(this.model1.attributes, this.model2.attributes);
+            if (result.winner !== 'draw') {
 
+                $.ajax({
+                    url: '/api/battleResults',
+                    data: {winner: result.winner.id, loser: result.loser.id},
+                    method: 'POST'
+                });
+            }
+
+            var counter = 0;
+            var maxLength = 5;
+            setTimeout(appendLI, 4000);
         }
-
     }
 
 });

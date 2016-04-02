@@ -36,6 +36,8 @@ var SingleHeroFullView = Backbone.View.extend({
              + '/standard_small'   
              + '.' + this.model.get('extension')));
 
+        this.$el.find('.')
+
     }
 });
 
