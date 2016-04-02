@@ -19,11 +19,11 @@ var SearchItemView = Backbone.View.extend({
     },
 
     render: function () {
-        console.log(this.model);
         this.$el.html(this.template(this.model));
     },
 
     toBattle: function () {
+        console.log('click Event in Search SearchItemView');
         window.location.hash = ('battleSetup/' + this.model.get('id'));
     },
 

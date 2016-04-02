@@ -38,7 +38,7 @@ var HeroChildView = Backbone.View.extend({
 var MiniSearchView = Backbone.View.extend({
 
 
-    template: _.template(require('./SearchView.html')),
+    template: _.template(require('./MiniSearchView.html')),
     
 
     events: {

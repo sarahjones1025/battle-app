@@ -17,12 +17,18 @@ var BattleSetupView = Backbone.View.extend({
 
     onStatButtonClick: function () {
         if ((this.heroPick1.withHero === true) && (this.heroPick2.withHero === true)) {
-        window.location.hash = '/battleSpace/' + this.heroPick1.model.get('id') + '/' + 
-            this.heroPick2.model.get('id') + '/stats';
-        }
+            window.location.hash = '/battleSpace/'
+                + this.heroPick1.model.get('id') + '/'
+                + this.heroPick2.model.get('id') + '/stats';
+        };
     },
 
     onTurnBattleClick: function () {
+        if ((this.heroPick1.withHero === true) && (this.heroPick2.withHero === true)) {
+            window.location.hash = '/battleSpace/'
+                + this.heroPick1.model.get('id') + '/'
+                + this.heroPick2.model.get('id') + '/turn';
+        };
 
     },
 
