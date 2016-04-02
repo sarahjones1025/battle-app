@@ -33,6 +33,8 @@ var SearchView = Backbone.View.extend({
 
             this.children[i].remove();
         };
+
+        $('.searchresults').addClass('active');
         
         var list = utils.searchForName($('input').val());
 

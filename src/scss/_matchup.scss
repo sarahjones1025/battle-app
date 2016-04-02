@@ -45,3 +45,64 @@
 
 	}
 }
+
+
+.search-dock{
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    background-color: rgba(0,0,0, 0.2);
+
+	input{
+	height: 70px;
+    border: solid 5px yellow;
+    background: #2286e8;
+    box-sizing: border-box;
+    vertical-align: middle;
+    width: 51%;
+    font-size: 1.3em;
+    color: yellow;
+    text-indent: 20px;
+    font-family: 'bebas_neue_regularregular';
+    letter-spacing: .2em;
+	}
+
+	button{
+	    height: 70px;
+	    border: solid 5px yellow;
+	    background: #2286e8;
+	    box-sizing: border-box;
+	    vertical-align: middle;
+	    width: 11%;
+	    margin-left: 0%;
+	    font-size: 3em;
+	    padding-top: 5px;
+	    border-left: none;
+	}
+
+    h2{
+    	margin: 20px auto;
+    }
+}
+
+.searchresults{
+	background-color: #fff;
+    width: 61.75%;
+    margin: 0 auto;
+    border: solid 5px yellow;
+    border-top: none;
+    ul{
+		margin: 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
