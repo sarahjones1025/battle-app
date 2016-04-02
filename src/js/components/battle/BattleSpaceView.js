@@ -71,9 +71,24 @@ var BattleSpaceView = Backbone.View.extend({
             $('.victories_right > .wins').html(result.fighter2.wins);
             $('.victories_right > .percent').html(result.fighter2.wins / 15);
 
-        } else {
+        } 
+        else {
 
-            // var result = BattleManager.narrativeBattle(this.model1.attributes, this.model2.attributes);
+
+
+            var result = BattleManager.narrativeBattle(this.model1.attributes, this.model2.attributes);
+            var counter = 0;
+            function appendLI () {
+                
+                this.$el.find('.turns').append($('<li>').html(result.fightData[counter].message));
+                counter++;
+                setTimeout(appendLI, 750);
+
+            }
+
+
+
+
             // var displayList = this.$el.find('.turns li').toArray();
             // console.log("in turn battle");
             // var currentPoint;
