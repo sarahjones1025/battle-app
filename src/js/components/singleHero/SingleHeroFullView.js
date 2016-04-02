@@ -36,10 +36,9 @@ var SingleHeroFullView = Backbone.View.extend({
              + '/portrait_xlarge'   
              + '.' + this.model.get('extension')));
 
-        this.$el.find('.bio_img').append($('<img>').attr('src', 
+        this.$el.find('.bio_img img').attr('src', 
              (this.model.get('thumbnail')
-             + '.' + this.model.get('extension'))));
-        // this.$el.find('.');
+             + '.' + this.model.get('extension')));
     }
 });
 
