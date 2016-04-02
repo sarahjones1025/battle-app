@@ -144,12 +144,10 @@ form li p, form li button {
 .top_picks h1 {
   font-size: 1.5em; }
 
-.searchresults {
-  display: none; }
-  .searchresults li {
-    display: block; }
+.searchresults li {
+  display: block; }
 
-.active {
+#active {
   display: block; }
 
 .pre-pick {
@@ -189,11 +187,18 @@ form li p, form li button {
     color: #000;
     width: 125px; }
 
+div.active {
+  display: block; }
+
 .search-dock {
+  box-sizing: border-box;
+  display: none;
   text-align: center;
-  width: 100%;
+  width: 60%;
   position: absolute;
-  background-color: rgba(0, 0, 0, 0.2); }
+  background-color: rgba(0, 0, 255, 0.7);
+  border: solid 5px yellow;
+  left: 20%; }
   .search-dock input {
     height: 70px;
     border: solid 5px yellow;
@@ -215,19 +220,12 @@ form li p, form li button {
     width: 11%;
     margin-left: 0%;
     font-size: 3em;
-    padding-top: 5px;
-    border-left: none; }
+    padding-top: 5px; }
   .search-dock h2 {
     margin: 20px auto; }
 
-.searchresults {
-  background-color: #fff;
-  width: 61.75%;
-  margin: 0 auto;
-  border: solid 5px yellow;
-  border-top: none; }
-  .searchresults ul {
-    margin: 0; }
+.searchresults ul {
+  margin: 0; }
 
 .arena {
   background: url(../img/sidewalk.jpg);

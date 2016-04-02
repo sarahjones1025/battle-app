@@ -33,6 +33,7 @@ var HeroPickView = Backbone.View.extend({
             searchController.disable();
             this.searchView = new MiniSearchView();
             this.searchView.render();
+            $('.search-dock').addClass('active');
             $('.search-dock').append(this.searchView.$el);
             this.listenTo(this.searchView,'pick', this.show);
         }
@@ -71,6 +72,7 @@ var HeroPickView = Backbone.View.extend({
         if (model) {
             this.model = model;
             this.withHero = true;
+            
             this.searchView.remove();
             this.$el.find('.picked > img').attr('src', (this.model.get('thumbnail')
                     + '/portrait_xlarge'
