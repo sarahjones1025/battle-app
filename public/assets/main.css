@@ -30,7 +30,7 @@
     height: 115px; }
     header h1 {
       margin: 0;
-      margin-left: 10%;
+      margin-left: 12%;
       font-size: 1.5em; }
     header .top_nav {
       padding: 0;
@@ -75,7 +75,7 @@
 @media screen and (min-width: 1000px) {
   header h1 {
     margin: 0;
-    margin-left: 19%;
+    margin-left: 12%;
     font-size: 2.2em; }
 
   .top_nav a {
@@ -415,6 +415,10 @@ div.active {
   padding: 0;
   margin: 0;
   min-height: 200px; }
+  .turns li {
+    margin: 20px;
+    font-size: 1.5em;
+    text-align: center; }
 
 @media screen and (min-width: 1020px) {
   .card {
@@ -583,9 +587,6 @@ body {
   background-size: cover;
   background-attachment: fixed; }
 
-.star {
-  display: none; }
-
 header {
   width: 100%;
   position: relative;
@@ -725,7 +726,7 @@ header {
     background-repeat: no-repeat;
     display: block;
     width: 20%;
-    height: 111px;
+    height: 130px;
     float: left;
     margin-top: 7%; }
   .picks_battles .recent_battles .battle1 .character1, .picks_battles .recent_battles .battle1 .character2, .picks_battles .recent_battles .battle2 .character1, .picks_battles .recent_battles .battle2 .character2 {

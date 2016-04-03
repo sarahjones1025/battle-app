@@ -4,7 +4,8 @@ var Backbone = require ('backbone');
 var SingleHeroModel = Backbone.Model.extend({
 
     defaults: {
-        thumbnail: "default string"
+        thumbnail: "default for thumbnail",
+        name: 'default for name'
     },
 
     initialize: function () {
@@ -32,6 +33,8 @@ var SingleHeroModel = Backbone.Model.extend({
         if (resultData.description === '') {
             resultData.description = 'Description Not Available';
         }
+        console.log('below is the parse log');
+        console.log(resultData);
 
         return resultData;
     }

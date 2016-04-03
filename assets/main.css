@@ -367,7 +367,8 @@ div.active {
 
 .battle_buttons {
   width: 100%;
-  display: block; }
+  display: block;
+  text-align: center; }
 
 .button {
   display: inline-block;
@@ -405,7 +406,12 @@ div.active {
 .turns {
   list-style-type: none;
   padding: 0;
-  margin: 0; }
+  margin: 0;
+  min-height: 200px; }
+  .turns li {
+    margin: 20px;
+    font-size: 1.5em;
+    text-align: center; }
 
 @media screen and (min-width: 1020px) {
   .card {
