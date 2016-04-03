@@ -46,6 +46,18 @@ var utils = {
             }
         });
         return new SingleHeroModel(result);
+    },
+
+    getStats: function (id) {
+        var result;
+        
+          eStats.forEach(function (current) {
+            if (parseInt(current['id']) === parseInt(id)) {
+                result = current;
+            }
+        });
+        return result;
+
     }
 };
 

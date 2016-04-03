@@ -1,7 +1,7 @@
 var $ = require('jquery');
 var _ = require('underscore');
 var Backbone = require('backbone');
-
+var utils = require('../utils/utils.js');
 var cache = require('../cache/characterCache.js');
 var MiniSearchView = require('../search/MiniSearchView.js');
 var searchController = require('./searchController.js');
@@ -66,17 +66,32 @@ var HeroPickView = Backbone.View.extend({
         // this.stopListening('pick');
         //  show the current character.
         //INCOMPLETE!!! Set the message here.
-
         // this.model = cache.getCharacter(heroId);
         this.stopListening('pick');
+        
         if (model) {
+            // var stats = utils.getStats(this.model.get('id'));
+            // var strength = parseInt(stats.strength)*(14.3) + '%';
+            // var speed = parseInt(stats.speed)*(14.3) + '%';
+            // var fighting = parseInt(stats.fighting)*(14.3) + '%';
+            // var durability = parseInt(stats.durability)*(14.3) + '%';
+            // var intelligence = parseInt(stats.intelligence)*(14.3) + '%';
+            // var energy = parseInt(stats.energy)*(14.3) + '%';
+
             this.model = model;
             this.withHero = true;
             
             this.searchView.remove();
             this.$el.find('.picked > img').attr('src', (this.model.get('thumbnail')
                     + '/portrait_xlarge'
-                    + '.' + this.model.get('extension')));            
+                    + '.' + this.model.get('extension')));  
+
+            // this.$el.find('.strength > div').css({'width': strength});
+            // this.$el.find('.speed > div').css({'width': speed});
+            // this.$el.find('.fighting > div').css({'width': fighting});
+            // this.$el.find('.durability > div').css({'width': durability});
+            // this.$el.find('.intelligence > div').css({'width': intelligence});
+            // this.$el.find('.energy > div').css({'width': energy});          
 
  
         };
