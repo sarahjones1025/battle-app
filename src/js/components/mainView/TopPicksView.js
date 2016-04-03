@@ -55,17 +55,17 @@ var TopPicksView = Backbone.View.extend({
         console.log("in pickView show");
             this.$el.find('.first-hero img').attr('src',
                 (this.model1.get('thumbnail')
-                + '/portrait_xlarge'   
+                + '/landscape_large'   
                 + '.' + this.model1.get('extension')));
 
             this.$el.find('.second-hero img').attr('src',
                 (this.model2.get('thumbnail')
-                + '/portrait_xlarge'   
+                + '/landscape_large'   
                 + '.' + this.model2.get('extension')));    
 
             this.$el.find('.third-hero img').attr('src',
                 (this.model3.get('thumbnail')
-                + '/portrait_xlarge'   
+                + '/landscape_large'   
                 + '.' + this.model3.get('extension')));
 
             this.$el.find('.first-hero p').html(this.model1.get('name'));
