@@ -1,9 +1,10 @@
 .arena{
 	background:url(../img/sidewalk.jpg);
-	background-size:100%;
-	width:80%;
+	background-size: cover;
+	width:128%;
 	background-repeat:no-repeat;
-	padding:0 10%;
+	// padding:0 10%;
+    margin:0 -14%;
 }
 
 .health_bars{
@@ -19,10 +20,12 @@
 
 .health_left{
 	float: left;
+    margin-left:11%;
 }
 
 .health_right{
 	float: right;
+    margin-right:11%;
 }
 
 .combatants{
@@ -42,15 +45,18 @@
 
 .combatant_one{
 	float: left;
+    margin-left:11%;
 }
 
 .combatant_two{
 	float: right;
+    margin-right:11%;
 }
 
 .char_pic{
 	display: block;
     margin: 0 auto;
+    width:100%;
 }
 
 .action_area{
