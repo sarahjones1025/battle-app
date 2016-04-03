@@ -44,6 +44,7 @@ function set (id, model) {
 //  This is the External function that the application code uses.
 function getCharacter (heroData) {
 
+
     //  It will get a character from the cache and create a new 
     //  model.
     var cached = get(heroData.id);
@@ -56,6 +57,7 @@ function getCharacter (heroData) {
         model.fetch({
             success: function () {
                 console.log('this is where we add to cache')
+                console.log(model.attributes);
                 console.log( model.get('thumbnail'));
                 set(heroData.id, model);
             }

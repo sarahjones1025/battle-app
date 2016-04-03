@@ -14,7 +14,7 @@ var HeroPickView = Backbone.View.extend({
     tagName: 'div',
 
     events: {
-        'click img': 'onClick'
+        'click': 'onClick'
     },
 
     template: _.template(require('./HeroPickView.html')),
@@ -33,6 +33,7 @@ var HeroPickView = Backbone.View.extend({
             searchController.disable();
             this.searchView = new MiniSearchView();
             this.searchView.render();
+            $('.search-dock').addClass('active');
             $('.search-dock').append(this.searchView.$el);
             this.listenTo(this.searchView,'pick', this.show);
         }
@@ -48,12 +49,11 @@ var HeroPickView = Backbone.View.extend({
         this.listenTo(dispatcher, 'sync', this.render);
         if (options) {
             this.withHero = true;
-            console.log("with hero")
+            console.log("with hero");
+            this.$el.find('.picked > img').attr('src', (this.model.get('thumbnail')
+                    + '/detail'
+                    + '.' + this.model.get('extension')));            
 
-            //******************
-           // dock.attr('src', (options.model.get('thumbnail')
-             //               + '/portrait_xlarge'
-               //             + '.' + options.model.get('extension')));
         } else {
             this.withHero = false;
         }
@@ -71,10 +71,14 @@ var HeroPickView = Backbone.View.extend({
         this.stopListening('pick');
         if (model) {
             this.model = model;
+            this.withHero = true;
+            
             this.searchView.remove();
-            $('.picked > img').attr('src', (this.model.get('thumbnail')
+            this.$el.find('.picked > img').attr('src', (this.model.get('thumbnail')
                     + '/portrait_xlarge'
-                    + '.' + this.model.get('extension')));
+                    + '.' + this.model.get('extension')));            
+
+ 
         };
 
         searchController.enable();

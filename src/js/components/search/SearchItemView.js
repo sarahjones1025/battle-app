@@ -10,8 +10,7 @@ var SearchItemView = Backbone.View.extend({
     template: _.template(require('./SearchItemView.html')),
 
     events: {
-        'click .single-hero': 'toSingleHero',
-        'click .to-the-battle': 'toBattle'
+        'click button': 'toSingleHero'
     },
 
     initialize: function () {
@@ -19,17 +18,23 @@ var SearchItemView = Backbone.View.extend({
     },
 
     render: function () {
-        console.log(this.model);
         this.$el.html(this.template(this.model));
     },
 
     toBattle: function () {
+        console.log('click Event in Search SearchItemView');
+
         window.location.hash = ('battleSetup/' + this.model.get('id'));
     },
 
-    toSingleHero: function () {
-        window.location.hash = ('singleHero/' + this.model.get('id'));
-    }
+    toSingleHero: function (e) {
+        console.log(e.target);
+        if (e.target.classList.contains('to-the-battle')) {
+            window.location.hash = ('battleSetup/' + this.model.get('id'));
+        } else {
+            window.location.hash = ('singleHero/' + this.model.get('id'));
+        }
+    }    
 
 });
 

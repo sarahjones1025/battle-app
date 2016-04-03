@@ -1,215 +1,213 @@
+@media screen and (min-width:1020px){
+	.card{
+		background-color: #fff4d5;
+	}
 
-.card{
-	background-color: #fff4d5;
-}
+	.combatant{
+		text-align: center;
+		padding-top: 70px;
+		background-image: url(../img/bio_bg_03.jpg);
+		background-size: contain;
+		// don't change this ^ 
+		background-repeat: no-repeat;
+		width: 50%;
+		float: left;
+		position: relative;
+		box-sizing: border-box;
+			h1{
+				position: absolute;
+				bottom: 0;
+				left: 20px;
+				text-align: left;
+				margin: 0;
+				padding: 0;
+				font-family: Impact;
+				text-transform: uppercase;
+				&:first-letter{
+			  		font-size: 4em;
+	  			}
+			}
+	}
 
-.combatant{
-	text-align: center;
-	padding-top: 70px;
-	background-image: url(../img/bio_bg_03.jpg);
-	background-size: contain;
-	// don't change this ^ 
-	background-repeat: no-repeat;
-	width: 50%;
-	float: left;
-	position: relative;
-	box-sizing: border-box;
-		h1{
-			position: absolute;
-			bottom: 0;
-			left: 20px;
-			text-align: left;
+	.bio_img {
+	    // background-image: url(../img/detail.jpg);
+	    background-size: contain;
+	    background-repeat: no-repeat;
+	    z-index: 20;
+	    height: 568px;
+	    box-sizing: border-box;
+	    margin: 0 7% 17% 7%;
+	}
+
+	.levels{
+		background-color: #000;
+		
+		p{
+			text-align: center;
+			background-color: #000;
+			color: #fff;
+			float: left;
+			width: 14.23%;
 			margin: 0;
 			padding: 0;
-			font-family: Impact;
-			text-transform: uppercase;
-			&:first-letter{
-		  		font-size: 4em;
-  			}
-		}
-}
 
-.bio_img {
-    background-image: url(../img/detail.jpg);
-    background-size: contain;
-    background-repeat: no-repeat;
-    z-index: 20;
-    height: 568px;
-    box-sizing: border-box;
-    margin: 0 7% 17% 7%;
-}
+			&:first-child{
+				width: 7.3%;
+				text-align: left;
+			}
 
-.levels{
-	background-color: #000;
-	
-	p{
-		text-align: center;
-		background-color: #000;
-		color: #fff;
-		float: left;
-		width: 14.23%;
-		margin: 0;
-		padding: 0;
-
-		&:first-child{
-			width: 7.3%;
-			text-align: left;
-		}
-
-		&:last-child{
-			width: 7.3%;
-			padding-right: 0;
-			text-align: right;
+			&:last-child{
+				width: 7.3%;
+				padding-right: 0;
+				text-align: right;
+			}
 		}
 	}
-}
 
-.yellow_box {
-    background-color: yellow;
-    border: solid 1px #000;
-    height: 50px;
-    margin-top: 2.5%;
-    margin-bottom: 20px;
-}
-
-.character_bio{
-	width: 50%;
-	position: relative;
-	padding-right: 30px;
-	float: left;
-	box-sizing: border-box;
-
-	span{
-		font-size: 3em;
-	    position: absolute;
-	    top: -17px;
-	    left: -58px;
-	}
-	
-
-	img{
-    	margin-left: 5%;
-    }
-	
-	a{
-		margin-top: 20px;
-	    display: block;
-	    padding: 20px 120px;
-	    text-decoration: none;
-	    color: #fff;
-	    background-color: red;
-	    text-align: center;
-	    font-size: 1.5em;
-	}
-	
-	h1{
-		margin: 0;
-	    font-family: Impact;
-	    color: blue;
-	    position: absolute;
-	    top: -65px;
-	    right: 390px;
-
-		// &:first-letter{
-  // 		}
+	.yellow_box {
+	    background-color: yellow;
+	    border: solid 1px #000;
+	    height: 50px;
+	    margin-top: 2.5%;
+	    margin-bottom: 20px;
 	}
 
-}
-
-.categories{
-	padding-top: 20px;
-
-
-	div{
+	.character_bio{
+		width: 50%;
 		position: relative;
+		padding-right: 30px;
+		float: left;
+		box-sizing: border-box;
+
+		span{
+			font-size: 3em;
+		    position: absolute;
+		    top: -17px;
+		    left: -58px;
+		}
+		
+
+		img{
+	    	margin-left: 5%;
+	    }
+		
+		a{
+			margin-top: 20px;
+		    display: block;
+		    padding: 20px 120px;
+		    text-decoration: none;
+		    color: #fff;
+		    background-color: red;
+		    text-align: center;
+		    font-size: 1.5em;
+		}
+		
+		h1{
+			margin: 0;
+		    font-family: Impact;
+		    color: blue;
+		    position: absolute;
+		    top: -65px;
+		    right: 390px;
+		}
+
+	}
+
+	.categories{
+		padding-top: 20px;
+
 
 		div{
-			background-color: pink;
-			height: 23px;
-			width: 28.3%;
-			position: absolute;
-			top: 0;
-			left: 0;
-			z-index: 2;
-		}
-
-	}
-}
-
-.power_rating{
-	float: right;
-    width: 60%;
-    background-color: #fff;
-    border: solid 2px #000;
-    background-image: url(../img/tile.jpg);
-    background-size: 14.6%;
-
-	
-	div{
-		list-style: none;
-		color: #000;
-		
-		h4{
-			padding: 4px;
-			margin: 4px;
-			z-index: 10;
 			position: relative;
+
+			div{
+				background-color: pink;
+				height: 23px;
+				width: 28.3%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: 2;
+			}
+
 		}
 	}
 
-	h3{
-		padding: 0;
-		margin: 0;
-		background-color: #000;
-		color: #fff;
-		text-align: center;
-		letter-spacing: .5em;
+	.power_rating{
+		float: right;
+	    width: 60%;
+	    background-color: #fff;
+	    border: solid 2px #000;
+	    background-image: url(../img/tile.jpg);
+	    background-size: 14.6%;
+
+		
+		div{
+			list-style: none;
+			color: #000;
+			
+			h4{
+				padding: 4px;
+				margin: 4px;
+				z-index: 10;
+				position: relative;
+			}
+		}
+
+		h3{
+			padding: 0;
+			margin: 0;
+			background-color: #000;
+			color: #fff;
+			text-align: center;
+			letter-spacing: .5em;
+		}
 	}
-}
 
-.wins_losses{
-	padding: 5px;
-	margin-top: 20px;
-	background-color: #fff;
-	color: #000;
+	.wins_losses{
+		padding: 5px;
+		margin-top: 20px;
+		background-color: #fff;
+		color: #000;
 
-	h3{
+		h3{
+			float: left;
+			margin: 5px;
+		}
+	}
+
+	.wins, .losses{
 		float: left;
-		margin: 5px;
-	}
-}
+		width: 25%;
 
-.wins, .losses{
-	float: left;
-	width: 25%;
+		h3{
+			float: left;
+			margin: 5px;
+			text-decoration: underline;
+		}
 
-	h3{
-		float: left;
-		margin: 5px;
-		text-decoration: underline;
-	}
+		div{
+			float: left;
+			width: 25px;
+			height: 25px;
+			border: solid 2px #000;
+		}
 
-	div{
-		float: left;
-		width: 25px;
-		height: 25px;
-		border: solid 2px #000;
 	}
 
-}
+	.description{
+		padding: 10px;
+	    margin-top: 20px;
+		background-color: #fff;
+		color: #000;
 
-.description{
-	padding: 10px;
-    margin-top: 20px;
-	background-color: #fff;
-	color: #000;
+		h3{
+			margin: 0;
+		}
 
-	h3{
-		margin: 0;
-	}
-
-	p{
-		font-family: Helvetica;
-		font-size: .8em;
+		p{
+			font-family: Helvetica;
+			font-size: .8em;
+		}
 	}
 }

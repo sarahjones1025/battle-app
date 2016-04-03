@@ -4,6 +4,7 @@ var bodyParser = require('body-parser');
 var app = express();
 app.use(express.static(__dirname + '/public'));
 
+
 // express.static will take a path to the files
 // we want to serve publicly
 // middleware = functions that get executed with the request and the response
@@ -11,91 +12,13 @@ app.use(express.static(__dirname + '/public'));
 var battleResultsIds = 0;
 
 
-var battleResults = [
-    {winner:100, loser:101},
-    {winner:110, loser:111},
-    {winner:105, loser:112},
-    {winner:107, loser:124},
-    {winner:100, loser:114},
-    {winner:110, loser:112},
-    {winner:105, loser:112},
-    {winner:100, loser:111},
-    {winner:103, loser:107},
-    {winner:103, loser:107},
-    {winner:103, loser:107},
-    {winner:103, loser:107},
-    {winner:103, loser:107},
-    {winner:103, loser:107},
-    {winner:103, loser:107},
-    {winner:103, loser:107},
-    {winner:103, loser:107},
-    {winner:103, loser:107},
-    {winner:103, loser:107},
-    {winner:103, loser:107},
-    {winner:103, loser:107},
-    {winner:103, loser:107},
-    {winner:103, loser:107},
-    {winner:103, loser:107},
-    {winner:103, loser:107},
-    {winner:103, loser:107},
-    {winner:103, loser:107},
-    {winner:103, loser:107},
-    {winner:103, loser:107},
-    {winner:105, loser:112},
-    {winner:112, loser:108},
-    {winner:118, loser:109},
-    {winner:113, loser:102},
-    {winner:120, loser:114},
-    {winner:105, loser:112},
-    {winner:102, loser:100},
-    {winner:118, loser:109},
-    {winner:110, loser:102},
-    {winner:100, loser:101},
-    {winner:105, loser:112},
-    {winner:110, loser:111},
-    {winner:105, loser:112},
-    {winner:107, loser:124},
-    {winner:105, loser:112},
-    {winner:105, loser:112},
-    {winner:105, loser:112},
-    {winner:105, loser:112},
-    {winner:105, loser:112},
-    {winner:105, loser:112},
-    {winner:105, loser:112},
-    {winner:105, loser:112},
-    {winner:105, loser:112},
-    {winner:105, loser:112},
-    {winner:105, loser:112},
-    {winner:105, loser:112},
-    {winner:105, loser:112},
-    {winner:105, loser:112},
-    {winner:100, loser:114},
-    {winner:110, loser:112},
-    {winner:105, loser:112},
-    {winner:101, loser:111},
-    {winner:118, loser:105},
-    {winner:118, loser:105},
-    {winner:118, loser:105},
-    {winner:118, loser:105},
-    {winner:118, loser:105},
-    {winner:118, loser:105},
-    {winner:105, loser:112},
-    {winner:116, loser:117},
-    {winner:112, loser:118},
-    {winner:123, loser:119},
-    {winner:106, loser:102},
-    {winner:118, loser:109},
-    {winner:105, loser:112},
-    {winner:105, loser:112},
-    {winner:120, loser:114},
-    {winner:102, loser:120},
-    {winner:110, loser:102},
-    {winner:160, loser:161},
-    {winner:161, loser:1152}
+var battleResults = [{winner: 1009148, loser:1009146},
+                     {winner: 1009149, loser: 1011334}                    
+                ];
 
-];
 
-function topPicks(arr) {
+
+function topPicks (arr) {
 
     //  Count up all the heros in battle.
 
@@ -141,15 +64,10 @@ function topPicks(arr) {
     });
 
     return heroList;
-
-
 }
 
 
 
-for (; battleResultsIds++ < battleResults.length;) {
-    battleResults[battleResultsIds - 1].id = battleResultsIds;
-}
 
 app.use(bodyParser());
 // what bodyParser does is add a propery to the request, called body, that we can use
@@ -172,7 +90,10 @@ app.get('/api/battleResults', function (req, res) {
 });
 
 app.post('/api/battleResults', function (req, res) {
+    console.log(req.body);
+    req.body.id = battleResultsIds++;
     battleResults.push(req.body);
+    console.log(req.body);
 });
 
 app.get('/api/topPicks', function (req, res) {
@@ -180,8 +101,11 @@ app.get('/api/topPicks', function (req, res) {
     if (req.query.limit) {
         result = result.slice(0, req.query.limit);
     }
+    console.log(result);
 
     res.json(result);
 });
+
+//app.get('/api/winsAndLosses', function (req, res) {})
 
 app.listen(8000);

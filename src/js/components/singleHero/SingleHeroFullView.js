@@ -1,7 +1,6 @@
 var _ = require('underscore');
 var $ = require('jquery');
 var Backbone = require('backbone');
-
 var SingleHeroModel = require('./SingleHeroModel.js');
 
 var SingleHeroFullView = Backbone.View.extend({
@@ -26,16 +25,24 @@ var SingleHeroFullView = Backbone.View.extend({
         this.listenTo(this.model, 'sync', this.render);
 
         //*********button.html('Send To Battle');
-        this.$el.html(this.template(this.model))
+        this.$el.html(this.template(this.model));
     },
 
     render: function () {
-        //  The following is the full path of the image.
-        $('.combatant img').attr('src',
+         //The following is the full path of the image.
+        this.$el.find('.character_bio img').attr('src',
              (this.model.get('thumbnail')
              + '/detail'   
              + '.' + this.model.get('extension')));
 
+        this.$el.find('.bio_img img').attr('src', 
+             (this.model.get('thumbnail')
+             + '.' + this.model.get('extension')));
+
+        this.$el.find('.description p').html(this.model.get('description'));
+        this.$el.find('.combatant h1').html(this.model.get('name'));
+        this.$el.find('.character_bio h1').html($('<span>').html(this.model.get('name').split('').splice(0, 1).join()));
+        this.$el.find('.character_bio h1').append(this.model.get('name').split('').splice(1).join(''));
     }
 });
 

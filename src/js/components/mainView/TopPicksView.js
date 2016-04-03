@@ -2,8 +2,9 @@ var Backbone = require('backbone');
 var $ = require('jquery');
 var _ = require('underscore');
 
-
 var dispatcher = require('../router/dispatcher.js');
+var cache = require('../cache/characterCache.js');
+var utils = require('../utils/utils.js');
 
 // This view, will generate the Top Picks sub view,
 // it'll have 3 children views, which will be the last 3
@@ -17,26 +18,65 @@ var TopPicksView = Backbone.View.extend({
 
     template: _.template(require('./topPicks.html')),
 
+
+
     initialize: function (options) {
-        this.listenTo(dispatcher, 'show', this.show);
-    },
 
-    show: function (view) {
+        var _this = this;
 
-        if (view) {
-            if (this.child) {
-                this.child.remove();
-            }
+        this.$el.html(this.template());
 
-            view.render();
+        $.ajax({
+            url:'/api/topPicks',
+            data:{limit:5},
+            method:'GET',
+            success: processResult
+        });
 
-            this.$('.recentBattleSlot').append(view.$el);
-            this.child = view;
+        function processResult(data) {
+            console.log("in top picks init.");
+            console.log(data);
+            console.log(data[0].id);
+
+            _this.model1 = cache.getCharacter( utils.searchForId(data[0].id));
+            _this.model2 = cache.getCharacter( utils.searchForId(data[1].id));
+            _this.model3 = cache.getCharacter( utils.searchForId(data[2].id));
+
+            _this.listenTo(_this.model1,'sync', _this.show);
+            _this.listenTo(_this.model2,'sync', _this.show);
+            _this.listenTo(_this.model3,'sync', _this.show);
+
+            _this.show();
         }
+
     },
+
+    show: function () {
+        console.log("in pickView show");
+            this.$el.find('.first-hero img').attr('src',
+                (this.model1.get('thumbnail')
+                + '/landscape_large'   
+                + '.' + this.model1.get('extension')));
+
+            this.$el.find('.second-hero img').attr('src',
+                (this.model2.get('thumbnail')
+                + '/landscape_large'   
+                + '.' + this.model2.get('extension')));    
+
+            this.$el.find('.third-hero img').attr('src',
+                (this.model3.get('thumbnail')
+                + '/landscape_large'   
+                + '.' + this.model3.get('extension')));
+
+            this.$el.find('.first-hero p').html(this.model1.get('name'));
+            this.$el.find('.second-hero p').html(this.model2.get('name'));
+            this.$el.find('.third-hero p').html(this.model3.get('name'));
+
+
+    },
+
 
     render: function () {
-        this.$el.html(this.template());
     }
 });
 

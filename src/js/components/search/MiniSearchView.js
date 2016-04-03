@@ -38,7 +38,7 @@ var HeroChildView = Backbone.View.extend({
 var MiniSearchView = Backbone.View.extend({
 
 
-    template: _.template(require('./SearchView.html')),
+    template: _.template(require('./MiniSearchView.html')),
     
 
     events: {
@@ -60,6 +60,9 @@ var MiniSearchView = Backbone.View.extend({
         for (var i = 0; i < _this.children.length; i++) {
             this.children[i].remove();
         }
+        
+        $('.searchresults').addClass('active');
+
         var list = utils.searchForName($('.search-mini').val());
         list.forEach(function (current) {
             var currentModel = cache.getCharacter(current);
