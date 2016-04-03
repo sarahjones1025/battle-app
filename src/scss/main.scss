@@ -47,13 +47,12 @@ main{
 }
 
 .star{
-
+	display: none;
 }
 
 header{
-	width: 90%;
+	width: 100%;
 	position: relative;
-	height: 115px;
 	z-index: 0;
 
 	h1{
@@ -63,8 +62,8 @@ header{
 		position: relative;
 		float:left;
 		font-weight: 100;
-		margin-left: 19%;
-    	font-size: 2.2em;
+		margin-left: 5%;
+    	font-size: 1.5em;
 
 			a{
 				color: yellow;
@@ -80,8 +79,9 @@ header{
 
 	.top_nav{
 		padding:0;
-		margin:30px 0 0 0;
-		float:right;
+		float: right;
+		margin:0;
+		width: 40%;
 
 		button{
 			display: block;
