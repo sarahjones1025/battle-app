@@ -59,7 +59,7 @@ function getCharacter (heroData) {
                 console.log('this is where we add to cache')
                 console.log(model.attributes);
                 console.log( model.get('thumbnail'));
-                set(heroData.id, model);
+                //set(heroData.id, model);
             }
         });
     } else {
