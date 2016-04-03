@@ -20,7 +20,9 @@ var HeroChildView = Backbone.View.extend({
     template: _.template(require('./battleSearchItem.html')),
 
     initialize: function (options) {
-        this.searchView = options.searchView;        
+        this.searchView = options.searchView;
+        this.listenTo(this.model, 'sync', this.render);
+                
     },
 
     onClick: function () {
