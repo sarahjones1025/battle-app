@@ -1,3 +1,9 @@
+.star2{
+	top: 51px;
+    left: 64px;
+}
+
+
 .pre-pick{
 	width: 100%;
     height: inherit;
@@ -20,12 +26,13 @@
 
 .character_1, .character_2{
 	float: left;
-	width: 250px;
+	width: 50%;
 }
 
 .versus{
-	float: left;
-	width: 10%;
+	position: absolute;
+    left: 43%;
+    top: 25%;
 }
 
 .battle_options{
@@ -127,7 +134,47 @@ div.active{
 }
 
 
+.entry-point{		
+	width: 78%;
+	margin: 0 auto;
+	
+}
 
+.turn_battle_button{
+	position: absolute;
+    left: 4%;
+    top: 28%;
+}
+
+.turnBattleButton{
+	-webkit-appearance: none;
+	background-color: #fff;
+	font-family: Badaboom;
+	font-size: 2.5em;
+	border: none;
+	position: absolute;
+	top: 45%;
+	left: 16%;
+	// padding: 1%;
+}
+
+.stat_battle_button{
+	position: absolute;
+    left: 58%;
+    top: 24%;
+}
+
+.statBattleButton{
+	-webkit-appearance: none;
+	background-color: #fff;
+	font-family: Badaboom;
+	font-size: 2.5em;
+	border: none;
+	position: absolute;
+	top: 42%;
+	left: 66%;
+	// padding: 1%;
+}
 
 
 
