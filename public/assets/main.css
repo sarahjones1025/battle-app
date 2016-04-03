@@ -16,7 +16,6 @@
 
 @media screen and (min-width: 700px) {
   main {
-    width: 80%;
     margin: 0 auto; }
 
   .star {
@@ -102,30 +101,28 @@ form li {
 form li p, form li button {
   display: inline-block; }
 
-.wrapper {
-  margin: 0 11%; }
-  .wrapper input {
-    height: 70px;
-    border: solid 5px yellow;
-    background: #2286e8;
-    box-sizing: border-box;
-    vertical-align: middle;
-    width: 84.4%;
-    font-size: 1.3em;
-    color: yellow;
-    text-indent: 20px;
-    font-family: 'bebas_neue_regularregular';
-    letter-spacing: .2em; }
-  .wrapper button {
-    height: 70px;
-    border: solid 5px yellow;
-    background: #2286e8;
-    box-sizing: border-box;
-    vertical-align: middle;
-    width: 14%;
-    margin-left: 1%;
-    font-size: 3em;
-    padding-top: 5px; }
+.wrapper input {
+  height: 70px;
+  border: solid 5px yellow;
+  background: #2286e8;
+  box-sizing: border-box;
+  vertical-align: middle;
+  width: 84.4%;
+  font-size: 1.3em;
+  color: yellow;
+  text-indent: 20px;
+  font-family: 'bebas_neue_regularregular';
+  letter-spacing: .2em; }
+.wrapper button {
+  height: 70px;
+  border: solid 5px yellow;
+  background: #2286e8;
+  box-sizing: border-box;
+  vertical-align: middle;
+  width: 14%;
+  margin-left: 1%;
+  font-size: 3em;
+  padding-top: 5px; }
 
 .top_picks div {
   float: left;
@@ -159,13 +156,15 @@ form li p, form li button {
   height: inherit;
   background-color: orange;
   border: solid 5px #000;
-  color: #000; }
+  color: #000;
+  height: 650px; }
   .pre-pick h1 {
     text-align: center;
-    font-size: 14em;
+    font-size: 20em;
     font-family: Badaboom;
     margin: 0;
-    padding: 0; }
+    padding: 0;
+    margin-top: 30%; }
 
 .picked {
   z-index: 50; }
@@ -177,7 +176,7 @@ form li p, form li button {
 .versus {
   position: absolute;
   left: 43%;
-  top: 25%; }
+  top: 35%; }
 
 .battle_options {
   text-align: center; }
@@ -259,7 +258,7 @@ div.active {
 .turn_battle_button {
   position: absolute;
   left: 4%;
-  top: 28%; }
+  top: 54%; }
 
 .turnBattleButton {
   -webkit-appearance: none;
@@ -268,13 +267,13 @@ div.active {
   font-size: 2.5em;
   border: none;
   position: absolute;
-  top: 45%;
+  top: 66%;
   left: 16%; }
 
 .stat_battle_button {
   position: absolute;
   left: 58%;
-  top: 24%; }
+  top: 53%; }
 
 .statBattleButton {
   -webkit-appearance: none;
@@ -283,8 +282,16 @@ div.active {
   font-size: 2.5em;
   border: none;
   position: absolute;
-  top: 42%;
+  top: 65%;
   left: 66%; }
+
+.randomPickButton {
+  -webkit-appearance: none;
+  border: solid 5px #000;
+  background-color: orange;
+  font-size: 2em;
+  font-family: Badaboom;
+  padding: 10px 30px; }
 
 .arena {
   background: url(../img/sidewalk.jpg);
@@ -610,6 +617,10 @@ header {
 
 .buttons {
   height: 574px; }
+  .buttons img {
+    position: absolute;
+    left: 40%;
+    top: 37%; }
 
 .character_button {
   background: url(../img/choose_button.png);
