@@ -16,6 +16,8 @@ var battleResults = [{winner: 1009148, loser:1009146},
                      {winner: 1009149, loser: 1011334}                    
                 ];
 
+
+
 function topPicks (arr) {
 
     //  Count up all the heros in battle.
@@ -103,5 +105,7 @@ app.get('/api/topPicks', function (req, res) {
 
     res.json(result);
 });
+
+//app.get('/api/winsAndLosses', function (req, res) {})
 
 app.listen(8000);

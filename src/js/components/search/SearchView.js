@@ -51,7 +51,52 @@ var SearchView = Backbone.View.extend({
 
     initialize: function () {
         this.children = [];
+        var _this = this;
+
+        $.ajax({
+            url:'/api/topPicks',
+            data:{limit:5},
+            method:'GET',
+            success: processResult
+        });
+
+        function processResult(data) {
+
+            _this.model1 = cache.getCharacter( utils.searchForId(data[0].id));
+            _this.model2 = cache.getCharacter( utils.searchForId(data[1].id));
+            _this.model3 = cache.getCharacter( utils.searchForId(data[2].id));
+
+            _this.listenTo(_this.model1,'sync', _this.show);
+            _this.listenTo(_this.model2,'sync', _this.show);
+            _this.listenTo(_this.model3,'sync', _this.show);
+
+            _this.show();   
+        };        
     },
+
+    show: function () {
+        console.log("in pickView show");
+            this.$el.find('.first-hero img').attr('src',
+                (this.model1.get('thumbnail')
+                + '/portrait_uncanny'   
+                + '.' + this.model1.get('extension')));
+
+            this.$el.find('.second-hero img').attr('src',
+                (this.model2.get('thumbnail')
+                + '/portrait_uncanny'   
+                + '.' + this.model2.get('extension')));    
+
+            this.$el.find('.third-hero img').attr('src',
+                (this.model3.get('thumbnail')
+                + '/portrait_uncanny'   
+                + '.' + this.model3.get('extension')));
+
+            this.$el.find('.first-hero h2').html(this.model1.get('name'));
+            this.$el.find('.second-hero h2').html(this.model2.get('name'));
+            this.$el.find('.third-hero h2').html(this.model3.get('name'));
+
+    },
+
 
     render: function () {
         this.$el.html(this.template());

@@ -1,11 +1,9 @@
-            <section class="arena">
-                <!-- sidewalk graphic as random background -->
-                <div class="health_bars">
+            <section class="arena clearfix">
+                <div class="health_bars clearfix">
                     <div class="health_left"></div>
                     <div class="health_right"></div>
                 </div>
 
-                <!-- Health bars on an isolated row. -->
 
                 <div class="combatants">
                     <div class="combatant_one">
@@ -25,37 +23,28 @@
                     </div>
                 </div>
 
-                <!-- Character pictures on an isolated row. Should help with positioning and moving images between them? -->
 
             </section>
 
-            <!-- Turn battle. Same box styling at stats battle. -->
             <section class="turn_battle">
                 <ul class="turns">
                     <!-- 
                     For Character One, picture before text.
                     For Character Two, text before picture.
                     Order is either determined by JS insert order, or images are absolutely positioned by parent class. -->
-                    <li class="char_one">
-                        <img src="img/character_square.jpg">
-                        <p>[Insert Character name] lands a devastating blow for 40 Damage!</p>
-                    </li>
-                    <li class="char_two">
-                        <img src="img/character_square.jpg">
-                        <p>[Insert Character name] UNleashes a barrage for 35 Damage!</p>
-                    </li>
+                    
                     
                 </ul>
             </section>
 
             <section class="battle_buttons">
-                <div>
+                <div class="button">
                     <p>REMATCH</p>
                 </div>
-                <div>
+                <div class="button">
                     <p>NEW BATTLE</p>
                 </div>
-                <div>
+                <div class="button">
                     <p>TURN BATTLE</p>
                 </div>
             </section>
