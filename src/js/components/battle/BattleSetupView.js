@@ -33,7 +33,7 @@ var BattleSetupView = Backbone.View.extend({
     },
 
     onRandomBattleClick: function () {
-
+ 
     },
 
     initialize: function (options) {
