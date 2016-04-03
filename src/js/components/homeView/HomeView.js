@@ -7,7 +7,7 @@ var RecentBattleView = require('../battle/RecentBattleView.js');
 var HomeView = Backbone.View.extend({
 
     events: {
-        'click': 'onClick'
+        //'click': 'onClick'
     },
 
     template: _.template(require('./HomeView.html')),
@@ -17,6 +17,7 @@ var HomeView = Backbone.View.extend({
             window.location.hash = 'searchFull';
         } else {
             window.location.hash = 'battleSetup';
+        
         }
     },
 

@@ -12,7 +12,9 @@ app.use(express.static(__dirname + '/public'));
 var battleResultsIds = 0;
 
 
-var battleResults = [];
+var battleResults = [{winner: 1009148, loser:1009146},
+                     {winner: 1009149, loser: 1011334}                    
+                ];
 
 function topPicks (arr) {
 
@@ -60,15 +62,10 @@ function topPicks (arr) {
     });
 
     return heroList;
-
-
 }
 
 
 
-for (; battleResultsIds++ < battleResults.length;) {
-    battleResults[battleResultsIds - 1].id = battleResultsIds;
-}
 
 app.use(bodyParser());
 // what bodyParser does is add a propery to the request, called body, that we can use
@@ -102,6 +99,7 @@ app.get('/api/topPicks', function (req, res) {
     if (req.query.limit) {
         result = result.slice(0, req.query.limit);
     }
+    console.log(result);
 
     res.json(result);
 });
