@@ -61,6 +61,8 @@ var HeroPickView = Backbone.View.extend({
 
     show: function (model) {
 
+        $('.search-dock').removeClass('active');
+
         console.log("show inside the pick", model);
         // this.stopListening('pick');
         //  show the current character.
@@ -69,6 +71,7 @@ var HeroPickView = Backbone.View.extend({
         // this.model = cache.getCharacter(heroId);
         this.stopListening('pick');
         if (model) {
+
             this.model = model;
             this.withHero = true;
             
