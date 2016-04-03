@@ -40,6 +40,9 @@ var SingleHeroFullView = Backbone.View.extend({
              + '.' + this.model.get('extension')));
 
         this.$el.find('.description p').html(this.model.get('description'));
+        this.$el.find('.combatant h1').html(this.model.get('name'));
+        this.$el.find('.character_bio h1').html($('<span>').html(this.model.get('name').split('').splice(0, 1).join()));
+        this.$el.find('.character_bio h1').append(this.model.get('name').split('').splice(1).join(''));
     }
 });
 
