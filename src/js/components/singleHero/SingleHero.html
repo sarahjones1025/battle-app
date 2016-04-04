@@ -12,11 +12,13 @@
 	
 	<div class="character_bio">
 
-		<div class="yellow_box"></div>
+		<div class="yellow_box">
+			<h1>
+				<span><%= name[0] %></span><%= name.slice(1) %>
+			</h1>
+		</div>
 	<!-- the following h1 need to be populated with the characters name -->
-		<h1>
-			<span><%= name[0] %></span><%= name.slice(1) %>
-		</h1>
+		
 		<img src="<%= characterImage %>" alt="character">
 
 			<div class="power_rating">

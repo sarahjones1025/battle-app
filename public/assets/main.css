@@ -96,7 +96,6 @@
     top: 100px;
     left: 20%; }
 
-  /* Character Bio */
   .card {
     background-color: #fff4d5; }
 
@@ -104,179 +103,179 @@
     text-align: center;
     padding-top: 70px;
     background-image: url(../img/bio_bg_03.jpg);
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     width: 50%;
+    padding-top: 72%;
     float: left;
     position: relative;
     box-sizing: border-box; }
-
-  .combatant h1 {
-    position: absolute;
-    bottom: 0;
-    left: 20px;
-    text-align: left;
-    margin: 0;
-    padding: 0;
-    font-family: Impact;
-    text-transform: uppercase; }
-
-  .combatant h1:first-letter {
-    font-size: 4em; }
+    .combatant h1 {
+      color: #ffd633;
+      position: absolute;
+      text-shadow: -4px -2px 2px rgba(0, 0, 0, 0.4);
+      bottom: 2%;
+      left: 5%;
+      text-align: left;
+      margin: 0;
+      padding: 0;
+      font-family: Impact;
+      text-transform: uppercase;
+      z-index: 30; }
+      .combatant h1:first-letter {
+        font-size: 4em; }
 
   .bio_img {
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
+    background-position: center center;
     z-index: 20;
-    height: 568px;
+    position: absolute;
+    width: 86%;
+    padding-top: 116%;
+    top: 8%;
     box-sizing: border-box;
-    margin: 0 7% 17% 7%; }
+    margin: 4% 7% 17% 7%; }
 
   .levels {
     background-color: #000; }
-
-  .levels p {
-    text-align: center;
-    background-color: #000;
-    color: #fff;
-    float: left;
-    width: 14.23%;
-    margin: 0;
-    padding: 0; }
-
-  .levels p:first-child {
-    width: 7.3%;
-    text-align: left; }
-
-  .levels p:last-child {
-    width: 7.3%;
-    padding-right: 0;
-    text-align: right; }
+    .levels p {
+      text-align: center;
+      background-color: #000;
+      color: #fff;
+      float: left;
+      width: 14.23%;
+      margin: 0;
+      padding: 0; }
+      .levels p:first-child {
+        width: 7.3%;
+        text-align: left; }
+      .levels p:last-child {
+        width: 7.3%;
+        padding-right: 0;
+        text-align: right; }
 
   .yellow_box {
-    background-color: yellow;
-    border: solid 1px #000;
+    background-color: #ffd633;
+    position: relative;
+    border-top: solid 1px #000;
+    border-bottom: solid 1px #000;
     height: 50px;
     margin-top: 2.5%;
     margin-bottom: 20px; }
+    .yellow_box h1 {
+      margin: 0;
+      font-family: Impact;
+      color: #2286e8;
+      position: absolute;
+      top: 13%;
+      left: 65px; }
 
   .character_bio {
     width: 50%;
     position: relative;
-    padding-right: 30px;
     float: left;
     box-sizing: border-box; }
-
-  .character_bio span {
-    font-size: 3em;
-    position: absolute;
-    top: -17px;
-    left: -58px; }
-
-  .character_bio img {
-    margin-left: 5%; }
-
-  .character_bio a {
-    margin-top: 20px;
-    display: block;
-    padding: 20px 120px;
-    text-decoration: none;
-    color: #fff;
-    background-color: red;
-    text-align: center;
-    font-size: 1.5em; }
-
-  .character_bio h1 {
-    margin: 0;
-    font-family: Impact;
-    color: blue;
-    position: absolute;
-    top: -65px;
-    right: 390px; }
+    .character_bio span {
+      font-size: 3em;
+      position: absolute;
+      top: -17px;
+      left: -58px; }
+    .character_bio img {
+      margin-left: 10%; }
+    .character_bio button {
+      margin-top: 20px;
+      display: block;
+      padding: 20px;
+      text-decoration: none;
+      color: #fff4d5;
+      background-color: red;
+      text-align: center;
+      font-size: 1.5em;
+      letter-spacing: .2em;
+      border: none;
+      -webkit-appearance: none;
+      font-family: "bebas_neue_regularregular";
+      width: 100%; }
+    .character_bio .power_rating {
+      float: right; }
 
   .categories {
     padding-top: 20px; }
-
-  .categories div {
-    position: relative; }
-
-  .categories div div {
-    background-color: pink;
-    height: 23px;
-    width: 28.3%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 2; }
+    .categories div {
+      position: relative; }
+      .categories div div {
+        background-color: pink;
+        height: 23px;
+        width: 28.3%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2; }
 
   .power_rating {
-    width: 48%;
+    width: 52%;
     background-color: #fff;
     border: solid 2px #000;
     background-image: url(../img/tile.jpg);
     background-size: 14.6%; }
+    .power_rating div {
+      list-style: none;
+      color: #000; }
+      .power_rating div h4 {
+        padding: 4px;
+        margin: 4px;
+        z-index: 10;
+        position: relative; }
+    .power_rating h3 {
+      padding: 0;
+      margin: 0;
+      background-color: #000;
+      color: #fff;
+      text-align: center;
+      letter-spacing: .5em; }
 
-  .power_rating .character_1 .power_rating {
+  .character_1 .power_rating {
     float: right; }
 
-  .power_rating .character_2 .power_rating {
+  .character_2 .power_rating {
     float: left; }
-
-  .power_rating div {
-    list-style: none;
-    color: #000; }
-
-  .power_rating div h4 {
-    padding: 4px;
-    margin: 4px;
-    z-index: 10;
-    position: relative; }
-
-  .power_rating h3 {
-    padding: 0;
-    margin: 0;
-    background-color: #000;
-    color: #fff;
-    text-align: center;
-    letter-spacing: .5em; }
 
   .wins_losses {
     padding: 5px;
     margin-top: 20px;
     background-color: #fff;
     color: #000; }
-
-  .wins_losses h3 {
-    float: left;
-    margin: 5px; }
+    .wins_losses h3 {
+      float: left;
+      margin: 5px; }
 
   .wins, .losses {
     float: left;
     width: 25%; }
-
-  .wins h3, .losses h3 {
-    float: left;
-    margin: 5px;
-    text-decoration: underline; }
-
-  .wins div, .losses div {
-    float: left;
-    width: 25px;
-    height: 25px;
-    border: solid 2px #000; }
+    .wins h3, .losses h3 {
+      float: left;
+      margin: 5px;
+      text-decoration: underline; }
+    .wins div, .losses div {
+      float: left;
+      width: 25px;
+      height: 25px;
+      border: solid 2px #000; }
 
   .description {
     padding: 10px;
     margin-top: 20px;
     background-color: #fff;
     color: #000; }
+    .description h3 {
+      margin: 0; }
+    .description p {
+      font-family: Helvetica;
+      font-size: .8em; }
 
-  .description h3 {
-    margin: 0; }
-
-  .description p {
-    font-family: Helvetica;
-    font-size: 0.8em; } }
+  .magical_div {
+    padding: 0 5%; } }
 @font-face {
   font-family: Badaboom;
   src: url(fonts/badaboom.ttf);
@@ -698,6 +697,13 @@ div.active {
     height: 50px;
     margin-top: 2.5%;
     margin-bottom: 20px; }
+    .yellow_box h1 {
+      margin: 0;
+      font-family: Impact;
+      color: #2286e8;
+      position: absolute;
+      top: 13%;
+      left: 65px; }
 
   .character_bio {
     width: 50%;
@@ -725,13 +731,6 @@ div.active {
       -webkit-appearance: none;
       font-family: "bebas_neue_regularregular";
       width: 100%; }
-    .character_bio h1 {
-      margin: 0;
-      font-family: Impact;
-      color: #2286e8;
-      position: absolute;
-      top: 13%;
-      left: 65px; }
     .character_bio .power_rating {
       float: right; }
 
@@ -754,10 +753,6 @@ div.active {
     border: solid 2px #000;
     background-image: url(../img/tile.jpg);
     background-size: 14.6%; }
-    .power_rating .character_1 .power_rating {
-      float: right; }
-    .power_rating .character_2 .power_rating {
-      float: left; }
     .power_rating div {
       list-style: none;
       color: #000; }
@@ -773,6 +768,12 @@ div.active {
       color: #fff;
       text-align: center;
       letter-spacing: .5em; }
+
+  .character_1 .power_rating {
+    float: right; }
+
+  .character_2 .power_rating {
+    float: left; }
 
   .wins_losses {
     padding: 5px;
@@ -805,10 +806,10 @@ div.active {
       margin: 0; }
     .description p {
       font-family: Helvetica;
-      font-size: .8em; } }
-.magical_div {
-  padding: 0 5%; }
+      font-size: .8em; }
 
+  .magical_div {
+    padding: 0 5%; } }
 body {
   font-family: "bebas_neue_regularregular";
   color: yellow;
