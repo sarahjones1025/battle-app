@@ -29,12 +29,12 @@ var TopPicksView = Backbone.View.extend({
     },
 
     onSecondHeroClick: function () {
-        console.log('first hero click');
+        console.log('second hero click');
         
     },
 
     onThirdHeroClick: function () {
-        console.log('first hero click');
+        console.log('third hero click');
         
     },    
 
