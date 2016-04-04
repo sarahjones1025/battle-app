@@ -3,6 +3,7 @@ var $ = require('jquery');
 var Backbone = require('backbone');
 var SingleHeroModel = require('./SingleHeroModel.js');
 var utils = require('../utils/utils.js');
+var dispatcher = require('../router/dispatcher.js');
 
 var SingleHeroFullView = Backbone.View.extend({
 
@@ -22,19 +23,26 @@ var SingleHeroFullView = Backbone.View.extend({
     initialize: function () {
        //******** var button = $('<button>');
        //********  this.img = $('<img>');
+       var _this = this;
 
         this.listenTo(this.model, 'sync', this.render);
+        this.listenTo(dispatcher, 'addEvent', this.render);
 
         //*********button.html('Send To Battle');
+
+        this.winsAndLosses = {wins: 1000,losses:1000};
+
 
         $.ajax({
             url: '/api/winsAndLosses',
             method: 'GET',
+            data: {hero:this.model.get('id')},
             success: getWinsAndLosses
         });
 
-        function getWinsAndLosses () {
-            console.log('in get wins and losses');
+        function getWinsAndLosses (result) {
+            _this.winsAndLosses = result;
+            dispatcher.trigger('addEvent');
         }
     },
 
@@ -73,7 +81,10 @@ var SingleHeroFullView = Backbone.View.extend({
         this.$el.find('.durability > div').css({'width': durability});
         this.$el.find('.intelligence > div').css({'width': intelligence});
         this.$el.find('.energy > div').css({'width': energy});
-    },
+
+        this.$el.find('.wins div').html(this.winsAndLosses.wins);
+        this.$el.find('.losses div').html(this.winsAndLosses.losses);
+    }
 
         
 });

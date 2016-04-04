@@ -85,7 +85,7 @@ var BattleSpaceView = Backbone.View.extend({
                 if (counter < result.fightData.length) {
                     setTimeout(appendLI, 4000);
                 }   else {
-                    _this.$el.find('.turns').firstChild.addClass('winning-message');
+                    _this.$el.find('.turns').children.first.addClass('winning-message');
                 }
 
                 
