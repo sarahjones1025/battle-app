@@ -56,7 +56,6 @@ var MiniSearchView = Backbone.View.extend({
     },
 
     onClick: function () {
-        console.log('we up in here');
         var count = 0;
         var _this = this;
         for (var i = 0; i < _this.children.length; i++) {
