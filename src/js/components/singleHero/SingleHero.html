@@ -7,17 +7,17 @@
 		<div class="bio_img">
 		</div>
 	<!-- the following h1 need to be populated with the characters name -->
-		<h1>Character</h1>
+		<h1><%= name %></h1>
 	</div>
 	
 	<div class="character_bio">
-		<div class="yellow_box">
-			<!-- the following h1 need to be populated with the characters name -->
-			<h1><span>C</span>haracter</h1>
-		</div>
-	
-		<div class="magical_div">
-			<img src="img/portrait_xlarge.jpg" alt="character">
+
+		<div class="yellow_box"></div>
+	<!-- the following h1 need to be populated with the characters name -->
+		<h1>
+			<span><%= name[0] %></span><%= name.slice(1) %>
+		</h1>
+		<img src="<%= characterImage %>" alt="character">
 
 			<div class="power_rating">
 				<div class="levels">
@@ -74,13 +74,13 @@
 				</div>
 			</div>
 
-			<div class="description">
-				<h3>Description:</h3>
-		<!-- This p tag needs to be populated with the description. If no description exists, needs to return "No character description available." -->
-				<p></p>
-			</div>
-			<!--this was an a tag below, I changed it to a button, just letting you know -->
+
+		<div class="description">
+			<h3>Description:</h3>
+	<!-- This p tag needs to be populated with the description. If no description exists, needs to return "No character description available." -->
+			<p><%= description %></p>
 			<button>Send into Battle!</button>
+
 		</div>
 	</div>	
 </main>

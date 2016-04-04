@@ -42,6 +42,7 @@ var RecentBattleView = Backbone.View.extend({
 
             // _this.show();
         }        
+
     },
 
     show: function () {

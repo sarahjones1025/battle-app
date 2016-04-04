@@ -60,12 +60,15 @@ var HeroPickView = Backbone.View.extend({
 
     },
 
+
     render: function ( ) {
            
         console.log('in the render function');
         console.log(this.model);
         this.show(this.model);       
-
+    },
+    getBarPercent: function (stat) {
+        return parseInt(stat) * 14.3 + '%';
     },
 
     show: function (model) {
@@ -80,14 +83,6 @@ var HeroPickView = Backbone.View.extend({
         this.stopListening('pick');
         
         if (model) {
-            // var stats = utils.getStats(this.model.get('id'));
-            // var strength = parseInt(stats.strength)*(14.3) + '%';
-            // var speed = parseInt(stats.speed)*(14.3) + '%';
-            // var fighting = parseInt(stats.fighting)*(14.3) + '%';
-            // var durability = parseInt(stats.durability)*(14.3) + '%';
-            // var intelligence = parseInt(stats.intelligence)*(14.3) + '%';
-            // var energy = parseInt(stats.energy)*(14.3) + '%';
-
             this.model = model;
             this.withHero = true;
             
@@ -98,20 +93,28 @@ var HeroPickView = Backbone.View.extend({
             this.$el.find('.picked > img').attr('src', (this.model.get('thumbnail')
                     + '.' + this.model.get('extension'))); 
             this.$el.find('.name-of').html(this.model.get('name'));     
-                         
-            // this.$el.find('.strength > div').css({'width': strength});
-            // this.$el.find('.speed > div').css({'width': speed});
-            // this.$el.find('.fighting > div').css({'width': fighting});
-            // this.$el.find('.durability > div').css({'width': durability});
-            // this.$el.find('.intelligence > div').css({'width': intelligence});
-            // this.$el.find('.energy > div').css({'width': energy});          
 
- 
+            var stats = utils.getStats(this.model.get('id'));
+            var strength     = this.getBarPercent(stats.strength);
+            var speed        = this.getBarPercent(stats.speed);
+            var fighting     = this.getBarPercent(stats.fighting);
+            var durability   = this.getBarPercent(stats.durability);
+            var intelligence = this.getBarPercent(stats.intelligence);
+            var energy       = this.getBarPercent(stats.energy);
+            this.$el.find('.strength > div').css({'width': strength});
+            this.$el.find('.speed > div').css({'width': speed});
+            this.$el.find('.fighting > div').css({'width': fighting});
+            this.$el.find('.durability > div').css({'width': durability});
+            this.$el.find('.intelligence > div').css({'width': intelligence});
+            this.$el.find('.energy > div').css({'width': energy});
+
+
+
         };
 
         searchController.enable();
      
-    },
+    }
 
 });
 
