@@ -22,15 +22,20 @@
 	}
 }
 
-.character_1 .picked{
-	position: absolute;
-	width: 50%;
-	top: 11.1%;
-	left: 11%;
-	z-index: 0;
-	img{
-		max-width: 77.5%;
-		border: solid 5px #000;
+.character_1{
+	.picked{
+		position: absolute;
+		width: 50%;
+		top: 11.1%;
+		left: 11%;
+		z-index: 0;
+		img{
+			max-width: 77.5%;
+			border: solid 5px #000;
+		}
+	}
+	.power_rating{
+		float: right;
 	}
 }
 
