@@ -29,45 +29,42 @@ var RecentBattleView = Backbone.View.extend({
         });
 
         function processResult(data) {
-            console.log("in top picks init.");
-            console.log(data);
-            console.log(data[0].id);
 
-            _this.model1 = cache.getCharacter( utils.searchForId(data[0].winner));
-            _this.model2 = cache.getCharacter( utils.searchForId(data[0].loser));
-            _this.model3 = cache.getCharacter( utils.searchForId(data[1].winner));
-            _this.model4 = cache.getCharacter( utils.searchForId(data[1].loser));
+            // _this.model1 = cache.getCharacter( utils.searchForId(data[0].winner));
+            // _this.model2 = cache.getCharacter( utils.searchForId(data[0].loser));
+            // _this.model3 = cache.getCharacter( utils.searchForId(data[1].winner));
+            // _this.model4 = cache.getCharacter( utils.searchForId(data[1].loser));
 
-            _this.listenTo(_this.model1,'sync', _this.show);
-            _this.listenTo(_this.model2,'sync', _this.show);
-            _this.listenTo(_this.model3,'sync', _this.show);
-            _this.listenTo(_this.model4,'sync', _this.show);
+            // _this.listenTo(_this.model1,'sync', _this.show);
+            // _this.listenTo(_this.model2,'sync', _this.show);
+            // _this.listenTo(_this.model3,'sync', _this.show);
+            // _this.listenTo(_this.model4,'sync', _this.show);
 
-            _this.show();
+            // _this.show();
         }        
     },
 
     show: function () {
-        console.log("in pickView show");
-            var string = (this.model1.get('thumbnail')
-                + '/landscape_large'   
-                + '.' + this.model1.get('extension'));
-            this.$el.find('.battle1 .character1').css({'background-image': string});
+        // console.log("in pickView show");
+        //     var string = (this.model1.get('thumbnail')
+        //         + '/landscape_large'   
+        //         + '.' + this.model1.get('extension'));
+        //     this.$el.find('.battle1 .character1').css({'background-image': string});
 
-            string = (this.model2.get('thumbnail')
-                + '/landscape_large'   
-                + '.' + this.model2.get('extension'));
-            this.$el.find('.second-hero .character2').css({'background-image': string});
+        //     string = (this.model2.get('thumbnail')
+        //         + '/landscape_large'   
+        //         + '.' + this.model2.get('extension'));
+        //     this.$el.find('.second-hero .character2').css({'background-image': string});
 
-            string = (this.model3.get('thumbnail')
-                + '/landscape_large'   
-                + '.' + this.model3.get('extension'));
-            this.$el.find('.battle2 .character1').attr({'background-image': string});
+        //     string = (this.model3.get('thumbnail')
+        //         + '/landscape_large'   
+        //         + '.' + this.model3.get('extension'));
+        //     this.$el.find('.battle2 .character1').attr({'background-image': string});
 
-            string = (this.model4.get('thumbnail')
-                + '/landscape_large'   
-                + '.' + this.model4.get('extension'));
-            this.$el.find('.battle2 .character2').attr({'background-image': string});
+        //     string = (this.model4.get('thumbnail')
+        //         + '/landscape_large'   
+        //         + '.' + this.model4.get('extension'));
+        //     this.$el.find('.battle2 .character2').attr({'background-image': string});
 
 
 

@@ -5,24 +5,28 @@
 
 	.combatant{
 		text-align: center;
-		padding-top: 70px;
-		background-image: url(../img/bio_bg_03.jpg);
-		background-size: contain;
-		// don't change this ^ 
-		background-repeat: no-repeat;
-		width: 50%;
-		float: left;
-		position: relative;
-		box-sizing: border-box;
+	    padding-top: 70px;
+	    background-image: url(../img/bio_bg_03.jpg);
+	    background-size: cover;
+	    background-repeat: no-repeat;
+	    width: 50%;
+	    padding-top: 72%;
+	    float: left;
+	    position: relative;
+	    box-sizing: border-box;
+
 			h1{
+				color: #ffd633;
 				position: absolute;
-				bottom: 0;
-				left: 20px;
+				text-shadow: -4px -2px 2px rgba(0,0,0,0.4);
+				bottom: 2%;
+				left: 5%;
 				text-align: left;
 				margin: 0;
 				padding: 0;
 				font-family: Impact;
 				text-transform: uppercase;
+				z-index: 30;
 				&:first-letter{
 			  		font-size: 4em;
 	  			}
@@ -30,13 +34,18 @@
 	}
 
 	.bio_img {
-	    // background-image: url(../img/detail.jpg);
-	    background-size: contain;
+	    background-size: cover;
 	    background-repeat: no-repeat;
+	    background-position: center center;
 	    z-index: 20;
-	    height: 568px;
+	    position: absolute;
+	    width: 86%;
+	    padding-top: 116%;
+	    top: 8%;
 	    box-sizing: border-box;
-	    margin: 0 7% 17% 7%;
+	    margin: 4% 7% 17% 7%;
+    
+
 	}
 
 	.levels{
@@ -65,8 +74,10 @@
 	}
 
 	.yellow_box {
-	    background-color: yellow;
-	    border: solid 1px #000;
+	    background-color: #ffd633;
+	    position: relative;
+	    border-top: solid 1px #000;
+	    border-bottom: solid 1px #000;
 	    height: 50px;
 	    margin-top: 2.5%;
 	    margin-bottom: 20px;
@@ -74,10 +85,9 @@
 
 	.character_bio{
 		width: 50%;
-		position: relative;
-		padding-right: 30px;
-		float: left;
-		box-sizing: border-box;
+	    position: relative;
+	    float: left;
+	    box-sizing: border-box;
 
 		span{
 			font-size: 3em;
@@ -88,27 +98,36 @@
 		
 
 		img{
-	    	margin-left: 5%;
+	    	margin-left: 10%;
 	    }
 		
-		a{
+		button{
 			margin-top: 20px;
 		    display: block;
-		    padding: 20px 120px;
+		    padding: 20px;
 		    text-decoration: none;
-		    color: #fff;
+		    color: #fff4d5;
 		    background-color: red;
 		    text-align: center;
 		    font-size: 1.5em;
+		    letter-spacing: .2em;
+		    border: none;
+		    -webkit-appearance: none;
+		    font-family: "bebas_neue_regularregular";
+		    width: 100%;
 		}
 		
 		h1{
 			margin: 0;
 		    font-family: Impact;
-		    color: blue;
+		    color: #2286e8;
 		    position: absolute;
-		    top: -65px;
-		    right: 390px;
+		    top: 13%;
+		    left: 65px
+		}
+
+		.power_rating{
+			float: right;
 		}
 
 	}
@@ -136,8 +155,7 @@
 
 
 .power_rating{
-	// float: right;
-    width: 48%;
+    width: 52%;
     background-color: #fff;
     border: solid 2px #000;
     background-image: url(../img/tile.jpg);
@@ -219,4 +237,8 @@
 			font-size: .8em;
 		}
 	}
+}
+
+.magical_div{
+	padding: 0 5%;
 }
