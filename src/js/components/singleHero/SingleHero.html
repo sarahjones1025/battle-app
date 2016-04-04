@@ -18,71 +18,70 @@
 			</h1>
 		</div>
 	<!-- the following h1 need to be populated with the characters name -->
-		
-		<img src="<%= characterImage %>" alt="character">
+		<div class="magical_div">
+			<img src="<%= characterImage %>" alt="character">
 
-			<div class="power_rating">
-				<div class="levels">
-					<p>0</p>
-					<p>1</p>
-					<p>2</p>
-					<p>3</p>
-					<p>4</p>
-					<p>5</p>
-					<p>6</p>
-					<p>7</p>
+				<div class="power_rating">
+					<div class="levels">
+						<p>0</p>
+						<p>1</p>
+						<p>2</p>
+						<p>3</p>
+						<p>4</p>
+						<p>5</p>
+						<p>6</p>
+						<p>7</p>
+					</div>
+					<div class="categories">
+						<div class="strength">
+							<h4>strength</h4>
+							<div></div>
+						</div>
+						<div class="speed">
+							<h4>speed</h4>
+							<div></div>
+						</div>
+						<div class="fighting">
+							<h4>fighting</h4>
+							<div></div>
+						</div>
+						<div class="energy">
+							<h4>energy</h4>
+							<div></div>
+						</div>
+						<div class="durability">
+							<h4>durability</h4>
+							<div></div>
+						</div>
+						<div class="intelligence">
+							<h4>intelligence</h4>
+							<div></div>
+						</div>
+					</div>
+					<h3>Power Ratings</h3>
 				</div>
-				<div class="categories">
-					<div class="strength">
-						<h4>strength</h4>
+				<div class="clear"></div>
+				<div class="wins_losses clearfix">
+					<h3>historic wins/losses:</h3>
+					<div class="wins">
+						<h3>wins</h3>
+				<!-- This div needs to be populated with the number of wins -->
 						<div></div>
 					</div>
-					<div class="speed">
-						<h4>speed</h4>
-						<div></div>
-					</div>
-					<div class="fighting">
-						<h4>fighting</h4>
-						<div></div>
-					</div>
-					<div class="energy">
-						<h4>energy</h4>
-						<div></div>
-					</div>
-					<div class="durability">
-						<h4>durability</h4>
-						<div></div>
-					</div>
-					<div class="intelligence">
-						<h4>intelligence</h4>
+					
+					<div class="losses">
+						<h3>losses</h3>
+				<!-- This div needs to be populated with the number of wins -->
 						<div></div>
 					</div>
 				</div>
-				<h3>Power Ratings</h3>
-			</div>
-			<div class="clear"></div>
-			<div class="wins_losses clearfix">
-				<h3>historic wins/losses:</h3>
-				<div class="wins">
-					<h3>wins</h3>
-			<!-- This div needs to be populated with the number of wins -->
-					<div></div>
-				</div>
-				
-				<div class="losses">
-					<h3>losses</h3>
-			<!-- This div needs to be populated with the number of wins -->
-					<div></div>
-				</div>
-			</div>
-
 
 		<div class="description">
 			<h3>Description:</h3>
 	<!-- This p tag needs to be populated with the description. If no description exists, needs to return "No character description available." -->
 			<p><%= description %></p>
+			</div>
+			<button>Send into Battle!</button>
 		</div>
-		<button>Send into Battle!</button>
-
 	</div>	
 </main>
