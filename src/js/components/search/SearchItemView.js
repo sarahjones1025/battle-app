@@ -10,7 +10,8 @@ var SearchItemView = Backbone.View.extend({
     template: _.template(require('./SearchItemView.html')),
 
     events: {
-        'click button': 'toSingleHero'
+        
+        // 'click .to-the-battle': toBattle,
     },
 
     initialize: function () {
@@ -19,23 +20,31 @@ var SearchItemView = Backbone.View.extend({
 
     render: function () {
         this.$el.html(this.template(this.model));
-    },
+    }
 
-    toBattle: function () {
-        console.log('click Event in Search SearchItemView');
+    // test: function (e) {
+    //     console.log(e.target);
+    //     if (e.target.classList.contains('to-the-battle')) {
+    //         window.location.hash = 'battleSetup/' + this.model.get('id');
 
-        window.location.hash = ('battleSetup/' + this.model.get('id'));
-    },
+    //     }
 
-    toSingleHero: function (e) {
-        console.log(e.target);
-        if (e.target.classList.contains('to-the-battle')) {
-            window.location.hash = ('battleSetup/' + this.model.get('id'));
-        } else {
-            window.location.hash = ('singleHero/' + this.model.get('id'));
-        }
-    }    
+    // toBattle: function () {
+    //     console.log('click Event in Search SearchItemView');
 
+    //     window.location.hash = ('battleSetup/' + this.model.get('id'));
+    // },
+
+    // toSingleHero: function (e) {
+    //     console.log(e.target);
+        // console.log('it worked');
+        // if (e.target.classList.contains('to-the-battle')) {
+        //     window.location.hash = ('battleSetup/' + this.model.get('id'));
+        // } else {
+        //     window.location.hash = ('singleHero/' + this.model.get('id'));
+        // }
+    // }
+    
 });
 
 module.exports = SearchItemView;
