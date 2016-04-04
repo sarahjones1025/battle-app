@@ -71,8 +71,6 @@ var HeroPickView = Backbone.View.extend({
         this.stopListening('pick');
         
         if (model) {
-<<<<<<< HEAD
-=======
             // var stats = utils.getStats(this.model.get('id'));
             // var strength = parseInt(stats.strength)*(14.3) + '%';
             // var speed = parseInt(stats.speed)*(14.3) + '%';
@@ -80,18 +78,13 @@ var HeroPickView = Backbone.View.extend({
             // var durability = parseInt(stats.durability)*(14.3) + '%';
             // var intelligence = parseInt(stats.intelligence)*(14.3) + '%';
             // var energy = parseInt(stats.energy)*(14.3) + '%';
->>>>>>> working
 
             this.model = model;
             this.withHero = true;
             
             this.searchView.remove();
             this.$el.find('.picked > img').attr('src', (this.model.get('thumbnail')
-<<<<<<< HEAD
                     + '.' + this.model.get('extension')));            
-=======
-                    + '/portrait_xlarge'
-                    + '.' + this.model.get('extension')));  
 
             // this.$el.find('.strength > div').css({'width': strength});
             // this.$el.find('.speed > div').css({'width': speed});
@@ -99,7 +92,6 @@ var HeroPickView = Backbone.View.extend({
             // this.$el.find('.durability > div').css({'width': durability});
             // this.$el.find('.intelligence > div').css({'width': intelligence});
             // this.$el.find('.energy > div').css({'width': energy});          
->>>>>>> working
 
  
         };
