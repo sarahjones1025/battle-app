@@ -90,10 +90,8 @@ app.get('/api/battleResults', function (req, res) {
 });
 
 app.post('/api/battleResults', function (req, res) {
-    console.log(req.body);
     req.body.id = battleResultsIds++;
     battleResults.push(req.body);
-    console.log(req.body);
 });
 
 app.get('/api/topPicks', function (req, res) {
@@ -101,11 +99,15 @@ app.get('/api/topPicks', function (req, res) {
     if (req.query.limit) {
         result = result.slice(0, req.query.limit);
     }
-    console.log(result);
-
     res.json(result);
 });
 
-//app.get('/api/winsAndLosses', function (req, res) {})
+app.get('/api/winsAndLosses', function (req, res) {
+    // var wins;
+    // var losses;
+
+    // battleResults.forEach(function () {
+    // })
+});
 
 app.listen(8000);

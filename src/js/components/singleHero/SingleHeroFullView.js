@@ -26,49 +26,56 @@ var SingleHeroFullView = Backbone.View.extend({
         this.listenTo(this.model, 'sync', this.render);
 
         //*********button.html('Send To Battle');
-        this.$el.html(this.template(this.model));
+
+        $.ajax({
+            url: '/api/winsAndLosses',
+            method: 'GET',
+            success: getWinsAndLosses
+        });
+
+        function getWinsAndLosses () {
+            console.log('in get wins and losses');
+        }
+    },
+
+    getBarPercent: function (stat) {
+        return parseInt(stat) * 14.3 + '%';
     },
 
     render: function () {
          //The following is the full path of the image.
 
-         // var stats = utils.getStats(this.model.get('id'));
+        this.$el.html(this.template({
+            name: this.model.get('name'),
+            description: this.model.get('description'),
+            characterImage:
+                this.model.get('thumbnail') + '/portrait_xlarge' + '.' + this.model.get('extension')
+        }));
+        console.log('below is the double model');
+        console.log(this.model);
+        var stats = utils.getStats(this.model.get('id'));
 
-         // var strength = parseInt(stats.strength)*(14.3) + '%';
-         // var speed = parseInt(stats.speed)*(14.3) + '%';
-         // var fighting = parseInt(stats.fighting)*(14.3) + '%';
-         // var durability = parseInt(stats.durability)*(14.3) + '%';
-         // var intelligence = parseInt(stats.intelligence)*(14.3) + '%';
-         // var energy = parseInt(stats.energy)*(14.3) + '%';
+        var strength     = this.getBarPercent(stats.strength);
+        var speed        = this.getBarPercent(stats.speed);
+        var fighting     = this.getBarPercent(stats.fighting);
+        var durability   = this.getBarPercent(stats.durability);
+        var intelligence = this.getBarPercent(stats.intelligence);
+        var energy       = this.getBarPercent(stats.energy);
 
+        this.$el.find('.bio_img').css({
+            'background-image': "url('" + this.model.get('thumbnail') +
+            '.' + this.model.get('extension') + "')" });
 
-        this.$el.find('.character_bio img').attr('src',
-             (this.model.get('thumbnail')
-             + '/portrait_xlarge'   
-             + '.' + this.model.get('extension')));
+        // Update widths of stat bars
+        this.$el.find('.strength > div').css({'width': strength});
+        this.$el.find('.speed > div').css({'width': speed});
+        this.$el.find('.fighting > div').css({'width': fighting});
+        this.$el.find('.durability > div').css({'width': durability});
+        this.$el.find('.intelligence > div').css({'width': intelligence});
+        this.$el.find('.energy > div').css({'width': energy});
+    },
 
-
-        this.$el.find('.bio_img').css({'background-image': "url('" + this.model.get('thumbnail')
-              + '.' + this.model.get('extension') + "')" });
-
-
-        console.log();
-        console.log("url('" + this.model.get('thumbnail')
-             + '.' + this.model.get('extension') + "')");
-
-        // this.$el.find('.description p').html(this.model.get('description'));
-        // this.$el.find('.combatant h1').html(this.model.get('name'));
-        // this.$el.find('.character_bio h1').html($('<span>').html(this.model.get('name').split('').splice(0, 1).join()));
-        // this.$el.find('.character_bio h1').append(this.model.get('name').split('').splice(1).join(''));
-        // this.$el.find('.strength > div').css({'width': strength});
-        // this.$el.find('.speed > div').css({'width': speed});
-        // this.$el.find('.fighting > div').css({'width': fighting});
-        // this.$el.find('.durability > div').css({'width': durability});
-        // this.$el.find('.intelligence > div').css({'width': intelligence});
-        // this.$el.find('.energy > div').css({'width': energy});
-
-
-    }
+        
 });
 
 module.exports = SingleHeroFullView;

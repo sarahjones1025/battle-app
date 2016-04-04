@@ -1,6 +1,8 @@
 var Backbone = require('backbone');
 var _ = require('underscore');
 var $ = require('jquery');
+var utils = require('../utils/utils.js');
+
 
 var HeroPickView = require('../heroPick/HeroPickView.js');
 var searchController = require('../heroPick/searchController.js');
@@ -53,6 +55,7 @@ var BattleSetupView = Backbone.View.extend({
         this.$el.append(this.template());
 
         this.$el.find('.character_1').append(this.heroPick1.$el);
+
         this.$el.find('.character_2').append(this.heroPick2.$el);
 
     },
