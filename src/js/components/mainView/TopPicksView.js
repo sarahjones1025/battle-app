@@ -18,7 +18,25 @@ var TopPicksView = Backbone.View.extend({
 
     template: _.template(require('./topPicks.html')),
 
+    events: {
+        'click .first-hero':'onFirstHeroClick',
+        'click .second-hero':'onSecondHeroClick',
+        'click .third-hero':'onThirdHeroClick'
+    },
 
+    onFirstHeroClick: function () {
+        console.log('first hero click');
+    },
+
+    onSecondHeroClick: function () {
+        console.log('first hero click');
+        
+    },
+
+    onThirdHeroClick: function () {
+        console.log('first hero click');
+        
+    },    
 
     initialize: function (options) {
 
