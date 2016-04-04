@@ -79,10 +79,14 @@
     height: 115px; }
     header h1 {
       margin: 0;
-      margin-left: 3%; }
+      margin-left: 3%;
+      font-size: 2.2em; }
 
-  .top_nav a {
-    padding: 15px 50px; }
+  .top_nav {
+    height: 115px;
+    float: right; }
+    .top_nav a {
+      padding: 15px 50px; }
 
   li:last-child a {
     padding: 15px 65px;
@@ -798,12 +802,10 @@ body {
   position: relative; }
 
 header {
-  width: 100%;
   position: relative;
   z-index: 0; }
   header h1 {
     font-family: Badaboom;
-    margin: 0;
     position: relative;
     float: left;
     font-weight: 100; }
@@ -816,7 +818,6 @@ header {
     text-shadow: 2px 5px 5px #000; }
   header .top_nav {
     padding: 0;
-    float: right;
     margin: 0;
     display: table; }
     header .top_nav li {

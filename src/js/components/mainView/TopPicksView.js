@@ -25,16 +25,16 @@ var TopPicksView = Backbone.View.extend({
     },
 
     onFirstHeroClick: function () {
-        console.log('first hero click');
+        window.location.hash = ('singleHero/' + this.model1.get('id'));
     },
 
     onSecondHeroClick: function () {
-        console.log('second hero click');
+        window.location.hash = ('singleHero/' + this.model2.get('id'));
         
     },
 
     onThirdHeroClick: function () {
-        console.log('third hero click');
+        window.location.hash = ('singleHero/' + this.model3.get('id'));
         
     },    
 
