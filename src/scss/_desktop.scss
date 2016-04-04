@@ -1,5 +1,7 @@
-@media screen and (min-width:1000px){
+@media screen and (min-width: 1000px){
 
+
+// General Styling
 	header{
 
 		width:78%;
@@ -33,6 +35,7 @@
 		}
 	}
 
+// Index Page
 	.character_button{
 		top:100px; 
 		left:20%; 
@@ -42,250 +45,249 @@
 
 	}
 
-	/* Character Bio */
+// Bio Page
+  .card{
+      background-color: #fff4d5;
+    }
 
-	.card{
-		background-color: #fff4d5;
-		}
+    .combatant{
+      text-align: center;
+        padding-top: 70px;
+        background-image: url(../img/bio_bg_03.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 50%;
+        padding-top: 72%;
+        float: left;
+        position: relative;
+        box-sizing: border-box;
 
-		.combatant{
-			text-align: center;
-		    padding-top: 70px;
-		    background-image: url(../img/bio_bg_03.jpg);
-		    background-size: cover;
-		    background-repeat: no-repeat;
-		    width: 50%;
-		    padding-top: 72%;
-		    float: left;
-		    position: relative;
-		    box-sizing: border-box;
+        h1{
+          color: #ffd633;
+          position: absolute;
+          text-shadow: -4px -2px 2px rgba(0,0,0,0.4);
+          bottom: 2%;
+          left: 5%;
+          text-align: left;
+          margin: 0;
+          padding: 0;
+          font-family: Impact;
+          text-transform: uppercase;
+          z-index: 30;
+          &:first-letter{
+              font-size: 4em;
+            }
+        }
+    }
 
-				h1{
-					color: #ffd633;
-					position: absolute;
-					text-shadow: -4px -2px 2px rgba(0,0,0,0.4);
-					bottom: 2%;
-					left: 5%;
-					text-align: left;
-					margin: 0;
-					padding: 0;
-					font-family: Impact;
-					text-transform: uppercase;
-					z-index: 30;
-					&:first-letter{
-				  		font-size: 4em;
-		  			}
-				}
-		}
+    .bio_img {
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        z-index: 20;
+        position: absolute;
+        width: 86%;
+        padding-top: 116%;
+        top: 8%;
+        box-sizing: border-box;
+        margin: 4% 7% 17% 7%;
+    }
 
-		.bio_img {
-		    background-size: cover;
-		    background-repeat: no-repeat;
-		    background-position: center center;
-		    z-index: 20;
-		    position: absolute;
-		    width: 86%;
-		    padding-top: 116%;
-		    top: 8%;
-		    box-sizing: border-box;
-		    margin: 4% 7% 17% 7%;
-	    
+    .levels{
+      background-color: #000;
+      
+      p{
+        text-align: center;
+        background-color: #000;
+        color: #fff;
+        float: left;
+        width: 14.23%;
+        margin: 0;
+        padding: 0;
 
-		}
+        &:first-child{
+          width: 7.3%;
+          text-align: left;
+        }
 
-		.levels{
-			background-color: #000;
-			
-			p{
-				text-align: center;
-				background-color: #000;
-				color: #fff;
-				float: left;
-				width: 14.23%;
-				margin: 0;
-				padding: 0;
+        &:last-child{
+          width: 7.3%;
+          padding-right: 0;
+          text-align: right;
+        }
+      }
+    }
 
-				&:first-child{
-					width: 7.3%;
-					text-align: left;
-				}
+    .yellow_box {
+        background-color: #ffd633;
+        position: relative;
+        border-top: solid 1px #000;
+        border-bottom: solid 1px #000;
+        height: 50px;
+        margin-top: 2.5%;
+        margin-bottom: 20px;
 
-				&:last-child{
-					width: 7.3%;
-					padding-right: 0;
-					text-align: right;
-				}
-			}
-		}
+        h1{
+          margin: 0;
+          font-family: Impact;
+          color: #2286e8;
+          position: absolute;
+          top: 13%;
+          left: 65px
+      }
+    }
 
-		.yellow_box {
-		    background-color: #ffd633;
-		    position: relative;
-		    border-top: solid 1px #000;
-		    border-bottom: solid 1px #000;
-		    height: 50px;
-		    margin-top: 2.5%;
-		    margin-bottom: 20px;
-		}
+    .character_bio{
+      width: 50%;
+        position: relative;
+        float: left;
+        box-sizing: border-box;
 
-		.character_bio{
-			width: 50%;
-		    position: relative;
-		    float: left;
-		    box-sizing: border-box;
+      span{
+        font-size: 3em;
+          position: absolute;
+          top: -17px;
+          left: -58px;
+      }
+      
 
-			span{
-				font-size: 3em;
-			    position: absolute;
-			    top: -17px;
-			    left: -58px;
-			}
-			
+      img{
+          margin-left: 10%;
+        }
+      
+      button{
+        margin-top: 20px;
+          display: block;
+          padding: 20px;
+          text-decoration: none;
+          color: #fff4d5;
+          background-color: red;
+          text-align: center;
+          font-size: 1.5em;
+          letter-spacing: .2em;
+          border: none;
+          -webkit-appearance: none;
+          font-family: "bebas_neue_regularregular";
+          width: 100%;
+      }
+      
+     
 
-			img{
-		    	margin-left: 10%;
-		    }
-			
-			button{
-				margin-top: 20px;
-			    display: block;
-			    padding: 20px;
-			    text-decoration: none;
-			    color: #fff4d5;
-			    background-color: red;
-			    text-align: center;
-			    font-size: 1.5em;
-			    letter-spacing: .2em;
-			    border: none;
-			    -webkit-appearance: none;
-			    font-family: "bebas_neue_regularregular";
-			    width: 100%;
-			}
-			
-			h1{
-				margin: 0;
-			    font-family: Impact;
-			    color: #2286e8;
-			    position: absolute;
-			    top: 13%;
-			    left: 65px
-			}
+      .power_rating{
+        float: right;
+      }
 
-			.power_rating{
-				float: right;
-			}
+    }
 
-		}
-
-		.categories{
-			padding-top: 20px;
-
-
-			div{
-				position: relative;
-
-				div{
-					background-color: pink;
-					height: 23px;
-					width: 28.3%;
-					position: absolute;
-					top: 0;
-					left: 0;
-					z-index: 2;
-				}
-
-			}
-		}
+    .categories{
+      padding-top: 20px;
 
 
+      div{
+        position: relative;
 
-	.power_rating{
-	    width: 52%;
-	    background-color: #fff;
-	    border: solid 2px #000;
-	    background-image: url(../img/tile.jpg);
-	    background-size: 14.6%;
+        div{
+          background-color: pink;
+          height: 23px;
+          width: 28.3%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 2;
+        }
 
-	.character_1 .power_rating{
-		float: right;
-	}
+      }
+    }
 
-	.character_2 .power_rating{
-		float: left;
-	}
-			
-			div{
-				list-style: none;
-				color: #000;
-				
-				h4{
-					padding: 4px;
-					margin: 4px;
-					z-index: 10;
-					position: relative;
-				}
-			}
 
-			h3{
-				padding: 0;
-				margin: 0;
-				background-color: #000;
-				color: #fff;
-				text-align: center;
-				letter-spacing: .5em;
-			}
-		}
 
-		.wins_losses{
-			padding: 5px;
-			margin-top: 20px;
-			background-color: #fff;
-			color: #000;
+    .power_rating{
+        width: 52%;
+        background-color: #fff;
+        border: solid 2px #000;
+        background-image: url(../img/tile.jpg);
+        background-size: 14.6%;
 
-			h3{
-				float: left;
-				margin: 5px;
-			}
-		}
+      
+      div{
+        list-style: none;
+        color: #000;
+        
+        h4{
+          padding: 4px;
+          margin: 4px;
+          z-index: 10;
+          position: relative;
+        }
+      }
 
-		.wins, .losses{
-			float: left;
-			width: 25%;
+      h3{
+        padding: 0;
+        margin: 0;
+        background-color: #000;
+        color: #fff;
+        text-align: center;
+        letter-spacing: .5em;
+      }
+    }
 
-			h3{
-				float: left;
-				margin: 5px;
-				text-decoration: underline;
-			}
+    .character_1 .power_rating{
+      float: right;
+    }
 
-			div{
-				float: left;
-				width: 25px;
-				height: 25px;
-				border: solid 2px #000;
-			}
+    .character_2 .power_rating{
+      float: left;
+    }
 
-		}
+    .wins_losses{
+      padding: 5px;
+      margin-top: 20px;
+      background-color: #fff;
+      color: #000;
 
-		.description{
-			padding: 10px;
-		    margin-top: 20px;
-			background-color: #fff;
-			color: #000;
+      h3{
+        float: left;
+        margin: 5px;
+      }
+    }
 
-			h3{
-				margin: 0;
-			}
+    .wins, .losses{
+      float: left;
+      width: 25%;
 
-			p{
-				font-family: Helvetica;
-				font-size: .8em;
-			}
-		}
-	}
+      h3{
+        float: left;
+        margin: 5px;
+        text-decoration: underline;
+      }
 
-	.magical_div{
-		padding: 0 5%;
-	} 
+      div{
+        float: left;
+        width: 25px;
+        height: 25px;
+        border: solid 2px #000;
+      }
+
+    }
+
+    .description{
+      padding: 10px;
+        margin-top: 20px;
+      background-color: #fff;
+      color: #000;
+
+      h3{
+        margin: 0;
+      }
+
+      p{
+        font-family: Helvetica;
+        font-size: .8em;
+      }
+    }
+
+    .magical_div{
+      padding: 0 5%;
+    }
 
 }
