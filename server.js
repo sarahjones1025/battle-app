@@ -63,6 +63,8 @@ function topPicks (arr) {
 
     });
 
+    heroList.reverse();
+
     return heroList;
 }
 

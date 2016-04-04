@@ -45,7 +45,7 @@ var utils = {
                 result = current;
             }
         });
-        return new SingleHeroModel(result);
+        return result;
     },
 
     getStats: function (id) {

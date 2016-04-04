@@ -14,9 +14,25 @@ var SearchView = Backbone.View.extend({
    
     events: {
         'click button': 'onClick',
-        'keyUp'     : 'onKeyUp' 
+        'keyUp'     : 'onKeyUp',
+        'click .first-hero':'onFirstHeroClick',
+        'click .second-hero':'onSecondHeroClick',
+        'click .third-hero':'onThirdHeroClick'
     },
 
+    onFirstHeroClick: function () {
+        window.location.hash = ('singleHero/' + this.model1.get('id'));
+    },
+
+    onSecondHeroClick: function () {
+        window.location.hash = ('singleHero/' + this.model2.get('id'));
+        
+    },
+
+    onThirdHeroClick: function () {
+        window.location.hash = ('singleHero/' + this.model3.get('id'));
+        
+    },    
     onKeyUp: function (e) {
         console.log('keyup event in SearchView')
         if (e.keyCode === '13') {

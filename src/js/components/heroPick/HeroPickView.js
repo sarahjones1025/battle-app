@@ -46,16 +46,25 @@ var HeroPickView = Backbone.View.extend({
     initialize: function (options) {
         console.log("options", options)
         this.$el.html(this.template());
-        this.listenTo(dispatcher, 'sync', this.render);
+        this.listenTo(this.model, 'sync', this.render);
         if (options) {
             this.withHero = true;
             console.log("with hero");
+            console.log(this.model);
             this.$el.find('.picked > img').attr('src', (this.model.get('thumbnail')
                     + '.' + this.model.get('extension')));            
 
         } else {
             this.withHero = false;
         }
+
+    },
+
+    render: function ( ) {
+           
+        console.log('in the render function');
+        console.log(this.model);
+        this.show(this.model);       
 
     },
 
@@ -82,9 +91,13 @@ var HeroPickView = Backbone.View.extend({
             this.model = model;
             this.withHero = true;
             
-            this.searchView.remove();
+            if (this.searchView) {
+                this.searchView.remove();
+            };
+
             this.$el.find('.picked > img').attr('src', (this.model.get('thumbnail')
-                    + '.' + this.model.get('extension')));       
+                    + '.' + this.model.get('extension'))); 
+            this.$el.find('.name-of').html(this.model.get('name'));     
                          
             // this.$el.find('.strength > div').css({'width': strength});
             // this.$el.find('.speed > div').css({'width': speed});

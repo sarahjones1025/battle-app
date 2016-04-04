@@ -91,10 +91,10 @@ var BattleSpaceView = Backbone.View.extend({
             if (this.statBattle === true) {
                 result = BattleManager.statBattle(utils.getStats(this.model1.get('id')),
                                                   utils.getStats(this.model2.get('id')), 15);
-                $('.victories_left > .wins').html(result.fighter1.wins);
-                $('.victories_left > .percent').html(result.fighter1.wins / 15);
+                $('.victories_left > .wins').html((15 - result.fighter2.wins));
+                $('.victories_left > .percent').html(((15 -result.fighter2.wins) / .15).toFixed(0));
                 $('.victories_right > .wins').html(result.fighter2.wins);
-                $('.victories_right > .percent').html(result.fighter2.wins / 15);
+                $('.victories_right > .percent').html((result.fighter2.wins / .15).toFixed(0));
             } else {
                 result = BattleManager.narrativeBattle(utils.getStats(this.model1.get('id')),
                                                        utils.getStats(this.model2.get('id')));
@@ -114,7 +114,7 @@ var BattleSpaceView = Backbone.View.extend({
 
                 var counter = 0;
                 var maxLength = 5;
-                setTimeout(appendLI, 4000);
+                setTimeout(appendLI, 1000);
             }   
         }   
     },

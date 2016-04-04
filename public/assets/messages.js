@@ -55,7 +55,7 @@ var messages = {
                 [ "Furious and fumbling", 0, " dives in to assault ", 1, " clumsily missing." ],
                 [ 0, " stumbles while charging forward. Thrown off balance, ", 0, " is unable to land a blow to, ", 1, "." ],
                 [ 0, " assaults repeatedly in close range, but", 1, " dodges it all." ],
-                [ 0, " tries to shatter the spine of ", 1, " but only manages to lightly caress ," 1, "'s' back. Things are awkward."]
+                [ 0, " tries to shatter the spine of ", 1, " but only manages to lightly caress ", 1, "'s' back. Things are awkward."]
             ],
             blocked : [
                 [ "As ", 0, " steps forward to assault, ", 1, " steps forward to block, anticipating the attack and stopping it before its begun." ],
