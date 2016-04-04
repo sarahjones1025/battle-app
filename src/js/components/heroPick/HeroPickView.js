@@ -84,8 +84,8 @@ var HeroPickView = Backbone.View.extend({
             
             this.searchView.remove();
             this.$el.find('.picked > img').attr('src', (this.model.get('thumbnail')
-                    + '.' + this.model.get('extension')));            
-
+                    + '.' + this.model.get('extension')));       
+                         
             // this.$el.find('.strength > div').css({'width': strength});
             // this.$el.find('.speed > div').css({'width': speed});
             // this.$el.find('.fighting > div').css({'width': fighting});
