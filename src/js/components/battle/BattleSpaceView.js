@@ -114,7 +114,7 @@ var BattleSpaceView = Backbone.View.extend({
 
                 var counter = 0;
                 var maxLength = 5;
-                setTimeout(appendLI, 4000);
+                setTimeout(appendLI, 1000);
             }   
         }   
     },
