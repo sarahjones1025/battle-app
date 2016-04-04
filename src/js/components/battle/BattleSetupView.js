@@ -33,8 +33,9 @@ var BattleSetupView = Backbone.View.extend({
     },
 
     onRandomBattleClick: function () {
- 
+        console.log( "this button is soooo random" );
     },
+
 
     initialize: function (options) {
 

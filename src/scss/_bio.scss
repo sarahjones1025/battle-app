@@ -133,14 +133,23 @@
 		}
 	}
 
-	.power_rating{
-		float: right;
-	    width: 60%;
-	    background-color: #fff;
-	    border: solid 2px #000;
-	    background-image: url(../img/tile.jpg);
-	    background-size: 14.6%;
 
+
+.power_rating{
+	// float: right;
+    width: 48%;
+    background-color: #fff;
+    border: solid 2px #000;
+    background-image: url(../img/tile.jpg);
+    background-size: 14.6%;
+
+.character_1 .power_rating{
+	float: right;
+}
+
+.character_2 .power_rating{
+	float: left;
+}
 		
 		div{
 			list-style: none;

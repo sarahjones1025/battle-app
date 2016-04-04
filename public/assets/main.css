@@ -175,8 +175,25 @@ form li p, form li button {
     padding: 0;
     margin-top: 30%; }
 
-.picked {
-  z-index: 50; }
+.character_1 .picked {
+  position: absolute;
+  width: 50%;
+  top: 11.1%;
+  left: 11%;
+  z-index: 0; }
+  .character_1 .picked img {
+    max-width: 77.5%;
+    border: solid 5px #000; }
+
+.character_2 .picked {
+  position: absolute;
+  width: 50%;
+  top: 11.1%;
+  left: 50%;
+  z-index: 0; }
+  .character_2 .picked img {
+    max-width: 78%;
+    border: solid 5px #000; }
 
 .character_1, .character_2 {
   float: left;
@@ -185,7 +202,8 @@ form li p, form li button {
 .versus {
   position: absolute;
   left: 43%;
-  top: 35%; }
+  top: 35%;
+  z-index: 10; }
 
 .battle_options {
   text-align: center; }
@@ -207,11 +225,11 @@ div.active {
   box-sizing: border-box;
   display: none;
   text-align: left;
-  width: 75%;
+  width: 78.6%;
   position: absolute;
   background-color: blue;
   border: solid 5px yellow;
-  left: 14.5%;
+  left: 11%;
   padding: 30px;
   z-index: 100; }
   .search-dock input {
@@ -266,7 +284,7 @@ div.active {
 
 .turn_battle_button {
   position: absolute;
-  left: 4%;
+  left: 1%;
   top: 54%; }
 
 .turnBattleButton {
@@ -277,11 +295,11 @@ div.active {
   border: none;
   position: absolute;
   top: 66%;
-  left: 16%; }
+  left: 11%; }
 
 .stat_battle_button {
   position: absolute;
-  left: 58%;
+  left: 69%;
   top: 53%; }
 
 .statBattleButton {
@@ -292,7 +310,7 @@ div.active {
   border: none;
   position: absolute;
   top: 65%;
-  left: 66%; }
+  left: 76%; }
 
 .randomPickButton {
   -webkit-appearance: none;
@@ -527,12 +545,15 @@ div.active {
         z-index: 2; }
 
   .power_rating {
-    float: right;
-    width: 60%;
+    width: 48%;
     background-color: #fff;
     border: solid 2px #000;
     background-image: url(../img/tile.jpg);
     background-size: 14.6%; }
+    .power_rating .character_1 .power_rating {
+      float: right; }
+    .power_rating .character_2 .power_rating {
+      float: left; }
     .power_rating div {
       list-style: none;
       color: #000; }
