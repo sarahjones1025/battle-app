@@ -39,6 +39,10 @@ main{
 
 }
 
+.entry_point{
+	position: relative;
+}
+
 .star{
 }
 
@@ -54,8 +58,8 @@ header{
 		position: relative;
 		float:left;
 		font-weight: 100;
-		margin-left: 5%;
-    	font-size: 1.5em;
+		// margin-left: 5%;
+    	// font-size: 1.5em;
 
 			a{
 				color: yellow;
@@ -73,7 +77,13 @@ header{
 		padding:0;
 		float: right;
 		margin:0;
-		width: 40%;
+		// width: 40%;
+		display: table;
+
+		li{
+			display: table-cell;
+			vertical-align: middle;
+		}
 
 		button{
 			display: block;
@@ -83,6 +93,7 @@ header{
 			font-family: 'bebas_neue_regularregular';
 			font-size: 1em;
 			text-decoration: none;
+			border:none;
 		}
 	}
 

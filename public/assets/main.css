@@ -21,7 +21,7 @@
   .star {
     display: block;
     position: absolute;
-    top: -85px;
+    top: -65px;
     left: -91px;
     z-index: 1; }
 
@@ -73,10 +73,12 @@
     footer p {
       margin-bottom: 0; } }
 @media screen and (min-width: 1000px) {
-  header h1 {
-    margin: 0;
-    margin-left: 12%;
-    font-size: 2.2em; }
+  header {
+    width: 78%;
+    margin: 0 auto; }
+    header h1 {
+      margin: 0;
+      margin-left: 3%; }
 
   .top_nav a {
     padding: 15px 50px; }
@@ -462,7 +464,8 @@ div.active {
 
 .entry-point {
   width: 78%;
-  margin: 0 auto; }
+  margin: 0 auto;
+  position: relative; }
 
 .turn_battle_button {
   position: absolute;
@@ -794,6 +797,9 @@ body {
   background-size: cover;
   background-attachment: fixed; }
 
+.entry_point {
+  position: relative; }
+
 header {
   width: 100%;
   position: relative;
@@ -803,9 +809,7 @@ header {
     margin: 0;
     position: relative;
     float: left;
-    font-weight: 100;
-    margin-left: 5%;
-    font-size: 1.5em; }
+    font-weight: 100; }
     header h1 a {
       color: yellow;
       text-decoration: none; }
