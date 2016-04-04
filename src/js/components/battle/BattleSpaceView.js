@@ -79,7 +79,7 @@ var BattleSpaceView = Backbone.View.extend({
                 counter++;
 
                 if ($('.turns').children().length > maxLength) {
-                    $('.turns li:last-child').remove();
+                    //$('.turns li:last-child').remove();
                 }
 
                 if (counter < result.fightData.length) {
