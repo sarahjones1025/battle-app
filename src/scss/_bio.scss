@@ -44,8 +44,6 @@
 	    top: 8%;
 	    box-sizing: border-box;
 	    margin: 4% 7% 17% 7%;
-    
-
 	}
 
 	.levels{
@@ -81,6 +79,15 @@
 	    height: 50px;
 	    margin-top: 2.5%;
 	    margin-bottom: 20px;
+
+	    h1{
+			margin: 0;
+		    font-family: Impact;
+		    color: #2286e8;
+		    position: absolute;
+		    top: 13%;
+		    left: 65px
+		}
 	}
 
 	.character_bio{
@@ -117,14 +124,6 @@
 		    width: 100%;
 		}
 		
-		h1{
-			margin: 0;
-		    font-family: Impact;
-		    color: #2286e8;
-		    position: absolute;
-		    top: 13%;
-		    left: 65px
-		}
 
 		.power_rating{
 			float: right;
@@ -154,20 +153,13 @@
 
 
 
-.power_rating{
-    width: 52%;
-    background-color: #fff;
-    border: solid 2px #000;
-    background-image: url(../img/tile.jpg);
-    background-size: 14.6%;
+	.power_rating{
+	    width: 52%;
+	    background-color: #fff;
+	    border: solid 2px #000;
+	    background-image: url(../img/tile.jpg);
+	    background-size: 14.6%;
 
-.character_1 .power_rating{
-	float: right;
-}
-
-.character_2 .power_rating{
-	float: left;
-}
 		
 		div{
 			list-style: none;
@@ -189,6 +181,14 @@
 			text-align: center;
 			letter-spacing: .5em;
 		}
+	}
+
+	.character_1 .power_rating{
+		float: right;
+	}
+
+	.character_2 .power_rating{
+		float: left;
 	}
 
 	.wins_losses{
@@ -237,8 +237,9 @@
 			font-size: .8em;
 		}
 	}
+
+	.magical_div{
+		padding: 0 5%;
+	}
 }
 
-.magical_div{
-	padding: 0 5%;
-}
