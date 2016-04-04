@@ -13,6 +13,19 @@ var battleResultsIds = 0;
 
 
 var battleResults = [{winner: 1009148, loser:1009146},
+                     {winner: 1009149, loser: 1011334},                    
+                     {winner: 1009149, loser: 1011334},                    
+                     {winner: 1009149, loser: 1011334},                    
+                     {winner: 1011334 , loser: 1009149},                    
+                     {winner: 1011334 , loser: 1009149},                    
+                     {winner: 1011334 , loser: 1009149},                    
+                     {winner: 1011334 , loser: 1009149},                    
+                     {winner: 1011334 , loser: 1009149},                    
+                     {winner: 1009149, loser: 1011334},                    
+                     {winner: 1009149, loser: 1011334},                    
+                     {winner: 1009149, loser: 1011334},                    
+                     {winner: 1009149, loser: 1011334},                    
+                     {winner: 1009149, loser: 1011334},                    
                      {winner: 1009149, loser: 1011334}                    
                 ];
 
@@ -68,7 +81,28 @@ function topPicks (arr) {
     return heroList;
 }
 
+function winsAndLosses ( id ) {
 
+    var winCount = 0;
+    var loseCount = 0;
+
+    console.log(id);
+
+    battleResults.forEach( function (current) {
+        console.log(current);
+        if (parseInt(current.winner) === parseInt(id)) {
+        console.log(  'Add to winner');
+            winCount++;
+        };
+
+        if (parseInt(current.loser) === parseInt(id)) {
+            loseCount++;
+        };
+
+    });
+
+    return { wins: winCount, losses: loseCount}
+}
 
 
 app.use(bodyParser());
@@ -105,11 +139,10 @@ app.get('/api/topPicks', function (req, res) {
 });
 
 app.get('/api/winsAndLosses', function (req, res) {
-    // var wins;
-    // var losses;
-
-    // battleResults.forEach(function () {
-    // })
+ 
+    var result = winsAndLosses(req.query.hero);
+    res.json(result);
+    console.log(result);
 });
 
 app.listen(8000);
