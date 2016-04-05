@@ -9,6 +9,7 @@
 
 .health_bars{
 	padding:20px 0;
+    display: none;
 }
 
 .health_left, .health_right{
@@ -30,6 +31,8 @@
 
 .combatants{
 	position: relative;
+    padding-top: 30px;
+
 }
 
 .combatant_one, .combatant_two{
