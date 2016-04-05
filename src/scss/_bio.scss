@@ -153,7 +153,7 @@
 
 
 	.power_rating{
-	    width: 52%;
+	    width: 50%;
 	    background-color: #fff;
 	    border: solid 2px #000;
 	    background-image: url(../img/tile.jpg);
@@ -184,10 +184,14 @@
 
 	.character_1 .power_rating{
 		float: right;
+		margin-top: 25%;
+		margin-right: 10%;
 	}
 
 	.character_2 .power_rating{
 		float: left;
+		margin-top: 25%;
+		margin-left: 10%;
 	}
 
 	.wins_losses{

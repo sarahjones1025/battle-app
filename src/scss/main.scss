@@ -54,13 +54,11 @@ header{
 
 	h1{
 		font-family:Badaboom;
-		// color:yellow;
-		// margin:0;
+		margin-left: 50px;
 		position: relative;
 		float:left;
 		font-weight: 100;
-		// margin-left: 5%;
-    	// font-size: 1.5em;
+	
 
 			a{
 				color: yellow;
@@ -88,13 +86,16 @@ header{
 
 		button{
 			display: block;
-			padding: 15px 50px;
-			color: yellow;
-			background-color: #2286e8;
-			font-family: 'bebas_neue_regularregular';
-			font-size: 1em;
-			text-decoration: none;
-			border:none;
+		    padding: 15px;
+		    color: yellow;
+		    background-color: #2286e8;
+		    font-family: 'bebas_neue_regularregular';
+		    font-size: 1em;
+		    text-decoration: none;
+		    border: none;
+		    width: 160px;
+		    margin-left: 30px;
+		    letter-spacing: 0.15em;
 		}
 	}
 
@@ -204,7 +205,9 @@ header{
 		h3{
 			color:yellow;
 			text-align: center;
-			font-size:2em;
+			font-size:2.5em;
+			margin-top: 40px;
+			margin-bottom: 20px;
 		}
 
 		ul{
@@ -236,9 +239,6 @@ header{
 
 	.recent_battles{
 
-		// float:left;
-		// width:50%;
-
 		h3{
 			color:yellow;
 			text-align: center;
@@ -246,6 +246,8 @@ header{
 		}
 
 		ul{
+			float: left;
+			width: 50%;
 			padding:0;
 			margin:0;
 			list-style-type: none;
@@ -279,6 +281,12 @@ header{
 	}
 
 }
+
+.top_pick_left, .top_pick_right{
+	float: left;
+	width: 50%;
+}
+
 
 footer{
 	background:#000;
