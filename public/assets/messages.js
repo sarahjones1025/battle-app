@@ -67,7 +67,7 @@ var messages = {
         },
         success : [
             [ 0, " lunges forward and lashes out at close range. Caught off guard, ", 1, " stumbles as the blow lands." ],
-            [ "Dodging into close range, ", 0, "lands a blow, knocking ", 1, " to the ground." ],
+            [ "Dodging into close range, ", 0, " lands a blow, knocking ", 1, " to the ground." ],
             [ 0, " smashes into ", 1 ],
             [ 0, " delivers a crushing punch to ", 1, "'s jaw." ],
             [ 0, "Rips a manhole cover from the road, swinging it wildly and smashing it into", 1, "'s face." ]
