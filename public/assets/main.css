@@ -21,7 +21,7 @@
   .star {
     display: block;
     position: absolute;
-    top: -65px;
+    top: -86px;
     left: -91px;
     z-index: 1; }
 
@@ -847,7 +847,7 @@ body {
 
 header {
   position: relative;
-  z-index: 0; }
+  z-index: 2; }
   header h1 {
     font-family: Badaboom;
     position: relative;
