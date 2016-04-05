@@ -58,9 +58,9 @@ var BattleSetupView = Backbone.View.extend({
 
         this.$el.find('.character_2').append(this.heroPick2.$el);
 
-        this.$el.find('.bio_img').css({
-            'background-image': "url('" + this.model.get('thumbnail') +
-            '.' + this.model.get('extension') + "')" });
+        // this.$el.find('.bio_img').css({
+        //     'background-image': "url('" + this.model.get('thumbnail') +
+        //     '.' + this.model.get('extension') + "')" });
 
     },
 

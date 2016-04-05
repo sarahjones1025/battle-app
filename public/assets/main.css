@@ -367,10 +367,12 @@ form li p, form li button {
 
 .character_1 .picked {
   position: absolute;
+  width: 50%;
   top: 0;
   left: 0;
   z-index: 20; }
   .character_1 .picked img {
+    max-width: 77.5%;
     border: solid 5px #000; }
 .character_1 .power_rating {
   float: right; }
@@ -475,7 +477,7 @@ div.active {
 
 .turn_battle_button {
   position: absolute;
-  left: 1%;
+  left: -5%;
   top: 54%; }
 
 .turnBattleButton {
@@ -490,7 +492,7 @@ div.active {
 
 .stat_battle_button {
   position: absolute;
-  left: 69%;
+  left: 66%;
   top: 53%; }
 
 .statBattleButton {

@@ -34,12 +34,12 @@
 .character_1{
 	.picked{
 		position: absolute;
-		// width: 50%;
+		width: 50%;
 		top: 0;
 		left: 0;
 		z-index: 20;
 		img{
-			// max-width: 77.5%;
+			max-width: 77.5%;
 			border: solid 5px #000;
 		}
 	}
@@ -180,7 +180,7 @@ div.active{
 
 .turn_battle_button{
 	position: absolute;
-    left: 1%;
+    left: -5%;
     top: 54%;
 }
 
@@ -198,7 +198,7 @@ div.active{
 
 .stat_battle_button{
 	position: absolute;
-    left: 69%;
+    left: 66%;
     top: 53%;
 }
 
