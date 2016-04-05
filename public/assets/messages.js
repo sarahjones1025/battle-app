@@ -17,7 +17,7 @@ var messages = {
             [ 0, " throws ", 1, "'s limp body into the street, where it tumbles to a stop in the gutter. 'You asked for this...' ", 0, " says. ", 1, " groans in pain. ", 0, " wins!" ]
         ],
         draw : [
-            [ "The combatants stare across the broken and devistated landscape. They have found to a standstill. 'This isn't over', says ", 0, ". ", 1, " nods and turns away, teeth gritted in frustration. 'I'll get you next time.' The fight is a draw!"  ],
+            [ "The combatants stare across the broken and devistated landscape. They have fought to a standstill. 'This isn't over', says ", 0, ". ", 1, " nods and turns away, teeth gritted in frustration. 'I'll get you next time.' The fight is a draw!"  ],
             [ "Damaged and beaten, ", 0, " and ", 1, " have fought until neither combatant can continue. The fight is a draw!" ],
             [ "Neither fighter thought that the fight would last this long. ", 0, " glares across the battlefield at ", 1, ". 'I've finally met my match' ", 0, " says. The fight is a draw!" ]
         ]
@@ -26,7 +26,7 @@ var messages = {
         failed : {
             hit : [
                 [ 0, " peels off an attack from a distance, narrowly missing ", 1 ],
-                [ "Off balance, ", 0, "attacks at range, missing ", 1, " as the fighter stumbles over debris." ],
+                [ "Off balance, ", 0, " attacks at range, missing ", 1, " as the fighter stumbles over debris." ],
                 [ "Jumpy with anticipation, ", 0, " fires from a distance, narrowly missing ", 1 ],
                 [ 0, " slips on the uneven terrain, shooting wide and missing ", 1 ],
                 [ "The sun is in ", 0, "'s eyes. Squinting in the light, ", 0, " fires. Missing ", 1, " by a wide margin." ]
@@ -61,7 +61,7 @@ var messages = {
                 [ "As ", 0, " steps forward to assault, ", 1, " steps forward to block, anticipating the attack and stopping it before its begun." ],
                 [ 0, " charges in, but the blow landed is blocked, by ", 1, "." ],
                 [ 0, "'s blows lack the force to damage ", 1, ". ", 1, " parries them easily with one hand." ],
-                [ 1, " stands firm, blocking all attacks by", 0, ". " ],
+                [ 1, " stands firm, blocking all attacks by ", 0, ". " ],
                 [ 0, " Sees ", 1, "'s blow coming just in time to block it and dodge away." ]
             ]
         },
@@ -70,7 +70,7 @@ var messages = {
             [ "Dodging into close range, ", 0, " lands a blow, knocking ", 1, " to the ground." ],
             [ 0, " smashes into ", 1 ],
             [ 0, " delivers a crushing punch to ", 1, "'s jaw." ],
-            [ 0, "Rips a manhole cover from the road, swinging it wildly and smashing it into", 1, "'s face." ]
+            [ 0, "Rips a manhole cover from the road, swinging it wildly and smashing it into ", 1, "'s face." ]
         ]
     }
 };
