@@ -62,7 +62,7 @@ var messages = {
                 [ 0, " charges in, but the blow landed is blocked, by ", 1, "." ],
                 [ 0, "'s blows lack the force to damage ", 1, ". ", 1, " parries them easily with one hand." ],
                 [ 1, " stands firm, blocking all attacks by ", 0, ". " ],
-                [ 0, " Sees ", 1, "'s blow coming just in time to block it and dodge away." ]
+                [ 0, " sees ", 1, "'s blow coming just in time to block it and dodge away." ]
             ]
         },
         success : [
@@ -70,7 +70,7 @@ var messages = {
             [ "Dodging into close range, ", 0, " lands a blow, knocking ", 1, " to the ground." ],
             [ 0, " smashes into ", 1 ],
             [ 0, " delivers a crushing punch to ", 1, "'s jaw." ],
-            [ 0, "Rips a manhole cover from the road, swinging it wildly and smashing it into ", 1, "'s face." ]
+            [ 0, " rips a manhole cover from the road, swinging it wildly and smashing it into ", 1, "'s face." ]
         ]
     }
 };
