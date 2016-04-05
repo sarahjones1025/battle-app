@@ -10,7 +10,7 @@
 		position: absolute;
 		top: -86px;
     	left: -91px;
-		z-index: 1;
+		z-index: 100;
 	}
 
 	header{
@@ -62,8 +62,8 @@
 	}
 
 	.main_toppicks, .recent_battles{
-		float:left;
-		width:50%;
+		// float:left;
+		// width:50%;
 
 		ul{
 

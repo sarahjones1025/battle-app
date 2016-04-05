@@ -91,7 +91,6 @@ var SearchView = Backbone.View.extend({
     },
 
     show: function () {
-        console.log("in pickView show");
             this.$el.find('.first-hero img').attr('src',
                 (this.model1.get('thumbnail')
                 + '/portrait_uncanny'   

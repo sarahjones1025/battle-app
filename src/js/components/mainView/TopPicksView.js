@@ -21,7 +21,10 @@ var TopPicksView = Backbone.View.extend({
     events: {
         'click .first-hero':'onFirstHeroClick',
         'click .second-hero':'onSecondHeroClick',
-        'click .third-hero':'onThirdHeroClick'
+        'click .third-hero':'onThirdHeroClick',
+        'click .fourth-hero':'onFourthHeroClick',
+        'click .fifth-hero':'onFifthHeroClick',
+        'click .sixth-hero':'onSixthHeroClick'
     },
 
     onFirstHeroClick: function () {
@@ -36,7 +39,20 @@ var TopPicksView = Backbone.View.extend({
     onThirdHeroClick: function () {
         window.location.hash = ('singleHero/' + this.model3.get('id'));
         
-    },    
+    },
+
+    onFourthHeroClick: function () {
+        window.location.hash = ('singleHero/' + this.model4.get('id'));
+        
+    }, 
+    onFifthHeroClick: function () {
+        window.location.hash = ('singleHero/' + this.model5.get('id'));
+        
+    },
+    onSixthHeroClick: function () {
+        window.location.hash = ('singleHero/' + this.model6.get('id'));
+        
+    },        
 
     initialize: function (options) {
 
@@ -46,7 +62,7 @@ var TopPicksView = Backbone.View.extend({
 
         $.ajax({
             url:'/api/topPicks',
-            data:{limit:5},
+            data:{limit:6},
             method:'GET',
             success: processResult
         });
@@ -59,10 +75,16 @@ var TopPicksView = Backbone.View.extend({
             _this.model1 = cache.getCharacter( utils.searchForId(data[0].id));
             _this.model2 = cache.getCharacter( utils.searchForId(data[1].id));
             _this.model3 = cache.getCharacter( utils.searchForId(data[2].id));
+            _this.model4 = cache.getCharacter( utils.searchForId(data[3].id));
+            _this.model5 = cache.getCharacter( utils.searchForId(data[4].id));
+            _this.model6 = cache.getCharacter( utils.searchForId(data[5].id));
 
             _this.listenTo(_this.model1,'sync', _this.show);
             _this.listenTo(_this.model2,'sync', _this.show);
             _this.listenTo(_this.model3,'sync', _this.show);
+            _this.listenTo(_this.model4,'sync', _this.show);
+            _this.listenTo(_this.model5,'sync', _this.show);
+            _this.listenTo(_this.model6,'sync', _this.show);
 
             _this.show();
         }
@@ -70,7 +92,6 @@ var TopPicksView = Backbone.View.extend({
     },
 
     show: function () {
-        console.log("in pickView show");
             this.$el.find('.first-hero img').attr('src',
                 (this.model1.get('thumbnail')
                 + '/landscape_large'   
@@ -86,9 +107,28 @@ var TopPicksView = Backbone.View.extend({
                 + '/landscape_large'   
                 + '.' + this.model3.get('extension')));
 
+            this.$el.find('.fourth-hero img').attr('src',
+                (this.model4.get('thumbnail')
+                + '/landscape_large'   
+                + '.' + this.model4.get('extension')));
+
+            this.$el.find('.fifth-hero img').attr('src',
+                (this.model5.get('thumbnail')
+                + '/landscape_large'   
+                + '.' + this.model5.get('extension')));
+
+            this.$el.find('.sixth-hero img').attr('src',
+                (this.model6.get('thumbnail')
+                + '/landscape_large'   
+                + '.' + this.model6.get('extension')));
+
+
             this.$el.find('.first-hero p').html(this.model1.get('name'));
             this.$el.find('.second-hero p').html(this.model2.get('name'));
             this.$el.find('.third-hero p').html(this.model3.get('name'));
+            this.$el.find('.fourth-hero p').html(this.model4.get('name'));
+            this.$el.find('.fifth-hero p').html(this.model5.get('name'));
+            this.$el.find('.sixth-hero p').html(this.model6.get('name'));
 
 
     },
