@@ -57,7 +57,7 @@ var BattleRouter = Backbone.Router.extend({
 
     battleNow: function (id1, id2,battleType) {
 
-      
+        console.log('in battle Router');
         dispatcher.trigger('show', 
                 new BattleSpaceView({   
                     model1: cache.getCharacter(utils.searchForId(id1)),

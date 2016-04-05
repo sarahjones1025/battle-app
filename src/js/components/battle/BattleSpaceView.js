@@ -13,10 +13,19 @@ var BattleSpaceView = Backbone.View.extend({
 
     template2: _.template(require('./turnByTurn.html')),
 
+    events: {
+        'click .battle_buttons': 'onRematch'
+    },
+
+    onRematch: function () {
+            
+        window.location.reload();
+        
+    },
+
     onClick: function () {
  
         function timerCallback () {
-            console.log('timer event');
 
         }; 
 
@@ -80,13 +89,11 @@ var BattleSpaceView = Backbone.View.extend({
 
                 if ($('.turns').children().length > maxLength) {
                     //$('.turns li:last-child').remove();
-                }
+                };
 
                 if (counter < result.fightData.length) {
                     setTimeout(appendLI, 4000);
-                }   else {
-                    _this.$el.find('.turns').children.first.addClass('winning-message');
-                }
+                };
 
                 
             }
