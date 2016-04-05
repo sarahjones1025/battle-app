@@ -471,7 +471,7 @@ div.active {
 .turn_battle_button {
   position: absolute;
   left: -13%;
-  top: 41%; }
+  top: 42%; }
 
 .turnBattleButton {
   -webkit-appearance: none;
@@ -814,9 +814,10 @@ div.active {
       text-decoration: underline; }
     .wins div, .losses div {
       float: left;
-      width: 25px;
+      width: 35px;
       height: 25px;
-      border: solid 2px #000; }
+      border: solid 2px #000;
+      vertical-align: center; }
 
   .description {
     padding: 10px;
@@ -899,8 +900,9 @@ header {
   height: 574px; }
   .buttons img {
     position: absolute;
-    left: 40%;
-    top: 37%; }
+    left: 41%;
+    top: 43%;
+    width: 18%; }
 
 .character_button {
   background: url(../img/choose_button.png);
@@ -909,7 +911,7 @@ header {
   width: 220px;
   height: 200px;
   position: relative;
-  top: 100px;
+  top: 130px;
   left: 20%;
   font-family: bebas_neue_regularregular; }
   .character_button h2 {
