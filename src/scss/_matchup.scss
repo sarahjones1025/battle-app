@@ -16,13 +16,20 @@
 }
 
 .pre-pick{
-	// width: 100%;
-    height: inherit;
     background-color: orange;
-    border: solid 5px #000;
+    background-image: url(../img/pre_picked_bg.jpg);
     color: #000;
-    height: 500px;
-	
+    // height: 500px;
+	background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    z-index: 0;
+    width: 100%;
+    padding-top: 100%;
+    box-sizing: border-box;
+    border: solid 5px #000;
+
+
 	h1{
 		text-align: center;
 		font-size: 20em;
@@ -72,7 +79,7 @@
 .versus{
 	position: absolute;
     left: 39%;
-    top: 28%;
+    top: 20%;
     z-index: 25;
 }
 
@@ -185,7 +192,7 @@ div.active{
 .turn_battle_button{
 	position: absolute;
     left: -13%;
-    top: 41%;
+    top: 42%;
 }
 
 .turnBattleButton{
@@ -224,6 +231,20 @@ div.active{
     font-family: Badaboom;
     padding: 10px 30px;
 
+}
+
+.picked{
+	background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    z-index: 0;
+    // position: absolute;
+    width: 100%;
+    padding-top: 100%;
+    // top: 8%;
+    box-sizing: border-box;
+    // margin: 4% 7% 17% 7%;
+    border: solid 5px #000;
 }
 
 

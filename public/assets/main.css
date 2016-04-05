@@ -351,11 +351,17 @@ form li p, form li button {
     text-shadow: -2px 1px 4px black; }
 
 .pre-pick {
-  height: inherit;
   background-color: orange;
-  border: solid 5px #000;
+  background-image: url(../img/pre_picked_bg.jpg);
   color: #000;
-  height: 500px; }
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  z-index: 0;
+  width: 100%;
+  padding-top: 100%;
+  box-sizing: border-box;
+  border: solid 5px #000; }
   .pre-pick h1 {
     text-align: center;
     font-size: 20em;
@@ -388,7 +394,7 @@ form li p, form li button {
 .versus {
   position: absolute;
   left: 39%;
-  top: 28%;
+  top: 20%;
   z-index: 25; }
 
 .battle_options {
@@ -471,7 +477,7 @@ div.active {
 .turn_battle_button {
   position: absolute;
   left: -13%;
-  top: 41%; }
+  top: 42%; }
 
 .turnBattleButton {
   -webkit-appearance: none;
@@ -506,6 +512,16 @@ div.active {
   font-family: Badaboom;
   padding: 10px 30px; }
 
+.picked {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  z-index: 0;
+  width: 100%;
+  padding-top: 100%;
+  box-sizing: border-box;
+  border: solid 5px #000; }
+
 .arena {
   background: url(../img/sidewalk.jpg);
   background-size: cover;
@@ -514,7 +530,8 @@ div.active {
   margin: 0 -14%; }
 
 .health_bars {
-  padding: 20px 0; }
+  padding: 20px 0;
+  display: none; }
 
 .health_left, .health_right {
   display: block;
@@ -531,7 +548,8 @@ div.active {
   margin-right: 11%; }
 
 .combatants {
-  position: relative; }
+  position: relative;
+  padding-top: 30px; }
 
 .combatant_one, .combatant_two {
   float: left;
@@ -814,9 +832,10 @@ div.active {
       text-decoration: underline; }
     .wins div, .losses div {
       float: left;
-      width: 25px;
+      width: 35px;
       height: 25px;
-      border: solid 2px #000; }
+      border: solid 2px #000;
+      vertical-align: center; }
 
   .description {
     padding: 10px;
@@ -899,8 +918,9 @@ header {
   height: 574px; }
   .buttons img {
     position: absolute;
-    left: 40%;
-    top: 37%; }
+    left: 41%;
+    top: 43%;
+    width: 18%; }
 
 .character_button {
   background: url(../img/choose_button.png);
@@ -909,7 +929,7 @@ header {
   width: 220px;
   height: 200px;
   position: relative;
-  top: 100px;
+  top: 130px;
   left: 20%;
   font-family: bebas_neue_regularregular; }
   .character_button h2 {
