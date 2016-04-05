@@ -34,13 +34,13 @@ var messages = {
             blocked : [
                 [ 0, " launches a devistating blow, but ", 1, " deftly parries it." ],
                 [ "Though, ", 0, " lands the ranged attack, ", 1, " withstands it and dives away, taking no damage." ],
-                [ 1, " moves like a viper, dodging ", 0, "'s powerful ranged attack" ],
+                [ 1, " moves like a viper, dodging ", 0, "'s powerful ranged attack." ],
                 [ "Shielded by the fallen debris of a nearby, demolished building, ", 1, " blocks ", 0, "'s attack." ],
-                [ 1, " dives to the ground, ducking", 0, "'s attack and rolling to safety" ]
+                [ 1, " dives to the ground, ducking ", 0, "'s attack and rolling to safety." ]
             ]
         },
         success : [
-            [ 0, " launches a devistating salvo of attacks against ", 1 ],
+            [ 0, " launches a devistating salvo of attacks against ", 1, "." ],
             [ "Suddenly, ", 0, " blasts a long range attack, catching ", 1, " off balance and knocking the fighter back." ],
             [ "Faster than ", 1, " can react, ", 0, " fires a ranged attack that cannot be dodged." ],
             [ 1, " is knocked back by force of ", 0, "'s attack, stumbling to the ground." ],
@@ -51,11 +51,11 @@ var messages = {
         failed : {
             hit : [
                 [ "Lunging forward ", 0, " strikes at ", 1, " but swings wide, missing ", 1, " by a mile." ],
-                [ "Enraged and desperate, ", 0, " lashes out at random.", 1, " dodges it easily." ],
-                [ "Furious and fumbling", 0, " dives in to assault ", 1, " clumsily missing." ],
+                [ "Enraged and desperate, ", 0, " lashes out at random. ", 1, " dodges it easily." ],
+                [ "Furious and fumbling ", 0, " dives in to assault ", 1, " clumsily missing." ],
                 [ 0, " stumbles while charging forward. Thrown off balance, ", 0, " is unable to land a blow to, ", 1, "." ],
-                [ 0, " assaults repeatedly in close range, but", 1, " dodges it all." ],
-                [ 0, " tries to shatter the spine of ", 1, " but only manages to lightly caress ", 1, "'s' back. Things are awkward."]
+                [ 0, " assaults repeatedly in close range, but ", 1, " dodges it all." ],
+                [ 0, " tries to shatter the spine of ", 1, " but only manages to lightly caress ", 1, "'s back. Things are awkward."]
             ],
             blocked : [
                 [ "As ", 0, " steps forward to assault, ", 1, " steps forward to block, anticipating the attack and stopping it before its begun." ],
