@@ -61,7 +61,7 @@ var HeroPickView = Backbone.View.extend({
     },
 
 
-    render: function ( ) {
+    render: function () {
            
         console.log('in the render function');
         console.log(this.model);
@@ -89,10 +89,18 @@ var HeroPickView = Backbone.View.extend({
             if (this.searchView) {
                 this.searchView.remove();
             };
+            
+            // // the original:
+            // this.$el.find('.picked > img').attr('src', (this.model.get('thumbnail')
+            //         + '.' + this.model.get('extension'))); 
 
-            this.$el.find('.picked > img').attr('src', (this.model.get('thumbnail')
-                    + '.' + this.model.get('extension'))); 
-            this.$el.find('.name-of').html(this.model.get('name'));     
+
+            this.$el.find('.name-of').html(this.model.get('name')); 
+
+
+            this.$el.find('.picked').css({
+            'background-image': "url('" + this.model.get('thumbnail') +
+            '.' + this.model.get('extension') + "')" });    
 
             var stats = utils.getStats(this.model.get('id'));
             var strength     = this.getBarPercent(stats.strength);
