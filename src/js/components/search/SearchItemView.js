@@ -11,7 +11,8 @@ var SearchItemView = Backbone.View.extend({
 
     events: {
         
-        'click .to-the-battle': 'toBattle'
+        'click .battle': 'toBattle',
+        'click .single-hero': 'toSingleHero'
     },
 
     initialize: function () {
@@ -30,20 +31,13 @@ var SearchItemView = Backbone.View.extend({
     //     }
 
     toBattle: function () {
-        console.log('click Event in Search SearchItemView');
 
         window.location.hash = ('battleSetup/' + this.model.get('id'));
-    }
+    },
 
-    // toSingleHero: function (e) {
-    //     console.log(e.target);
-    //     console.log('it worked');
-    //     if (e.target.classList.contains('to-the-battle')) {
-    //         window.location.hash = ('battleSetup/' + this.model.get('id'));
-    //     } else {
-    //         window.location.hash = ('singleHero/' + this.model.get('id'));
-    //     }
-    // }
+    toSingleHero: function () {
+        window.location.hash = ('singleHero/' + this.model.get('id'));
+    }
     
 });
 

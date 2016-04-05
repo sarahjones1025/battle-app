@@ -14,7 +14,7 @@ var battleResultsIds = 0;
 
 var battleResults = [{winner: 1009148, loser:1009146},
                      {winner: 1009149, loser: 1011334},                    
-                     {winner: 1009149, loser: 1011334},                    
+                     {winner: 1010903, loser: 1011266},                    
                      {winner: 1009149, loser: 1011334},                    
                      {winner: 1011334 , loser: 1009149},                    
                      {winner: 1011334 , loser: 1009149},                    
