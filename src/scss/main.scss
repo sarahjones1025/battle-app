@@ -32,23 +32,11 @@ body{
 }
 
 
-
-main{
-
-	
-
-}
-
 .entry_point{
 	position: relative;
 }
 
-.star{
-
-}
-
 header{
-	// width: 100%;
 	position: relative;
 	z-index: 2;
 
@@ -74,9 +62,7 @@ header{
 
 	.top_nav{
 		padding:0;
-		// float: right;
 		margin:0;
-		// width: 40%;
 		display: table;
 
 		li{
@@ -199,9 +185,6 @@ header{
 	font-family: bebas_neue_regularregular;
 
 	.main_toppicks{
-
-		// float:left;
-		// width:50%;
 
 		h3{
 			color:yellow;
