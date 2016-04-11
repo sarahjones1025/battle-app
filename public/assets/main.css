@@ -470,7 +470,6 @@ div.active {
     height: 50px; }
 
 .entry-point {
-  width: 78%;
   margin: 0 auto;
   position: relative; }
 
@@ -855,77 +854,77 @@ body {
   color: yellow;
   letter-spacing: .2em;
   background: url(../img/background.jpg);
-  margin: 0;
+  background-repeat: no-repeat;
+  background-color: #a31b18;
+  margin: 0 auto;
   position: relative;
-  background-size: cover;
-  background-attachment: fixed; }
+  background-size: contain; }
 
 .entry_point {
   position: relative; }
 
 header {
   position: relative;
-  z-index: 2; }
+  z-index: 2;
+  padding: 2%;
+  text-align: center; }
   header h1 {
-    font-family: Badaboom;
-    margin-left: 50px;
     position: relative;
+    font-family: Badaboom;
     float: left;
-    font-weight: 100; }
+    font-weight: 100;
+    color: yellow;
+    font-size: 1.5em; }
     header h1 a {
-      color: yellow;
       text-decoration: none; }
-  header .first_s {
-    color: red;
-    font-size: 3em;
-    text-shadow: 2px 5px 5px #000; }
-  header .top_nav {
-    padding: 0;
-    margin: 0;
-    display: table; }
-    header .top_nav li {
-      display: table-cell;
-      vertical-align: middle; }
-    header .top_nav button {
-      display: block;
-      padding: 15px;
-      color: yellow;
-      background-color: #2286e8;
-      font-family: 'bebas_neue_regularregular';
-      font-size: 1em;
-      text-decoration: none;
-      border: none;
-      width: 160px;
-      margin-left: 30px;
-      letter-spacing: 0.15em; }
   header li {
     color: yellow;
-    display: inline-block;
-    padding: 5px; }
+    padding: 5px;
+    list-style: none; }
     header li:last-child a {
       padding: 15px 65px;
       margin-left: 30px; }
 
+.first_s {
+  color: red;
+  font-size: 3em;
+  text-shadow: 2px 5px 5px #000; }
+
+.top_nav {
+  padding: 0; }
+  .top_nav button {
+    display: block;
+    padding: 15px;
+    color: yellow;
+    background-color: #2286e8;
+    font-family: 'bebas_neue_regularregular';
+    font-size: 1.3em;
+    text-decoration: none;
+    border: none;
+    width: 100%;
+    letter-spacing: 0.15em; }
+
+.star {
+  display: none; }
+
 .main_buttons {
   background: url(../img/marvel_group.jpg);
   background-repeat: no-repeat;
-  background-size: cover;
-  display: block;
-  height: 574px;
+  background-size: contain;
+  display: none;
+  height: 200px;
   position: relative; }
 
-.buttons {
-  height: 574px; }
-  .buttons img {
-    position: absolute;
-    left: 41%;
-    top: 43%;
-    width: 18%; }
+.buttons img {
+  position: absolute;
+  left: 41%;
+  top: 43%;
+  width: 18%; }
 
 .character_button {
   background: url(../img/choose_button.png);
   background-repeat: no-repeat;
-  display: block;
+  display: none;
   width: 220px;
   height: 200px;
   position: relative;
@@ -949,10 +948,13 @@ header {
     padding: 55px 20px;
     font-size: 1.5em; }
 
+.big_arrow {
+  display: none; }
+
 .battle_button {
   background: url(../img/battle_button.png);
   background-repeat: no-repeat;
-  display: block;
+  display: none;
   width: 220px;
   height: 200px;
   position: relative;
@@ -971,65 +973,56 @@ header {
     padding: 80px 0;
     display: block; }
 
-.picks_battles {
-  font-family: bebas_neue_regularregular; }
-  .picks_battles .main_toppicks h3 {
-    color: yellow;
-    text-align: center;
-    font-size: 2.5em;
-    margin-top: 40px;
-    margin-bottom: 20px; }
-  .picks_battles .main_toppicks ul {
-    padding: 0;
-    margin: 0;
-    list-style-type: none; }
-  .picks_battles .main_toppicks li {
-    display: table;
-    margin: 20px 0; }
-    .picks_battles .main_toppicks li img {
-      float: left; }
-    .picks_battles .main_toppicks li p {
-      float: left;
-      color: yellow;
-      font-size: 1.5em;
-      margin: 0;
-      padding: 55px 15px; }
-  .picks_battles .recent_battles h3 {
-    color: yellow;
-    text-align: center;
-    font-size: 2em; }
-  .picks_battles .recent_battles ul {
-    float: left;
-    width: 50%;
-    padding: 0;
-    margin: 0;
-    list-style-type: none; }
-  .picks_battles .recent_battles .recent_versus {
-    background: url(../img/versus.png);
-    background-size: 100%;
-    background-repeat: no-repeat;
-    display: block;
-    width: 20%;
-    height: 130px;
-    float: left;
-    margin-top: 7%; }
-  .picks_battles .recent_battles .battle1 .character1, .picks_battles .recent_battles .battle1 .character2, .picks_battles .recent_battles .battle2 .character1, .picks_battles .recent_battles .battle2 .character2 {
-    background: url(../img/character_square.jpg);
-    background-size: 100%;
-    background-repeat: no-repeat;
-    width: 39%;
-    height: 200px;
-    float: left; }
+.topPicksView {
+  text-align: center; }
+  .topPicksView p {
+    margin: 0 0 20px 0; }
 
-.top_pick_left, .top_pick_right {
+.main_toppicks h3 {
+  color: yellow;
+  text-align: center;
+  font-size: 1.5em;
+  margin-bottom: 10px; }
+.main_toppicks ul {
+  padding: 0;
+  margin: 0; }
+.main_toppicks li {
+  list-style: none; }
+
+.recent_battles h3 {
+  color: yellow;
+  text-align: center;
+  font-size: 2em; }
+.recent_battles ul {
   float: left;
-  width: 50%; }
+  width: 50%;
+  padding: 0;
+  margin: 0; }
+.recent_battles li {
+  list-style: none; }
+
+.recent_versus {
+  background: url(../img/versus.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  display: block;
+  width: 20%;
+  height: 130px;
+  float: left;
+  margin-top: 7%; }
+
+.character1, .character2 {
+  background: url(../img/character_square.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  width: 39%;
+  height: 200px;
+  float: left; }
 
 footer {
-  background: #000;
-  height: 100px;
+  background-color: #000;
   margin-top: 30px;
-  padding: 0 10%; }
+  padding: 10%; }
   footer p {
     float: left;
     color: yellow;
