@@ -294,34 +294,33 @@ form li {
 form li p, form li button {
   display: inline-block; }
 
-.wrapper input {
-  height: 70px;
-  border: solid 5px yellow;
-  background: #2286e8;
-  box-sizing: border-box;
-  vertical-align: middle;
-  width: 84.4%;
-  font-size: 1.3em;
-  color: yellow;
-  text-indent: 20px;
-  font-family: 'bebas_neue_regularregular';
-  letter-spacing: .2em; }
-.wrapper button {
-  height: 70px;
-  border: solid 5px yellow;
-  background: #2286e8;
-  box-sizing: border-box;
-  vertical-align: middle;
-  width: 14%;
-  margin-left: 1%;
-  font-size: 3em;
-  padding-top: 5px; }
+.wrapper {
+  text-align: center; }
+  .wrapper input {
+    height: 70px;
+    border: solid 5px yellow;
+    background: #2286e8;
+    box-sizing: border-box;
+    vertical-align: middle;
+    width: 75%;
+    font-size: 1.3em;
+    color: yellow;
+    text-indent: 20px;
+    font-family: 'bebas_neue_regularregular';
+    letter-spacing: .2em; }
+  .wrapper button {
+    height: 70px;
+    border: solid 5px yellow;
+    background: #2286e8;
+    box-sizing: border-box;
+    vertical-align: middle;
+    width: 20%;
+    margin-left: 1%;
+    font-size: 2em;
+    padding-top: 5px; }
 
 .top_picks div {
-  float: left;
-  width: 30%;
-  margin-right: 5%;
-  text-align: center; }
+  padding: 2%; }
   .top_picks div:last-child {
     margin: 0; }
   .top_picks div img {
@@ -331,6 +330,8 @@ form li p, form li button {
     display: block;
     margin: 0;
     padding: 0; }
+  .top_picks div h2 {
+    margin-top: 0; }
 .top_picks h1 {
   font-size: 1.5em; }
 
@@ -377,8 +378,6 @@ form li p, form li button {
   .character_1 .picked img {
     width: 100%;
     border: solid 5px #000; }
-.character_1 .power_rating {
-  float: right; }
 
 .character_2 .picked {
   position: absolute;
@@ -388,14 +387,23 @@ form li p, form li button {
     border: solid 5px #000; }
 
 .character_1, .character_2 {
-  float: left;
-  width: 50%; }
+  width: 80%;
+  margin: 0 auto; }
+
+.character_1 {
+  margin-bottom: 30px; }
 
 .versus {
   position: absolute;
-  left: 39%;
-  top: 20%;
+  width: 37%;
+  left: 64%;
+  top: 41%;
   z-index: 25; }
+
+.pre-pick h2 {
+  top: 0;
+  left: 17%;
+  z-index: 0; }
 
 .battle_options {
   text-align: center; }
@@ -419,9 +427,10 @@ div.active {
   text-align: left;
   width: 100%;
   position: absolute;
+  top: 0;
   background-color: blue;
   border: solid 5px yellow;
-  padding: 30px;
+  padding: 10px;
   z-index: 80; }
   .search-dock input {
     height: 70px;
@@ -429,7 +438,7 @@ div.active {
     background: #2286e8;
     box-sizing: border-box;
     vertical-align: middle;
-    width: 81.5%;
+    width: 75%;
     font-size: 1.3em;
     color: yellow;
     text-indent: 20px;
@@ -441,9 +450,9 @@ div.active {
     background: #2286e8;
     box-sizing: border-box;
     vertical-align: middle;
-    width: 16.5%;
+    width: 20%;
     margin-left: 1%;
-    font-size: 2.7em;
+    font-size: 1.7em;
     padding-top: 5px; }
   .search-dock h2 {
     text-align: left; }
@@ -454,11 +463,12 @@ div.active {
   padding: 0; }
 .searchresults li {
   margin: 10px 0; }
-  .searchresults li img, .searchresults li p, .searchresults li button {
+  .searchresults li img, .searchresults li p {
     display: inline-block;
-    vertical-align: middle; }
+    vertical-align: middle;
+    margin-bottom: 0; }
   .searchresults li img {
-    margin-right: 20%; }
+    margin-right: 10%; }
   .searchresults li button {
     float: right;
     margin-right: 0;
@@ -466,50 +476,13 @@ div.active {
     font-family: Badaboom;
     background-color: orange;
     border-color: #000;
-    width: 17%;
-    height: 50px; }
+    width: 100%;
+    height: 50px;
+    margin: 30px 0; }
 
 .entry-point {
   margin: 0 auto;
   position: relative; }
-
-.turn_battle_button {
-  position: absolute;
-  left: -13%;
-  top: 42%; }
-
-.turnBattleButton {
-  -webkit-appearance: none;
-  background-color: #fff;
-  font-family: Badaboom;
-  font-size: 2.5em;
-  border: none;
-  position: absolute;
-  top: 56%;
-  left: 4%; }
-
-.stat_battle_button {
-  position: absolute;
-  left: 62%;
-  top: 42%; }
-
-.statBattleButton {
-  -webkit-appearance: none;
-  background-color: #fff;
-  font-family: Badaboom;
-  font-size: 2.5em;
-  border: none;
-  position: absolute;
-  top: 57%;
-  left: 73%; }
-
-.randomPickButton {
-  -webkit-appearance: none;
-  border: solid 5px #000;
-  background-color: orange;
-  font-size: 2em;
-  font-family: Badaboom;
-  padding: 10px 30px; }
 
 .picked {
   background-size: cover;
@@ -520,6 +493,18 @@ div.active {
   padding-top: 100%;
   box-sizing: border-box;
   border: solid 5px #000; }
+
+.turnBattleButton, .statBattleButton {
+  -webkit-appearance: none;
+  margin-top: 20px;
+  background-color: orange;
+  color: #000;
+  border: solid 5px #000;
+  width: 80%;
+  font-family: Badaboom;
+  font-weight: 100;
+  font-size: 1.7em;
+  padding: 10px; }
 
 .arena {
   background: url(../img/sidewalk.jpg);
@@ -664,191 +649,180 @@ div.active {
     margin: 20px;
     font-size: 1.5em; }
 
-@media screen and (min-width: 1020px) {
-  .card {
-    background-color: #fff4d5; }
+.card {
+  background-color: #fff4d5; }
 
-  .combatant {
-    text-align: center;
-    padding-top: 70px;
-    background-image: url(../img/bio_bg_03.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 50%;
-    padding-top: 72%;
-    float: left;
-    position: relative;
-    box-sizing: border-box; }
-    .combatant h1 {
-      color: #ffd633;
-      position: absolute;
-      text-shadow: -4px -2px 2px rgba(0, 0, 0, 0.4);
-      bottom: 2%;
-      left: 5%;
-      text-align: left;
-      margin: 0;
-      padding: 0;
-      font-family: Impact;
-      text-transform: uppercase;
-      z-index: 30; }
-      .combatant h1:first-letter {
-        font-size: 4em; }
-
-  .bio_img {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    z-index: 20;
+.combatant {
+  text-align: center;
+  padding-top: 70px;
+  background-image: url(../img/bio_bg_03.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 50%;
+  padding-top: 72%;
+  float: left;
+  position: relative;
+  box-sizing: border-box; }
+  .combatant h1 {
+    color: #ffd633;
     position: absolute;
-    width: 86%;
-    padding-top: 116%;
-    top: 8%;
-    box-sizing: border-box;
-    margin: 4% 7% 17% 7%; }
+    text-shadow: -4px -2px 2px rgba(0, 0, 0, 0.4);
+    bottom: 2%;
+    left: 5%;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    font-family: Impact;
+    text-transform: uppercase;
+    z-index: 30; }
+    .combatant h1:first-letter {
+      font-size: 4em; }
 
-  .levels {
-    background-color: #000; }
-    .levels p {
-      text-align: center;
-      background-color: #000;
-      color: #fff;
-      float: left;
-      width: 14.23%;
-      margin: 0;
-      padding: 0; }
-      .levels p:first-child {
-        width: 7.3%;
-        text-align: left; }
-      .levels p:last-child {
-        width: 7.3%;
-        padding-right: 0;
-        text-align: right; }
+.bio_img {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  z-index: 20;
+  position: absolute;
+  width: 86%;
+  padding-top: 116%;
+  top: 8%;
+  box-sizing: border-box;
+  margin: 4% 7% 17% 7%; }
 
-  .yellow_box {
-    background-color: #ffd633;
-    position: relative;
-    border-top: solid 1px #000;
-    border-bottom: solid 1px #000;
-    height: 50px;
-    margin-top: 2.5%;
-    margin-bottom: 20px; }
-    .yellow_box h1 {
-      margin: 0;
-      font-family: Impact;
-      color: #2286e8;
-      position: absolute;
-      top: 13%;
-      left: 65px; }
-
-  .character_bio {
-    width: 50%;
-    position: relative;
+.levels {
+  background-color: #000; }
+  .levels p {
+    text-align: center;
+    background-color: #000;
+    color: #fff;
     float: left;
-    box-sizing: border-box; }
-    .character_bio span {
-      font-size: 3em;
-      position: absolute;
-      top: -17px;
-      left: -58px; }
-    .character_bio img {
-      margin-left: 10%; }
-    .character_bio button {
-      margin-top: 20px;
-      display: block;
-      padding: 20px;
-      text-decoration: none;
-      color: #fff4d5;
-      background-color: red;
-      text-align: center;
-      font-size: 1.5em;
-      letter-spacing: .2em;
-      border: none;
-      -webkit-appearance: none;
-      font-family: "bebas_neue_regularregular";
-      width: 100%; }
-    .character_bio .power_rating {
-      float: right; }
+    width: 14.23%;
+    margin: 0;
+    padding: 0; }
+    .levels p:first-child {
+      width: 7.3%;
+      text-align: left; }
+    .levels p:last-child {
+      width: 7.3%;
+      padding-right: 0;
+      text-align: right; }
 
-  .categories {
-    padding-top: 20px; }
-    .categories div {
-      position: relative; }
-      .categories div div {
-        background-color: pink;
-        height: 23px;
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 2; }
+.yellow_box {
+  background-color: #ffd633;
+  position: relative;
+  border-top: solid 1px #000;
+  border-bottom: solid 1px #000;
+  height: 50px;
+  margin-top: 2.5%;
+  margin-bottom: 20px; }
+  .yellow_box h1 {
+    margin: 0;
+    font-family: Impact;
+    color: #2286e8;
+    position: absolute;
+    top: 13%;
+    left: 65px; }
 
-  .power_rating {
-    width: 50%;
-    background-color: #fff;
-    border: solid 2px #000;
-    background-image: url(../img/tile.jpg);
-    background-size: 14.6%; }
-    .power_rating div {
-      list-style: none;
-      color: #000; }
-      .power_rating div h4 {
-        padding: 4px;
-        margin: 4px;
-        z-index: 10;
-        position: relative; }
-    .power_rating h3 {
-      padding: 0;
-      margin: 0;
-      background-color: #000;
-      color: #fff;
-      text-align: center;
-      letter-spacing: .5em; }
-
-  .character_1 .power_rating {
-    float: right;
-    margin-top: 25%;
-    margin-right: 10%; }
-
-  .character_2 .power_rating {
-    float: left;
-    margin-top: 25%;
+.character_bio {
+  width: 50%;
+  position: relative;
+  float: left;
+  box-sizing: border-box; }
+  .character_bio span {
+    font-size: 3em;
+    position: absolute;
+    top: -17px;
+    left: -58px; }
+  .character_bio img {
     margin-left: 10%; }
-
-  .wins_losses {
-    padding: 5px;
+  .character_bio button {
     margin-top: 20px;
-    background-color: #fff;
-    color: #000; }
-    .wins_losses h3 {
-      float: left;
-      margin: 5px; }
+    display: block;
+    padding: 20px;
+    text-decoration: none;
+    color: #fff4d5;
+    background-color: red;
+    text-align: center;
+    font-size: 1.5em;
+    letter-spacing: .2em;
+    border: none;
+    -webkit-appearance: none;
+    font-family: "bebas_neue_regularregular";
+    width: 100%; }
+  .character_bio .power_rating {
+    float: right; }
 
-  .wins, .losses {
+.categories {
+  padding-top: 20px; }
+  .categories div {
+    position: relative; }
+    .categories div div {
+      background-color: pink;
+      height: 23px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 2; }
+
+.power_rating {
+  background-color: #fff;
+  border: solid 2px #000;
+  background-image: url(../img/tile.jpg);
+  background-size: 14.6%; }
+  .power_rating div {
+    list-style: none;
+    color: #000; }
+    .power_rating div h4 {
+      padding: 4px;
+      margin: 4px;
+      z-index: 10;
+      position: relative; }
+  .power_rating h3 {
+    padding: 0;
+    margin: 0;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    letter-spacing: .5em; }
+
+.wins_losses {
+  padding: 5px;
+  margin-top: 20px;
+  background-color: #fff;
+  color: #000; }
+  .wins_losses h3 {
     float: left;
-    width: 25%; }
-    .wins h3, .losses h3 {
-      float: left;
-      margin: 5px;
-      text-decoration: underline; }
-    .wins div, .losses div {
-      float: left;
-      width: 35px;
-      height: 25px;
-      border: solid 2px #000;
-      vertical-align: center; }
+    margin: 5px; }
 
-  .description {
-    padding: 10px;
-    margin-top: 20px;
-    background-color: #fff;
-    color: #000; }
-    .description h3 {
-      margin: 0; }
-    .description p {
-      font-family: Helvetica;
-      font-size: .8em; }
+.wins, .losses {
+  float: left;
+  width: 25%; }
+  .wins h3, .losses h3 {
+    float: left;
+    margin: 5px;
+    text-decoration: underline; }
+  .wins div, .losses div {
+    float: left;
+    width: 35px;
+    height: 25px;
+    border: solid 2px #000;
+    vertical-align: center; }
 
-  .magical_div {
-    padding: 0 5%; } }
+.description {
+  padding: 10px;
+  margin-top: 20px;
+  background-color: #fff;
+  color: #000; }
+  .description h3 {
+    margin: 0; }
+  .description p {
+    font-family: Helvetica;
+    font-size: .8em; }
+
+.magical_div {
+  padding: 0 5%; }
+
 body {
   font-family: "bebas_neue_regularregular";
   color: yellow;

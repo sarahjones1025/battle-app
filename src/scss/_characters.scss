@@ -7,35 +7,11 @@ form{
 	li p, li button{
 		display: inline-block;
 	}
-
-	// input{
-	// 	height: 70px;
-	//     border: solid 5px yellow;
-	//     background: #2286e8;
-	//     box-sizing: border-box;
-	//     vertical-align: middle;
-
-	//     &:first-child{
-	//     	width: 84%;
-	//     	font-size: 1.3em;
-	// 	    color: yellow;
-	// 	    text-indent: 20px;
-	// 	    font-family: 'bebas_neue_regularregular';
-	// 	    letter-spacing: .2em;
-	//     }
-
-	//     &:nth-child(2){
-	//     	width: 14%;
-	//     	margin-left: 1%;
-	//     	font-size: 3em;
-	//     	padding-top: 5px;
-	//     }
-	// }
 	
 }
 
 .wrapper{
-	// margin: 0 11%;
+	text-align: center;
 
 	input{
 		height: 70px;
@@ -43,7 +19,7 @@ form{
 	    background: #2286e8;
 	    box-sizing: border-box;
 	    vertical-align: middle;
-    	width: 84.4%;
+    	width: 75%;
     	font-size: 1.3em;
 	    color: yellow;
 	    text-indent: 20px;
@@ -57,9 +33,9 @@ form{
 	    background: #2286e8;
 	    box-sizing: border-box;
 	    vertical-align: middle;
-    	width: 14%;
+    	width: 20%;
     	margin-left: 1%;
-    	font-size: 3em;
+    	font-size: 2em;
     	padding-top: 5px;
     }
 
@@ -69,10 +45,7 @@ form{
 
 
 	div{
-		float: left;
-	    width: 30%;
-	    margin-right: 5%;
-	    text-align: center;
+		padding: 2%;
 
 		&:last-child{
 			margin: 0;
@@ -85,6 +58,9 @@ form{
 		    display: block;
 		    margin: 0;
 		    padding: 0;
+		}
+		h2{
+			margin-top: 0;
 		}
 	}
 
