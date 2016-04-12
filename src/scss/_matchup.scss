@@ -13,7 +13,7 @@
 
 .pre-pick{
     background-color: orange;
-    background-image: url(../img/pre_picked_bg.jpg);
+    background-image: url(../img/click_to_pick.jpg);
     color: #000;
 	background-size: cover;
     background-repeat: no-repeat;
@@ -104,6 +104,8 @@
 
 div.active{
 	display: block;
+	position: fixed;
+	top: 0;
 }
 
 

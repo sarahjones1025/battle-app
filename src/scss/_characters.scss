@@ -46,17 +46,15 @@ form{
 
 	div{
 		padding: 2%;
-
-		&:last-child{
-			margin: 0;
-		}
+		max-width: 85%;
+		margin: 0 auto;
 
 		img{
-			  border: solid 10px black;
+			border: solid 10px black;
 		    width: 100%;
 		    box-sizing: border-box;
 		    display: block;
-		    margin: 0;
+		    margin: 0 0 10px 0;
 		    padding: 0;
 		}
 		h2{
@@ -81,6 +79,48 @@ form{
 	display: block;
 }
 
+@media screen and (min-width: 600px){
+	
+	.wrapper{
+		text-align: left;
+		padding: 2%;
+
+		input{
+			width: 81%;
+		}
+		button{
+			width: 17%;
+			font-size: 2.5em;
+		}
+	}
+
+	.top_picks{
+
+		div{
+			padding: 0;
+			float: left;
+			width: 32%;
+			margin-right: 2%;
+			text-align: center;
+			&:last-child{
+				margin: 0;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 1020px){
+
+	.wrapper{
+
+		input{
+			width: 84%;
+		}
+		button{
+			width: 14%;
+		}
+	}
 
 
-   
+
+} 

@@ -32,6 +32,15 @@ body{
 	background-size: contain;
 }
 
+main{
+	padding: 2%;
+
+}
+
+.main-dock{
+	max-width: 1020px;
+    margin: 0 auto;
+}
 
 .entry_point{
 	position: relative;
@@ -46,13 +55,13 @@ header{
 	h1{
 		position: relative;
 		font-family: Badaboom;
-		float: left;
 		font-weight: 100;
 		color: yellow;
 		font-size: 1.5em;
 
 			a{
 				text-decoration: none;
+				color: yellow;
 			}
 	}
 
@@ -87,17 +96,15 @@ header{
 	    text-decoration: none;
 	    border: none;
 	    width: 100%;
-	    // max-width: 310px;
+	    margin: 5px 0;
 	    letter-spacing: 0.15em;
 	}
 }
 
-.star{
-	display: none;
-}
+
 
 .main_buttons{
-	background: url(../img/marvel_group.jpg);
+	background: url(../img/marvel_group2.jpg);
 	background-repeat: no-repeat;
 	background-size: contain;
 	display: none;
@@ -115,9 +122,9 @@ header{
 }
 
 .character_button{
-	background: url(../img/choose_button.png);
-	background-repeat: no-repeat;
-	display: none;
+	// background: url(../img/choose_button.png);
+	// background-repeat: no-repeat;
+	// display: none;
 	width: 220px;
 	height: 200px;
 	position: relative;
@@ -153,9 +160,9 @@ header{
 }
 
 .battle_button{
-	background: url(../img/battle_button.png);
-	background-repeat: no-repeat;
-	display: none;
+	// background: url(../img/battle_button.png);
+	// background-repeat: no-repeat;
+	// display: none;
 	width: 220px;
 	height: 200px;
 	position: relative;
@@ -266,7 +273,7 @@ footer{
 	.top_nav button{
 		width: 180px;
 		font-size: 1em;
-		float: right;
+		display: inline-block;
 		margin: 5px;
 
 	}
@@ -281,24 +288,49 @@ footer{
 
 @media screen and (min-width: 600px){
 
+	body{
+		background-size: cover;
+	}
+
+	.top_nav{ 
+		margin-top: 40px;
+
+		button{
+			float: right;
+		}
+	}
+
 	.main_buttons{
 		display: block;
+		width: 75%;
+		margin: 0 auto;
+		height: 100%;
 	}
 
 	.star{
 		display: block;
+		position: absolute;
+		top: -86px;
+    	left: -91px;
+		z-index: 100;
 	}
 	
-	.big_arrow{
-		display: block;
-	}
+	// .big_arrow{
+	// 	display: block;
+	// }
 
-	.character_button{
-		display: block;
-	}
+	// .character_button{
+	// 	display: block;
+	// }
 
-	.battle_button{
-		display: block;
+	// .battle_button{
+	// 	display: block;
+	// }
+	header{
+		h1{
+			float: left;
+			margin: 0;
+		}
 	}
 }
 
