@@ -87,6 +87,7 @@ header{
 	    text-decoration: none;
 	    border: none;
 	    width: 100%;
+	    // max-width: 310px;
 	    letter-spacing: 0.15em;
 	}
 }
@@ -260,3 +261,68 @@ footer{
 		}
 	}
 }
+
+@media screen and (min-width: 450px){
+	.top_nav button{
+		width: 180px;
+		font-size: 1em;
+		float: right;
+		margin: 5px;
+
+	}
+
+	header{
+		h1{
+			font-size: 2em;
+		}
+	}
+
+}
+
+@media screen and (min-width: 600px){
+
+	.main_buttons{
+		display: block;
+	}
+
+	.star{
+		display: block;
+	}
+	
+	.big_arrow{
+		display: block;
+	}
+
+	.character_button{
+		display: block;
+	}
+
+	.battle_button{
+		display: block;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
