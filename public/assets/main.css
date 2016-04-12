@@ -734,14 +734,14 @@ div.active {
   .character_bio img {
     margin-left: 10%; }
   .character_bio button {
-    margin-top: 20px;
+    margin: 20px 0;
     display: block;
     padding: 20px;
     text-decoration: none;
     color: #fff4d5;
     background-color: red;
     text-align: center;
-    font-size: 1.5em;
+    font-size: 1.3em;
     letter-spacing: .2em;
     border: none;
     -webkit-appearance: none;
@@ -797,13 +797,15 @@ div.active {
     margin: 5px;
     text-decoration: underline; }
   .wins div, .losses div {
-    float: left;
-    width: 35px;
-    height: 25px;
+    text-align: center;
+    display: inline-block;
+    width: 15%;
     border: solid 2px #000;
-    vertical-align: center; }
+    vertical-align: center;
+    padding: 3%; }
 
 .description {
+  text-align: center;
   padding: 10px;
   margin-top: 20px;
   background-color: #fff;
