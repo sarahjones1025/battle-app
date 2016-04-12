@@ -403,7 +403,8 @@ form li p, form li button {
 .pre-pick h2 {
   top: 0;
   left: 17%;
-  z-index: 0; }
+  z-index: 0;
+  text-shadow: none; }
 
 .battle_options {
   text-align: center; }
@@ -545,11 +546,11 @@ div.active {
 
 .combatant_one {
   float: left;
-  margin-left: 11%; }
+  margin-left: 20%; }
 
 .combatant_two {
   float: right;
-  margin-right: 11%; }
+  margin-right: 20%; }
 
 .char_pic {
   display: block;
@@ -598,9 +599,10 @@ div.active {
     font-size: 1.5em; }
 
 .battle_buttons {
-  width: 100%;
+  width: 90%;
   display: block;
-  text-align: center; }
+  text-align: center;
+  margin: 0 auto; }
 
 .button {
   display: inline-block;
@@ -614,7 +616,7 @@ div.active {
     color: #000;
     font-family: Badaboom; }
   .button:first-child {
-    width: 100%; }
+    width: 95%; }
   .button:nth-child(2), .button:nth-child(3) {
     display: none; }
 

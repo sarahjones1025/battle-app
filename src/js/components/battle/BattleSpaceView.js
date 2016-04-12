@@ -69,11 +69,11 @@ var BattleSpaceView = Backbone.View.extend({
             console.log("BattleSpace Show Event");
             
             this.$el.find('.combatant_one > .char_pic').attr('src', (this.model1.get('thumbnail')
-                                            + '/detail'
+                                            + '/standard_fantastic'
                                             + '.' + this.model1.get('extension')));
 
             this.$el.find('.combatant_two > .char_pic').attr('src', (this.model2.get('thumbnail')
-                                            + '/detail'
+                                            + '/standard_fantastic'
                                             + '.'+this.model2.get('extension')));
 
             this.$el.find('.combatant_one > p').html(this.model1.get('name'));

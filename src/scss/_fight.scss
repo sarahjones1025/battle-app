@@ -48,12 +48,12 @@
 
 .combatant_one{
 	float: left;
-    margin-left:11%;
+    margin-left: 20%;
 }
 
 .combatant_two{
 	float: right;
-    margin-right:11%;
+    margin-right: 20%;
 }
 
 .char_pic{
@@ -115,9 +115,10 @@
 }
 
 .battle_buttons{
-	width:100%;
+	width: 90%;
     display: block;
     text-align: center;
+    margin: 0 auto;
 
     
 }
@@ -139,7 +140,7 @@
     }
 
     &:first-child{
-        width:100%;
+        width: 95%;
     }
 
     &:nth-child(2), &:nth-child(3){
