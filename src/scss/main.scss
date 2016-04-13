@@ -6,10 +6,6 @@ $orange: #f7942e;
 
 @import "clearfix";
 
-@import "tablet";
-
-@import "desktop";
-
 @import "fonts";
 
 @import "characters";
@@ -40,10 +36,15 @@ main{
 .main-dock{
 	max-width: 1020px;
     margin: 0 auto;
+    padding: 5%;
 }
 
 .entry_point{
 	position: relative;
+}
+
+.star{
+	display: none;
 }
 
 header{
@@ -105,11 +106,12 @@ header{
 
 .main_buttons{
 	background: url(../img/marvel_group2.jpg);
-	background-repeat: no-repeat;
-	background-size: contain;
-	display: none;
-	height: 200px;
-	position: relative;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: none;
+    /* height: 200px; */
+    padding-bottom: 13%;
+    position: relative;
 }
 
 .buttons{
@@ -122,13 +124,8 @@ header{
 }
 
 .character_button{
-	// background: url(../img/choose_button.png);
-	// background-repeat: no-repeat;
-	// display: none;
-	width: 220px;
-	height: 200px;
-	position: relative;
-	top: 130px;
+	position: absolute;
+	top: 0px;
 	left: 20%;
 	font-family: bebas_neue_regularregular;
 
@@ -289,7 +286,7 @@ footer{
 @media screen and (min-width: 600px){
 
 	body{
-		background-size: cover;
+		background-size: contain;
 	}
 
 	.top_nav{ 
@@ -302,30 +299,73 @@ footer{
 
 	.main_buttons{
 		display: block;
-		width: 75%;
 		margin: 0 auto;
 		height: 100%;
 	}
 
-	.star{
-		display: block;
-		position: absolute;
-		top: -86px;
-    	left: -91px;
-		z-index: 100;
-	}
+	// .star{
+	// 	display: block;
+	// 	position: absolute;
+	// 	top: -86px;
+ //    	left: -91px;
+	// 	z-index: 100;
+	// }
 	
-	// .big_arrow{
-	// 	display: block;
-	// }
+	.topPicksView{
+		text-align: left;
+		
+	}
 
-	// .character_button{
-	// 	display: block;
-	// }
+	.top_pick_left{
+		float: left;
+		width: 50%;
+	}
 
-	// .battle_button{
-	// 	display: block;
-	// }
+	.top_pick_right{
+		float: right;
+		width: 50%;
+	}
+
+
+.main_toppicks{
+
+		// float:left;
+		// width:50%;
+
+		h3{
+			color:yellow;
+			text-align: center;
+			font-size:2.5em;
+			margin-top: 40px;
+			margin-bottom: 20px;
+		}
+
+		ul{
+			padding:0;
+			margin:0;
+			list-style-type: none;
+		}
+
+		li{
+			display: table;
+			margin: 20px 0;
+			
+			img{
+				float:left;
+			}
+
+			p{
+				float:left;
+				color: yellow;
+ 	    		font-size: 1.5em;
+    			margin: 0;
+    			padding: 55px 15px;
+			}
+
+		}
+
+
+	}
 	header{
 		h1{
 			float: left;
@@ -334,7 +374,11 @@ footer{
 	}
 }
 
-
+@media screen and (min-width: 1020px){
+	body{
+		background-size: cover;
+	}
+}
 
 
 
