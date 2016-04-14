@@ -280,7 +280,7 @@ div.active {
 
 @media screen and (min-width: 600px) {
   .entry-point {
-    padding: 5%; }
+    padding: 1% 5%; }
 
   .character_1, .character_2 {
     width: 44%;
@@ -816,9 +816,7 @@ main {
   padding: 2%; }
 
 .main-dock {
-  max-width: 1020px;
-  margin: 0 auto;
-  padding: 5%; }
+  margin: 0 auto; }
 
 .entry_point {
   position: relative; }
@@ -865,67 +863,72 @@ header {
     text-decoration: none;
     border: none;
     width: 100%;
-    margin: 5px 0;
+    margin: 10px 0;
     letter-spacing: 0.15em; }
 
 .main_buttons {
   background: url(../img/marvel_group2.jpg);
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   display: none;
   /* height: 200px; */
-  padding-bottom: 13%;
+  padding-bottom: 62%;
   position: relative; }
 
-.buttons img {
-  position: absolute;
-  left: 41%;
-  top: 43%;
-  width: 18%; }
+.buttons {
+  position: relative; }
 
 .character_button {
+  display: none;
   position: absolute;
-  top: 0px;
-  left: 20%;
+  top: 10px;
+  left: 10px;
   font-family: bebas_neue_regularregular; }
   .character_button h2 {
     margin: 0;
-    padding: 10px 20px;
+    padding: 0;
     text-align: center;
     font-size: 2em; }
   .character_button a {
     text-decoration: none;
     font-size: .75em;
-    color: yellow;
+    color: black;
     display: block;
-    padding: 60px 0; }
-  .character_button p {
-    color: yellow;
-    margin: 0;
-    padding: 55px 20px;
-    font-size: 1.5em; }
+    padding: 20px 20px;
+    background-color: orange;
+    border: solid 5px black;
+    font-family: Badaboom; }
 
 .big_arrow {
   display: none; }
 
 .battle_button {
-  width: 220px;
-  height: 200px;
-  position: relative;
-  top: 50px;
-  left: 60%;
+  display: none;
+  position: absolute;
+  top: 10px;
+  right: 10px;
   font-family: bebas_neue_regularregular; }
   .battle_button h2 {
     margin: 0;
-    padding: 10px 56px;
+    padding: 0;
     text-align: center;
     font-size: 2em; }
   .battle_button a {
     text-decoration: none;
     font-size: .75em;
-    color: yellow;
-    padding: 80px 0;
-    display: block; }
+    color: black;
+    display: block;
+    padding: 20px 20px;
+    background-color: orange;
+    border: solid 5px black;
+    font-family: Badaboom; }
+
+.invisible_button {
+  position: absolute;
+  left: 30%;
+  top: 30%;
+  height: 45%;
+  width: 45%; }
 
 .topPicksView {
   text-align: center; }
@@ -997,6 +1000,10 @@ footer {
   body {
     background-size: contain; }
 
+  header {
+    padding: 0 7%;
+    text-align: left; }
+
   .top_nav {
     margin-top: 40px; }
     .top_nav button {
@@ -1022,7 +1029,7 @@ footer {
     color: yellow;
     text-align: center;
     font-size: 2.5em;
-    margin-top: 40px;
+    margin-top: 70px;
     margin-bottom: 20px; }
   .main_toppicks ul {
     padding: 0;
@@ -1043,6 +1050,9 @@ footer {
   header h1 {
     float: left;
     margin: 0; } }
+@media screen and (min-width: 950px) {
+  header h1 {
+    font-size: 2.8em; } }
 @media screen and (min-width: 1020px) {
   body {
     background-size: cover; } }
