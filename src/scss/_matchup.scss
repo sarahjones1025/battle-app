@@ -103,13 +103,13 @@
 }
 
 div.active{
-	    background: url(../img/marvel_group2.jpg);
+	    // background: url(../img/marvel_group2.jpg);
 	    background-repeat: no-repeat;
 	    background-size: contain;
-	    display: none;
+	    display: block;
 	    /* height: 200px; */
-	    padding-bottom: 13%;
-	    position: relative;
+	    // padding-bottom: 13%;
+	    // position: relative;
 }
 
 
@@ -169,14 +169,13 @@ div.active{
     li{
     	margin: 10px 0;
 
-    	img, p{
+    	img, p, button{
     		display: inline-block;
     		vertical-align: middle;
-    		margin-bottom: 0;
     	}
 
     	img{
-    		margin-right: 10%;
+    		margin-right: 20%;
     	}
 
     	button{
@@ -186,12 +185,12 @@ div.active{
 		    font-family: Badaboom;
 		    background-color: orange;
 		    border-color: #000;
-		    width: 100%;
+		    width: 17%;
 		    height: 50px;
-		    margin: 30px 0;
     	}
     }
 }
+
 
 
 .entry-point{		

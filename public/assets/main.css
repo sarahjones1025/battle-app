@@ -185,13 +185,10 @@ form li p, form li button {
     width: 125px; }
 
 div.active {
-  background: url(../img/marvel_group2.jpg);
   background-repeat: no-repeat;
   background-size: contain;
-  display: none;
-  /* height: 200px; */
-  padding-bottom: 13%;
-  position: relative; }
+  display: block;
+  /* height: 200px; */ }
 
 .search-dock {
   box-sizing: border-box;
@@ -235,12 +232,11 @@ div.active {
   padding: 0; }
 .searchresults li {
   margin: 10px 0; }
-  .searchresults li img, .searchresults li p {
+  .searchresults li img, .searchresults li p, .searchresults li button {
     display: inline-block;
-    vertical-align: middle;
-    margin-bottom: 0; }
+    vertical-align: middle; }
   .searchresults li img {
-    margin-right: 10%; }
+    margin-right: 20%; }
   .searchresults li button {
     float: right;
     margin-right: 0;
@@ -248,9 +244,8 @@ div.active {
     font-family: Badaboom;
     background-color: orange;
     border-color: #000;
-    width: 100%;
-    height: 50px;
-    margin: 30px 0; }
+    width: 17%;
+    height: 50px; }
 
 .entry-point {
   margin: 0 auto;
@@ -447,9 +442,6 @@ div.active {
     margin: 20px;
     font-size: 1.5em; }
 
-@media screen and (min-width: 600px) {
-  .arena {
-    background: url(../img/sidewalk.jpg); } }
 .card {
   background-color: #fff4d5; }
 
