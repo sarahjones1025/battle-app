@@ -294,10 +294,6 @@ footer{
 
 @media screen and (min-width: 600px){
 
-	body{
-		background-size: contain;
-	}
-
 	header{
 		padding: 0 7%;
 		text-align: left;
@@ -316,14 +312,6 @@ footer{
 		margin: 0 auto;
 		height: 100%;
 	}
-
-	// .star{
-	// 	display: block;
-	// 	position: absolute;
-	// 	top: -86px;
- //    	left: -91px;
-	// 	z-index: 100;
-	// }
 	
 	.topPicksView{
 		text-align: left;
@@ -342,9 +330,6 @@ footer{
 
 
 .main_toppicks{
-
-		// float:left;
-		// width:50%;
 
 		h3{
 			color: yellow;
@@ -378,8 +363,8 @@ footer{
 
 		}
 
-
 	}
+
 	header{
 		h1{
 			float: left;
@@ -398,9 +383,10 @@ footer{
 
 
 @media screen and (min-width: 1020px){
-	body{
-		background-size: cover;
+	.main-dock{
+		max-width: 1020px;
 	}
+
 }
 
 
