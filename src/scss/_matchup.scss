@@ -169,24 +169,26 @@ div.active{
     li{
     	margin: 10px 0;
 
-    	img, p, button{
-    		display: inline-block;
+    	img, p{
+    		// display: inline-block;
+    		margin-left: 10px;
     		vertical-align: middle;
     	}
 
-    	img{
-    		margin-right: 20%;
-    	}
+    	// img{
+    	// 	margin-right: 20%;
+    	// }
 
     	button{
-    		float: right;
+    		// float: right;
     		margin-right: 0;
     		font-size: 1.1em;
 		    font-family: Badaboom;
 		    background-color: orange;
 		    border-color: #000;
-		    width: 17%;
+		    width: 150px;
 		    height: 50px;
+		    margin-bottom: 10px;
     	}
     }
 }
@@ -250,9 +252,21 @@ div.active{
 
 @media screen and (min-width: 900px){
 
+	.searchresults{
+		li{
+			img, p{
+				display: inline-block;
+			}
+		}
+	}
+	
+	.magical_button_div{
+		float: right;
+		width: 35%;
+	}
 	.searchresults li button {
-	    max-width: 180px;
-	    margin: 25px 0;
-	    float: right;
+	    // max-width: 180px;
+	    // margin: 25px 0;
+	    // float: right;
 	}
 }

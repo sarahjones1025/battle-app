@@ -6,6 +6,8 @@ var $ = require('jquery');
 var SearchItemView = Backbone.View.extend({
 
     tagName: 'li',
+
+    className: 'clearfix',
     
     template: _.template(require('./SearchItemView.html')),
 

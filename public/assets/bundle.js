@@ -14243,7 +14243,7 @@ var MiniSearchView = Backbone.View.extend({
 module.exports = MiniSearchView;
 
 },{"../cache/characterCache.js":11,"../router/dispatcher.js":23,"../utils/utils.js":35,"./MiniSearchView.html":24,"./battleSearchItem.html":30,"backbone":1,"jquery":2,"underscore":3}],26:[function(require,module,exports){
-module.exports = "\n<img src=<%= get('thumbnail') + '/standard_small' + '.' + get('extension') %> alt=\"character\">\n<p><%= get('name') %></p>\n<button class=\"single-hero\">Profile</button>\n<button class=\"battle\">Send To Battle</button>\n\n ";
+module.exports = "\n<img src=<%= get('thumbnail') + '/standard_small' + '.' + get('extension') %> alt=\"character\">\n<p><%= get('name') %></p>\n<div class=\"magical_button_div\">\n\t<button class=\"single-hero\">Profile</button>\n\t<button class=\"battle\">Send To Battle</button>\n</div>\n ";
 
 },{}],27:[function(require,module,exports){
 'use strict';
@@ -14255,6 +14255,8 @@ var $ = require('jquery');
 var SearchItemView = Backbone.View.extend({
 
     tagName: 'li',
+
+    className: 'clearfix',
 
     template: _.template(require('./SearchItemView.html')),
 
